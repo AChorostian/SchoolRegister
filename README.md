@@ -8,7 +8,7 @@ step by step Instructions:
 3. install rspec and simplecov.
 4. install rubymine.
 
-5. open main project directory from rubymine.
+5. clone and open main project directory from rubymine.
 7. you should receive message that you need to install more gems. click install.
 8. add cofiguration for testing:
    * "+" button -> RSpec
