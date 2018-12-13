@@ -1,0 +1,12 @@
+*.gem
+*.rbc
+/.config
+/coverage/
+/spec/reports/
+/spec/examples.txt
+build/
+/.bundle/
+/.vendor/
+/vendor
+/bundle
+/vendor/bundle
