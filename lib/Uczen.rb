@@ -1,12 +1,13 @@
+class Uczen
 
-def dodajucznia
-    return "tu bedzie dodawanie ucznia"
+    attr_reader :uczen_id, :imie, :nazwisko
+
+    def initialize
+        @uczen_id = 0
+        @imie = ""
+        @nazwisko = ""
+    end
+
 end
 
-def edytujucznia
-  return "tu bedzie dodawanie ucznia"
-end
 
-def usunucznia
-  return "tu bedzie dodawanie ucznia"
-end

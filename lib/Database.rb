@@ -4,7 +4,7 @@ require 'sqlite3'
 
 begin
 
-  db = SQLite3::Database.open "test2.db"
+  db = SQLite3::Database.open "database.db"
 
   db.execute "CREATE TABLE IF NOT EXISTS Friends(Id INTEGER PRIMARY KEY, Name TEXT)"
   db.execute "DELETE FROM Friends"
