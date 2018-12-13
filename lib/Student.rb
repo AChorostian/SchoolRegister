@@ -1,11 +1,11 @@
 class Student
 
-    attr_reader :student_id, :name, :surname, :subjects
+    attr_reader :id, :name, :surname, :subjects
 
-    def initialize
-        @student_id = 0
-        @name = ""
-        @surname = ""
+    def initialize(n,s)
+        @id = 0
+        @name = n
+        @surname = s
         @subjects = Array.new
     end
 

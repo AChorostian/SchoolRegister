@@ -5,92 +5,73 @@ require 'sqlite3'
 # sqlite available types: BLOB, TEXT, INTEGER, REAL, NUMERIC
 
 class Database
-
     attr_reader :db
 
-    def initialize
-        begin
-            @db = SQLite3::Database.open "database.db"
-            @db.execute "CREATE TABLE IF NOT EXISTS Uczen(
-                uczen_id INTEGER PRIMARY KEY,
-                imie TEXT,
-                nazwisko TEXT)"
-            @db.execute "CREATE TABLE IF NOT EXISTS Ocena(
-                ocena_id INTEGER PRIMARY KEY,
-                ocena INTEGER,
-                kategoria TEXT,
-                data TEXT,
-                przedmiot_id INTEGER,
-                uczen_id INTEGER)"
-            @db.execute "CREATE TABLE IF NOT EXISTS Przedmiot(
-                przedmiot_id INTEGER PRIMARY KEY,
-                nazwa TEXT,
-                nauczyciel_id INTEGER)"
-            @db.execute "CREATE TABLE IF NOT EXISTS Uwaga(
-                uwaga_id INTEGER PRIMARY KEY,
-                tresc TEXT,
-                data TEXT,
-                uczen_id INTEGER,
-                nauczyciel_id INTEGER)"
-            @db.execute "CREATE TABLE IF NOT EXISTS Nauczyciel(
-                nauczyciel_id INTEGER PRIMARY KEY,
-                imie TEXT,
-                nazwisko TEXT)"
-            @db.execute "CREATE TABLE IF NOT EXISTS UczenPrzedmiot(
-                uczen_id INTEGER,
-                przedmiot_id INTEGER)"
-        rescue SQLite3::Exception => e
-            puts "Exception occurred"
-            puts e
-        ensure
-            @db.close if @db
+    @@db = SQLite3::Database.open "database.db"
+
+    def self.init
+        @@db.execute "CREATE TABLE IF NOT EXISTS Student(
+            id INTEGER PRIMARY KEY,
+            name TEXT,
+            surname TEXT)"
+        @@db.execute "CREATE TABLE IF NOT EXISTS Grade(
+            id INTEGER PRIMARY KEY,
+            grade INTEGER,
+            category TEXT,
+            date TEXT,
+            subject_id INTEGER,
+            student_id INTEGER)"
+        @@db.execute "CREATE TABLE IF NOT EXISTS Subject(
+            id INTEGER PRIMARY KEY,
+            name TEXT,
+            teacher_id INTEGER)"
+        @@db.execute "CREATE TABLE IF NOT EXISTS Note(
+            id INTEGER PRIMARY KEY,
+            description TEXT,
+            date TEXT,
+            student_id INTEGER,
+            teacher_id INTEGER)"
+        @@db.execute "CREATE TABLE IF NOT EXISTS Teacher(
+            id INTEGER PRIMARY KEY,
+            name TEXT,
+            surname TEXT)"
+        @@db.execute "CREATE TABLE IF NOT EXISTS StudentSubject(
+            student_id INTEGER,
+            subject_id INTEGER)"
+    end
+
+    def self.db
+        @@db
+    end
+
+    def self.add obj
+        case obj
+            when Student
+                @@db.execute "INSERT INTO Student(name,surname) VALUES ('"+obj.name+"','"+obj.surname+"')"
+            when Grade
+                @@db.execute "INSERT INTO Grade(grade,category,date,subject_id,student_id) VALUES ('"+obj.grade+"','"+obj.category+"','"+obj.date+"','"+obj.subject_id+"','"+obj.student_id+"')"
+            when Subject
+                @@db.execute "INSERT INTO Subject(name,teacher_id) VALUES ('"+obj.name+"','"+obj.teacher+"')"
+            when Note
+                @@db.execute "INSERT INTO Note(description,date,student_id,teacher_id) VALUES ('"+obj.description+"','"+obj.date+"','"+obj.student_id+"','"+obj.teacher_id+"')"
+            when Teacher
+                @@db.execute "INSERT INTO Teacher(name,surname) VALUES ('"+obj.name+"','"+obj.surname+"')"
+            #when StudentSubject
+                #@@db.execute "INSERT INTO StudentSubject(student_id,subject_id) VALUES ('"+obj.student_id+"','"+obj.subject_id+"')"
+            else
+                raise ArgumentError
         end
     end
-
-    def createuczen uczen
-        puts "xd"
-    end
-    def readuczen uczen_id
-        puts "xd"
-    end
-    def updateuczen uczen
-        puts "xd"
-    end
-    def deleteuczen uczen
-      puts "xd"
-    end
-    def countuczen
-      puts "xd"
-    end
-
 end
 
 
 
+Database.init
+Database.db.execute "DELETE FROM Student"
 
-begin
+Database.add Student.new("jan" , "kowalski" )
+Database.add Student.new("ktos" , "ktosiowski" )
 
-  db = SQLite3::Database.open "database.db"
+puts Database.db.execute "SELECT * FROM Student"
 
-  db.execute "CREATE TABLE IF NOT EXISTS Friends(Id INTEGER PRIMARY KEY, Name TEXT)"
-  db.execute "DELETE FROM Friends"
-  db.execute "INSERT INTO Friends(Name) VALUES ('Tom')"
-  db.execute "INSERT INTO Friends(Name) VALUES ('Rebecca')"
-  db.execute "INSERT INTO Friends(Name) VALUES ('Jim')"
-  db.execute "INSERT INTO Friends(Name) VALUES ('Robert')"
-  db.execute "INSERT INTO Friends(Name) VALUES ('Julian')"
 
-  id = db.last_insert_row_id
-  puts "The last id of the inserted row is #{id}"
-
-  print "\n"
-  puts db.execute "SELECT * FROM Friends"
-
-rescue SQLite3::Exception => e
-
-  puts "Exception occurred"
-  puts e
-
-ensure
-  db.close if db
-end

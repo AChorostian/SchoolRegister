@@ -1,13 +1,13 @@
 class Subject
 
-  attr_reader :subject_id, :name, :teacher_id
+    attr_reader :id, :name, :teacher_id
 
-  def initialize
-    @subject_id = 0
-    @name = ""
+    def initialize
+        @id = 0
+        @name = ""
 
-    @teacher_id = 0
-  end
+        @teacher_id = 0
+    end
 
 end
 
