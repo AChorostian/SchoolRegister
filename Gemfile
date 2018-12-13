@@ -8,6 +8,9 @@ git_source(:github) {|repo_name| "https://github.com/#{repo_name}" }
 
 group :test do
   gem 'rspec'
+  gem 'rspec-mocks'
   gem 'simplecov'
   gem 'minitest'
+  gem 'rake'
+  gem 'sqlite3', '~> 1.3', '>= 1.3.11'
 end 
