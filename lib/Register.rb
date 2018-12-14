@@ -16,7 +16,7 @@ class Register
         puts ""
         puts "5. Wyjscie"
         puts ""
-        print "podaj numer: "
+        #print "podaj numer: "
         #n = gets
         #puts n
     end
@@ -24,11 +24,16 @@ end
 
 Database.init
 CsvManager.importFromCsv("data/students.csv",Student )
+CsvManager.importFromCsv("data/teachers.csv",Teacher )
 Register.drawmenu
 
-CsvManager.saveToFile("students", Database.findall(Student))
+CsvManager.saveToFile("students.csv", Database.findall(Student))
+CsvManager.saveToFile("teachers.csv", Database.findall(Teacher))
 
-Database.findall(Student).each do |row|
-  puts row
-end
+
+puts "Students"
+puts Database.findall(Student)
+
+puts "Teachers"
+puts Database.findall(Teacher)
 

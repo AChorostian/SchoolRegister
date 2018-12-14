@@ -4,6 +4,7 @@ GEM
     csv (1.0.0)
     diff-lcs (1.3)
     docile (1.3.1)
+    fileutils (1.0.2)
     json (2.1.0)
     minitest (5.11.3)
     rake (12.3.2)
@@ -32,6 +33,7 @@ PLATFORMS
 
 DEPENDENCIES
   csv
+  fileutils
   minitest
   rake
   rspec

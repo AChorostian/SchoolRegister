@@ -13,4 +13,6 @@ group :test do
   gem 'minitest'
   gem 'rake'
   gem 'sqlite3'
+  gem 'csv'
+  gem 'fileutils'
 end 
