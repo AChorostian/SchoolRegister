@@ -4,7 +4,6 @@ require_relative 'Teacher'
 require_relative 'Grade'
 require_relative 'Note'
 require_relative 'Database'
-require_relative 'insert'
 require_relative 'CsvManager'
 
 class Register
