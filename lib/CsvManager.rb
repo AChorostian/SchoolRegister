@@ -26,12 +26,13 @@ class CsvManager
   def self.importFromCsv(filepath,className, delimiter=',')
 
 
-    CSV.foreach(filepath,
-                :headers =>true,
-                :col_sep => delimiter
-    )  do |row|
+    data = CSV.read(filepath, encoding:"UTF-8",
+                    headers: true,
+                    header_converters: :symbol,
+                    converters: :all).map do |row| row.to_hash end
+    data.each do |row|
       temp = className.new
-      temp.setarray(row)
+      temp.sethash(row)
       Database.add(temp)
     end
 

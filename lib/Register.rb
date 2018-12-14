@@ -27,8 +27,8 @@ CsvManager.importFromCsv("data/students.csv",Student )
 CsvManager.importFromCsv("data/teachers.csv",Teacher )
 Register.drawmenu
 
-CsvManager.saveToFile("students.csv", Database.findall(Student))
-CsvManager.saveToFile("teachers.csv", Database.findall(Teacher))
+#CsvManager.saveToFile("students.csv", Database.findall(Student))
+#CsvManager.saveToFile("teachers.csv", Database.findall(Teacher))
 
 
 puts "Students"

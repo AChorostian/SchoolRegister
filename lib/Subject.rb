@@ -6,7 +6,6 @@ class Subject
         @id = 0
         @name = ""
 
-        @teacher_id = 0
     end
 
 end
