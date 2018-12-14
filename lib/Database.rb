@@ -65,7 +65,7 @@ class Database
     end
     def self.update obj
         h = obj.gethash
-        @@db.execute "Update " + obj.class.to_s + " SET (" + h.keys.to_s.delete("[:]") + ")
+        @@db.execute "UPDATE " + obj.class.to_s + " SET (" + h.keys.to_s.delete("[:]") + ")
                       = (" + h.values.to_s.delete("[:]") + ") WHERE id = "+obj.id.to_s
     end
 

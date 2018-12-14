@@ -12,5 +12,5 @@ group :test do
   gem 'simplecov'
   gem 'minitest'
   gem 'rake'
-  gem 'sqlite3', '~> 1.3', '>= 1.3.11'
+  gem 'sqlite3'
 end 

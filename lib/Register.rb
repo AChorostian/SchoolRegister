@@ -28,7 +28,7 @@ Database.add s2
 Database.add s3
 
 s3 = Student.new.setarray([3,"jan","kowalski"])
-Database.update s3
+#Database.update(s3)
 
 #puts s.gethash.keys.to_s.delete("[:]")
 #puts s.gethash.values.to_s.delete("[:]")
