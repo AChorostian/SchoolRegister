@@ -7,13 +7,12 @@ require 'Database'
 
 class Register
     def self.drawmenu
-        puts "xd"
-        puts "xd"
+        puts "============DZENNIK"
+        puts "do"
     end
 end
 
 Database.init
-Database.db.execute "DELETE FROM Student"
 
 s = Student.new
 s.id = 2

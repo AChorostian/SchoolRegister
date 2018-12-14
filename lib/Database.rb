@@ -45,6 +45,12 @@ class Database
             student_id INTEGER NOT NULL REFERENCES Student(id),
             PRIMARY KEY(subject_id, student_id)
             )"
+        @@db.execute "DELETE FROM StudentSubject"
+        @@db.execute "DELETE FROM Grade"
+        @@db.execute "DELETE FROM Note"
+        @@db.execute "DELETE FROM Subject"
+        @@db.execute "DELETE FROM Teacher"
+        @@db.execute "DELETE FROM Student"
     end
 
     def self.db
@@ -74,12 +80,12 @@ class Database
     end
 
     def self.findall(cl)
-        res = []
+        objarray = []
         data = @@db.execute "SELECT * FROM " + cl.to_s
         data.each do |row|
-            res << cl.new.setarray(row.flatten)
+            objarray << cl.new.setarray(row.flatten)
         end
-        return res
+        return objarray
     end
 
 end
