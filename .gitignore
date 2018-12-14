@@ -1,6 +1,7 @@
 *.gem
 *.rbc
 *.db
+database.db
 /.config
 /coverage/
 /spec/reports/
