@@ -9,6 +9,10 @@ class Student
         @subjects = Array.new
     end
 
+    def setid(i)
+        @id = i
+    end
+
 end
 
 

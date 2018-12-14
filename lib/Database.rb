@@ -47,31 +47,63 @@ class Database
     def self.add obj
         case obj
             when Student
-                @@db.execute "INSERT INTO Student(name,surname) VALUES ('"+obj.name+"','"+obj.surname+"')"
+                @@db.execute "INSERT INTO Student(name,surname)
+                              VALUES ('"+obj.name+"','"+obj.surname+"')"
             when Grade
-                @@db.execute "INSERT INTO Grade(grade,category,date,subject_id,student_id) VALUES ('"+obj.grade+"','"+obj.category+"','"+obj.date+"','"+obj.subject_id+"','"+obj.student_id+"')"
+                @@db.execute "INSERT INTO Grade(grade,category,date,subject_id,student_id)
+                              VALUES ('"+obj.grade.to_s+"','"+obj.category+"','"+obj.date.to_s+"',
+                                      '"+obj.subject_id.to_s+"','"+obj.student_id.to_s+"')"
             when Subject
-                @@db.execute "INSERT INTO Subject(name,teacher_id) VALUES ('"+obj.name+"','"+obj.teacher+"')"
+                @@db.execute "INSERT INTO Subject(name,teacher_id)
+                              VALUES ('"+obj.name+"','"+obj.teacher_id.to_s+"')"
             when Note
-                @@db.execute "INSERT INTO Note(description,date,student_id,teacher_id) VALUES ('"+obj.description+"','"+obj.date+"','"+obj.student_id+"','"+obj.teacher_id+"')"
+                @@db.execute "INSERT INTO Note(description,date,student_id,teacher_id)
+                              VALUES ('"+obj.description+"','"+obj.date.to_s+"',
+                                      '"+obj.student_id.to_s+"','"+obj.teacher_id.to_s+"')"
             when Teacher
-                @@db.execute "INSERT INTO Teacher(name,surname) VALUES ('"+obj.name+"','"+obj.surname+"')"
+                @@db.execute "INSERT INTO Teacher(name,surname)
+                              VALUES ('"+obj.name+"','"+obj.surname+"')"
             #when StudentSubject
-                #@@db.execute "INSERT INTO StudentSubject(student_id,subject_id) VALUES ('"+obj.student_id+"','"+obj.subject_id+"')"
+            #    @@db.execute "INSERT INTO StudentSubject(student_id,subject_id)
+            #                  VALUES ('"+obj.student_id+"','"+obj.subject_id+"')"
             else
                 raise ArgumentError
         end
     end
+    def self.update obj
+        case obj
+        when Student
+            @@db.execute "UPDATE Student SET name = '"+obj.name+"' ,
+                                             surname = '"+obj.surname+"'
+                          WHERE id = "+obj.id.to_s
+        when Grade
+            @@db.execute "UPDATE Grade SET grade = '"+obj.grade.to_s+"' ,
+                                           category = '"+obj.category+"' ,
+                                           date = '"+obj.date.to_s+"' ,
+                                           subject_id = '"+obj.subject_id.to_s+"' ,
+                                           student_id = '"+obj.student_id.to_s+"'
+                          WHERE id = "+obj.id.to_s
+        when Subject
+            @@db.execute "UPDATE Subject SET name = '"+obj.name+"' ,
+                                             teacher_id = '"+obj.teacher_id.to_s+"'
+                          WHERE id = "+obj.id.to_s
+        when Note
+            @@db.execute "UPDATE Note SET description = '"+obj.description+"' ,
+                                          date = '"+obj.date.to_s+"' ,
+                                          student_id = '"+obj.student_id.to_s+"' ,
+                                          teacher_id = '"+obj.teacher_id.to_s+"'
+                          WHERE id = "+obj.id.to_s
+        when Teacher
+            @@db.execute "UPDATE Teacher SET name = '"+obj.name+"' ,
+                                             surname = '"+obj.surname+"'
+                          WHERE id = "+obj.id.to_s
+        else
+            raise ArgumentError
+        end
+    end
+
+
 end
 
-
-
-Database.init
-Database.db.execute "DELETE FROM Student"
-
-Database.add Student.new("jan" , "kowalski" )
-Database.add Student.new("ktos" , "ktosiowski" )
-
-puts Database.db.execute "SELECT * FROM Student"
 
 
