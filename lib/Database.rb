@@ -73,6 +73,15 @@ class Database
         return obj
     end
 
+    def self.findall(cl)
+        res = []
+        data = @@db.execute "SELECT * FROM " + cl.to_s
+        data.each do |row|
+            res << cl.new.setarray(row.flatten)
+        end
+        return res
+    end
+
 end
 
 

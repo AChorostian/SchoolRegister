@@ -34,6 +34,11 @@ Database.update s3
 #puts s.gethash.keys.to_s.delete("[:]")
 #puts s.gethash.values.to_s.delete("[:]")
 
-puts Database.db.execute "SELECT * FROM Student"
 
 puts Database.findbyid(Student,2).gethash
+
+print "\n"
+
+Database.findall(Student).each do |obj|
+    puts obj.gethash.to_s
+end
