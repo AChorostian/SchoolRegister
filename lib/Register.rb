@@ -1,5 +1,5 @@
-require 'Student'
-require 'Database'
+require_relative 'Student'
+require_relative 'Database'
 
 class Register
     def self.drawmenu

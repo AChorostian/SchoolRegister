@@ -10,33 +10,41 @@ class Database
 
     def self.init
         @@db.execute "CREATE TABLE IF NOT EXISTS Student(
-            id INTEGER PRIMARY KEY,
-            name TEXT,
-            surname TEXT)"
-        @@db.execute "CREATE TABLE IF NOT EXISTS Grade(
-            id INTEGER PRIMARY KEY,
-            grade INTEGER,
-            category TEXT,
-            date TEXT,
-            subject_id INTEGER,
-            student_id INTEGER)"
-        @@db.execute "CREATE TABLE IF NOT EXISTS Subject(
-            id INTEGER PRIMARY KEY,
-            name TEXT,
-            teacher_id INTEGER)"
-        @@db.execute "CREATE TABLE IF NOT EXISTS Note(
-            id INTEGER PRIMARY KEY,
-            description TEXT,
-            date TEXT,
-            student_id INTEGER,
-            teacher_id INTEGER)"
+            id INTEGER PRIMARY KEY AUTOINCREMENT,
+            name VARCHAR(255) NOT NULL,
+            surname VARCHAR(255) NOT NULL
+            )"
         @@db.execute "CREATE TABLE IF NOT EXISTS Teacher(
-            id INTEGER PRIMARY KEY,
-            name TEXT,
-            surname TEXT)"
+            id INTEGER PRIMARY KEY AUTOINCREMENT,
+            name VARCHAR(255) NOT NULL,
+            surname VARCHAR(255) NOT NULL
+            )"
+        @@db.execute "CREATE TABLE IF NOT EXISTS Subject(
+            id INTEGER PRIMARY KEY AUTOINCREMENT,
+            name VARCHAR(255) NOT NULL,
+            teacher_id INTEGER NOT NULL REFERENCES Teacher(id)
+            )"
+        @@db.execute "CREATE TABLE IF NOT EXISTS Note(
+            id INTEGER PRIMARY KEY AUTOINCREMENT,
+            description VARCHAR(255) NOT NULL,
+            date DATETIME,
+            student_id INTEGER NOT NULL REFERENCES Student(id),
+            teacher_id INTEGER NOT NULL REFERENCES Teacher(id)
+            )"
+
+        @@db.execute "CREATE TABLE IF NOT EXISTS Grade(
+            id INTEGER PRIMARY KEY AUTOINCREMENT,
+            grade INTEGER NOT NULL,
+            category TEXT,
+            date DATETIME NOT NULL,
+            subject_id INTEGER NOT NULL REFERENCES Subject(id),
+            student_id INTEGER NOT NULL REFERENCES Student(id)
+            )"
         @@db.execute "CREATE TABLE IF NOT EXISTS StudentSubject(
-            student_id INTEGER,
-            subject_id INTEGER)"
+            subject_id INTEGER NOT NULL REFERENCES Subject(id),
+            student_id INTEGER NOT NULL REFERENCES Student(id),
+            PRIMARY KEY(subject_id, student_id)
+            )"
     end
 
     def self.db
