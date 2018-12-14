@@ -61,7 +61,7 @@ class Database
 
     def self.findbyid(cl,id)
         data = @@db.execute "SELECT * FROM " + cl.to_s + " WHERE id = " + id.to_s
-        obj = cl.new.setarray(data)
+        obj = cl.new.setarray(data.flatten)
         return obj
     end
 
