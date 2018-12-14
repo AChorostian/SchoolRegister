@@ -76,20 +76,19 @@ class Database
 
     def self.findbyid(cl,id)
         data = @@db.execute "SELECT * FROM " + cl.to_s + " WHERE id = " + id.to_s
-        obj = cl.new.setarray(data.flatten)
+        obj = cl.new.sethash(data.next_hash)
         return obj
     end
 
     #returns array of hashes
     def self.findall(cl)
         res = []
-        @@db.results_as_hash = true
-        @@db.execute2( "SELECT * FROM " + cl.to_s ) do |row|
-            if (row.is_a?(Hash))
-             res.push(row)
+        stmt = @@db.prepare("SELECT * FROM "+ cl.to_s)
+        stmt.execute do |result|
+            result.each_hash do |item|
+                res.push(item)
             end
         end
-        @@db.results_as_hash = false
         return res
     end
 
