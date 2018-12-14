@@ -5,6 +5,7 @@ require_relative 'Grade'
 require_relative 'Note'
 require_relative 'Database'
 require_relative 'insert'
+require_relative 'CsvManager'
 
 class Register
     def self.drawmenu
@@ -23,15 +24,12 @@ class Register
 end
 
 Database.init
-insertstudents
-
+CsvManager.importFromCsv("data/students.csv",Student )
 Register.drawmenu
 
+CsvManager.saveToFile("students", Database.findall(Student))
 
-puts Database.findbyid(Student,2).gethash
-
-print "\n"
-
-Database.findall(Student).each do |obj|
-    puts obj.gethash.to_s
+Database.findall(Student).each do |row|
+  puts row
 end
+

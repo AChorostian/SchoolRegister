@@ -80,6 +80,7 @@ class Database
         return obj
     end
 
+    #returns array of hashes
     def self.findall(cl)
         res = []
         @@db.results_as_hash = true
