@@ -13,4 +13,5 @@ group :test do
   gem 'minitest'
   gem 'rake'
   gem 'sqlite3', '~> 1.3', '>= 1.3.11'
+  gem 'csv'
 end 

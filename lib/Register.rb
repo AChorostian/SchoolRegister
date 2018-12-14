@@ -1,9 +1,10 @@
-require 'Student'
-require 'Subject'
-require 'Teacher'
-require 'Grade'
-require 'Note'
-require 'Database'
+require_relative 'Student'
+require_relative 'Subject'
+require_relative 'Teacher'
+require_relative 'Grade'
+require_relative 'Note'
+require_relative 'Database'
+require_relative 'CsvManager'
 
 class Register
     def self.drawmenu
@@ -39,6 +40,5 @@ puts Database.findbyid(Student,2).gethash
 
 print "\n"
 
-Database.findall(Student).each do |obj|
-    puts obj.gethash.to_s
-end
+
+CsvManager.saveToFile("dane",Database.findall(Student))
