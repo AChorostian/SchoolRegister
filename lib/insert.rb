@@ -1,0 +1,23 @@
+
+def insertstudents
+    Database.add Student.new.setarray([0,"Cherye","Knagges"])
+    Database.add Student.new.setarray([0,"Wade","Krause"])
+    Database.add Student.new.setarray([0,"Norrie","Battman"])
+    Database.add Student.new.setarray([0,"Anabelle","Du Fray"])
+    Database.add Student.new.setarray([0,"Ofella","D'Costa"])
+    Database.add Student.new.setarray([0,"Linette","Willgrass"])
+    Database.add Student.new.setarray([0,"Lucita","Kingswood"])
+    Database.add Student.new.setarray([0,"Fairleigh","Glaum"])
+    Database.add Student.new.setarray([0,"Julina","Pilipets"])
+    Database.add Student.new.setarray([0,"Lowell","Poulden"])
+    Database.add Student.new.setarray([0,"Gallagher","Agiolfinger"])
+    Database.add Student.new.setarray([0,"Magdalena","Kalewe"])
+    Database.add Student.new.setarray([0,"Winifield","Saines"])
+    Database.add Student.new.setarray([0,"Tyson","Humphery"])
+    Database.add Student.new.setarray([0,"Jenifer","Van der Beek"])
+    Database.add Student.new.setarray([0,"Gill","Norridge"])
+    Database.add Student.new.setarray([0,"Barbara-anne","Clayfield"])
+    Database.add Student.new.setarray([0,"Darbee","Lyven"])
+    Database.add Student.new.setarray([0,"Cissiee","Craw"])
+    Database.add Student.new.setarray([0,"Carly","Ismay"])
+end
