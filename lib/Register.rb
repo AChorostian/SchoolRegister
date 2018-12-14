@@ -24,6 +24,12 @@ s.setid(1)
 
 Database.update s
 
-puts Database.db.execute "SELECT * FROM Student"
+s.setid(2)
+
+Database.delete s
+
+
+Database.findbyid( Student , 1 )
+
 
 

@@ -5,7 +5,6 @@ require 'sqlite3'
 # sqlite available types: BLOB, TEXT, INTEGER, REAL, NUMERIC
 
 class Database
-    attr_reader :db
 
     @@db = SQLite3::Database.open "database.db"
 
@@ -47,8 +46,8 @@ class Database
     def self.add obj
         case obj
             when Student
-                @@db.execute "INSERT INTO Student(name,surname)
-                              VALUES ('"+obj.name+"','"+obj.surname+"')"
+                @@db.execute "INSERT INTO " + obj.class.to_s + "(name,surname)
+                              VALUES ('"+obj.name.to_s+"','"+obj.surname+"')"
             when Grade
                 @@db.execute "INSERT INTO Grade(grade,category,date,subject_id,student_id)
                               VALUES ('"+obj.grade.to_s+"','"+obj.category+"','"+obj.date.to_s+"',
@@ -73,7 +72,7 @@ class Database
     def self.update obj
         case obj
         when Student
-            @@db.execute "UPDATE Student SET name = '"+obj.name+"' ,
+            @@db.execute "UPDATE Student SET name = '"+obj.name.to_s+"' ,
                                              surname = '"+obj.surname+"'
                           WHERE id = "+obj.id.to_s
         when Grade
@@ -102,6 +101,25 @@ class Database
         end
     end
 
+    def self.delete obj
+        @@db.execute "DELETE FROM " + obj.class.to_s + " WHERE id = " + obj.id.to_s
+    end
+
+    def self.findbyid(cl,id)
+        data = @@db.execute "SELECT * FROM " + cl.to_s + " WHERE id = " + id.to_s
+
+        case cl.to_s
+        when "Student"
+            obj = cl.new(data[1],data[2])
+        when "Grade"
+            obj = cl.new(data[1],data[2],data[3],data[4],data[5])
+        else
+            raise ArgumentError
+        end
+
+        obj.setid data[0]  # id
+        return obj
+    end
 
 end
 
