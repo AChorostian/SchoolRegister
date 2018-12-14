@@ -1,4 +1,8 @@
 require 'Student'
+require 'Subject'
+require 'Teacher'
+require 'Grade'
+require 'Note'
 require 'Database'
 
 class Register
@@ -8,28 +12,28 @@ class Register
     end
 end
 
-
-
-Register.drawmenu
-
-
 Database.init
 Database.db.execute "DELETE FROM Student"
 
-Database.add Student.new("jan" , "kowalski" )
-Database.add Student.new("ktos" , "ktosiowski" )
+s = Student.new
+s.id = 2
+s.name = "afawfwa"
+s.surname = "afawfawfwafaw"
 
-s = Student.new("ktos" , "ktosiowskowaty" )
-s.setid(1)
+s2 = Student.new.sethash({ id: 0 , name: "dada" , surname: "wadwaawawdwda"})
 
-Database.update s
+s3 = Student.new.setarray([0,"afaw","awfwagsh"])
 
-s.setid(2)
+Database.add s
+Database.add s2
+Database.add s3
 
-Database.delete s
+s3 = Student.new.setarray([3,"jan","kowalski"])
+Database.update s3
 
+#puts s.gethash.keys.to_s.delete("[:]")
+#puts s.gethash.values.to_s.delete("[:]")
 
-Database.findbyid( Student , 1 )
+puts Database.db.execute "SELECT * FROM Student"
 
-
-
+puts Database.findbyid(Student,2).gethash

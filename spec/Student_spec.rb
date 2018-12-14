@@ -2,7 +2,7 @@ require_relative '../lib/Student.rb'
 
 describe "Checking class initialization" do
     before{
-      @student = Student.new("abc","def")
+      @student = Student.new()
     }
 
     it "Returns not nil while created" do

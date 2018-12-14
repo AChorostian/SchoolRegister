@@ -10,7 +10,7 @@ class Database
 
     def self.init
         @@db.execute "CREATE TABLE IF NOT EXISTS Student(
-            id INTEGER PRIMARY KEY,
+            id INTEGER PRIMARY KEY AUTOINCREMENT,
             name TEXT,
             surname TEXT)"
         @@db.execute "CREATE TABLE IF NOT EXISTS Grade(
@@ -44,61 +44,15 @@ class Database
     end
 
     def self.add obj
-        case obj
-            when Student
-                @@db.execute "INSERT INTO " + obj.class.to_s + "(name,surname)
-                              VALUES ('"+obj.name.to_s+"','"+obj.surname+"')"
-            when Grade
-                @@db.execute "INSERT INTO Grade(grade,category,date,subject_id,student_id)
-                              VALUES ('"+obj.grade.to_s+"','"+obj.category+"','"+obj.date.to_s+"',
-                                      '"+obj.subject_id.to_s+"','"+obj.student_id.to_s+"')"
-            when Subject
-                @@db.execute "INSERT INTO Subject(name,teacher_id)
-                              VALUES ('"+obj.name+"','"+obj.teacher_id.to_s+"')"
-            when Note
-                @@db.execute "INSERT INTO Note(description,date,student_id,teacher_id)
-                              VALUES ('"+obj.description+"','"+obj.date.to_s+"',
-                                      '"+obj.student_id.to_s+"','"+obj.teacher_id.to_s+"')"
-            when Teacher
-                @@db.execute "INSERT INTO Teacher(name,surname)
-                              VALUES ('"+obj.name+"','"+obj.surname+"')"
-            #when StudentSubject
-            #    @@db.execute "INSERT INTO StudentSubject(student_id,subject_id)
-            #                  VALUES ('"+obj.student_id+"','"+obj.subject_id+"')"
-            else
-                raise ArgumentError
-        end
+        h = obj.gethash
+        h.delete(:id)
+        @@db.execute "INSERT INTO " + obj.class.to_s + "(" + h.keys.to_s.delete("[:]") + ")
+                      VALUES (" + h.values.to_s.delete("[:]") + ")"
     end
     def self.update obj
-        case obj
-        when Student
-            @@db.execute "UPDATE Student SET name = '"+obj.name.to_s+"' ,
-                                             surname = '"+obj.surname+"'
-                          WHERE id = "+obj.id.to_s
-        when Grade
-            @@db.execute "UPDATE Grade SET grade = '"+obj.grade.to_s+"' ,
-                                           category = '"+obj.category+"' ,
-                                           date = '"+obj.date.to_s+"' ,
-                                           subject_id = '"+obj.subject_id.to_s+"' ,
-                                           student_id = '"+obj.student_id.to_s+"'
-                          WHERE id = "+obj.id.to_s
-        when Subject
-            @@db.execute "UPDATE Subject SET name = '"+obj.name+"' ,
-                                             teacher_id = '"+obj.teacher_id.to_s+"'
-                          WHERE id = "+obj.id.to_s
-        when Note
-            @@db.execute "UPDATE Note SET description = '"+obj.description+"' ,
-                                          date = '"+obj.date.to_s+"' ,
-                                          student_id = '"+obj.student_id.to_s+"' ,
-                                          teacher_id = '"+obj.teacher_id.to_s+"'
-                          WHERE id = "+obj.id.to_s
-        when Teacher
-            @@db.execute "UPDATE Teacher SET name = '"+obj.name+"' ,
-                                             surname = '"+obj.surname+"'
-                          WHERE id = "+obj.id.to_s
-        else
-            raise ArgumentError
-        end
+        h = obj.gethash
+        @@db.execute "Update " + obj.class.to_s + " SET (" + h.keys.to_s.delete("[:]") + ")
+                      = (" + h.values.to_s.delete("[:]") + ") WHERE id = "+obj.id.to_s
     end
 
     def self.delete obj
@@ -107,17 +61,7 @@ class Database
 
     def self.findbyid(cl,id)
         data = @@db.execute "SELECT * FROM " + cl.to_s + " WHERE id = " + id.to_s
-
-        case cl.to_s
-        when "Student"
-            obj = cl.new(data[1],data[2])
-        when "Grade"
-            obj = cl.new(data[1],data[2],data[3],data[4],data[5])
-        else
-            raise ArgumentError
-        end
-
-        obj.setid data[0]  # id
+        obj = cl.new.setarray(data)
         return obj
     end
 
