@@ -9,13 +9,14 @@ require_relative 'Menu'
 
 class Register
 
+  def initialize
+    Database.init
+    CsvManager.importFromCsv("data/students.csv",Student )
+    CsvManager.importFromCsv("data/teachers.csv",Teacher )
+    Menu.main
+  end
+
 end
-
-Database.init
-CsvManager.importFromCsv("data/students.csv",Student )
-CsvManager.importFromCsv("data/teachers.csv",Teacher )
-
-Menu.main
 
 #CsvManager.saveToFile("students.csv", Database.findall(Student))
 #CsvManager.saveToFile("teachers.csv", Database.findall(Teacher))
