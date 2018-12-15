@@ -11,12 +11,16 @@ class Register
 
   def initialize
     Database.init
-    CsvManager.importFromCsv("data/students.csv",Student )
-    CsvManager.importFromCsv("data/teachers.csv",Teacher )
+    Database.addArray CsvManager.importFromCsv("data/students.csv",Student )
+    Database.addArray CsvManager.importFromCsv("data/teachers.csv",Teacher )
+  end
+
+  def run
     Menu.main
   end
 
 end
+
 
 #CsvManager.saveToFile("students.csv", Database.findall(Student))
 #CsvManager.saveToFile("teachers.csv", Database.findall(Teacher))

@@ -57,6 +57,14 @@ class Database
         @@db
     end
 
+    def self.addArray arr_of_obj
+
+        arr_of_obj.each do |obj|
+            self.add(obj)
+        end
+
+    end
+
     def self.add obj
         h = obj.gethash
         h.delete(:id)

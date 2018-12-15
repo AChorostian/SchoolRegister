@@ -25,7 +25,16 @@ class CsvManager
 
   def self.importFromCsv(filepath,className, delimiter=',')
 
+    if (className.is_a?(String))
+      case className
+      when "Student"
+        className = Student
+      when "Teacher"
+        className = Teacher
+      end
+    end
 
+    returnArray = []
     data = CSV.read(filepath, encoding:"UTF-8",
                     headers: true,
                     header_converters: :symbol,
@@ -33,11 +42,20 @@ class CsvManager
     data.each do |row|
       temp = className.new
       temp.sethash(row)
-      Database.add(temp)
+      returnArray.push(temp)
     end
+    return returnArray
 
   end
 
+
+  def self.getLengthOfFile(filepath,withHeader=false)
+    len = 0
+    CSV.open(filepath, :headers => withHeader) do |row|
+      len+=1
+    end
+    return len
+  end
 
 
 end

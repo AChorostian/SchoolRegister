@@ -2,4 +2,4 @@
 
 require_relative '../lib/Register'
 
-puts Register.new
+puts Register.new.run
