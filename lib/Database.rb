@@ -9,7 +9,6 @@ class Database
     @@db = SQLite3::Database.open "database.db"
 
     def self.init
-
         @@db.execute "CREATE TABLE IF NOT EXISTS Student(
             id INTEGER PRIMARY KEY,
             name TEXT NOT NULL,
@@ -76,7 +75,8 @@ class Database
 
     def self.findbyid(cl,id)
         stmt = @@db.prepare("SELECT * FROM " + cl.to_s + " WHERE id = " + id.to_s)
-        obj = cl.new.sethash(stmt.execute.next_hash)
+        h = stmt.execute.next_hash
+        obj = cl.new.sethash(Hash[h.map{|(k,v)| [k.to_sym,v]}])
         return obj
     end
 
@@ -86,9 +86,10 @@ class Database
         stmt = @@db.prepare("SELECT * FROM "+ cl.to_s)
         stmt.execute do |result|
             result.each_hash do |item|
-                res.push(item)
+                res << Hash[item.map{|(k,v)| [k.to_sym,v]}]
             end
         end
+
         return res
     end
 
