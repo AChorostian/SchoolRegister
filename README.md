@@ -4,6 +4,15 @@
 |:-----:	|:-----:	|:-----:	|
 | [![inql](https://avatars0.githubusercontent.com/u/23345084?s=40&v=4)](https://github.com/inql) [![dz3lo](https://avatars0.githubusercontent.com/u/25078869?s=40&v=4)](https://github.com/dz3lo) [![matmalecki](https://avatars2.githubusercontent.com/u/32633611?s=40&v=4)](https://github.com/Matmalecki)   	| [![ruby](https://upload.wikimedia.org/wikipedia/commons/thumb/7/73/Ruby_logo.svg/36px-Ruby_logo.svg.png)](https://www.ruby-lang.org/en/) 	| [![Build Status](https://travis-ci.com/TestowanieRubyUG20182019/projektsemestralny-gofive.svg?token=3kJQswsH2SS3Xnj1fhuG&branch=master)](https://travis-ci.com/TestowanieRubyUG20182019/projektsemestralny-gofive)  	|
 
+## How to run:
+
+```
+bundle install #install gems
+ruby bin/run.rb #run application
+rake #run tests
+```
+
+
 step by step Instructions:
 
 1. install Ruby.
