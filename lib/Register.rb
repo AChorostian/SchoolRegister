@@ -8,8 +8,6 @@ require_relative 'CsvManager'
 require_relative 'Menu'
 
 class Register
-
-end
   def initialize
     Database.init
     CsvManager.importFromCsv("data/students.csv",Student )
@@ -19,6 +17,7 @@ end
   end
 end
 
+register = Register.new
 
 #CsvManager.saveToFile("students.csv", Database.findall(Student))
 #CsvManager.saveToFile("teachers.csv", Database.findall(Teacher))
