@@ -75,8 +75,8 @@ class Database
     end
 
     def self.findbyid(cl,id)
-        data = @@db.execute "SELECT * FROM " + cl.to_s + " WHERE id = " + id.to_s
-        obj = cl.new.sethash(data.next_hash)
+        stmt = @@db.prepare("SELECT * FROM " + cl.to_s + " WHERE id = " + id.to_s)
+        obj = cl.new.sethash(stmt.execute.next_hash)
         return obj
     end
 
