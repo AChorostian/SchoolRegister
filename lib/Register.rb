@@ -12,18 +12,9 @@ class Register
 end
 
 Database.init
+
 CsvManager.importFromCsv("data/students.csv",Student )
 CsvManager.importFromCsv("data/teachers.csv",Teacher )
+CsvManager.importFromCsv("data/subjects.csv",Subject )
 
 Menu.main
-
-#CsvManager.saveToFile("students.csv", Database.findall(Student))
-#CsvManager.saveToFile("teachers.csv", Database.findall(Teacher))
-
-
-#puts "Students"
-#puts Database.findall(Student)
-
-#puts "Teachers"
-#puts Database.findall(Teacher)
-
