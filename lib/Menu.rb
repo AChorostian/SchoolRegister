@@ -2,12 +2,6 @@ class Menu
 
   def self.main
       top
-      arr = [method(:exit)]
-      arr << method(:listofstudents)
-      arr << method(:listofsubjects)
-      arr << method(:listofteachers)
-      arr << method(:addstudent)
-
       puts "1. Lista Uczniów"
       puts "2. Lista Przedmiotów"
       puts "3. Lista Nauczycieli"
@@ -21,63 +15,37 @@ class Menu
       puts "0. Wyjscie"
       puts ""
       print "podaj nr: "
-      arr[gets.to_i].call
+      case gets.to_i
+      when 1
+          list(Student)
+      when 2
+          list(Subject)
+      when 3
+          list(Teacher)
+      when 4
+          addstudent
+      when 0
+          exit
+      else
+          main
+      end
   end
 
-  def self.listofstudents
-    top
-    puts " Nr |        Imię |     Nazwisko "
-    puts "----+-------------+--------------"
-    Database.findall(Student).each do |v|
-      printf("%3d |%12s |%13s\n" , v[:id] , v[:name] , v[:surname])
-    end
-    puts ""
-    puts "Wybierz ucznia podając jego nr lub 0, aby wyjść"
-    print "podaj nr: "
-    n = gets.to_i
-    if (n == 0)
-        main
-    else
-        selectedstudent(n)
-    end
-  end
-
-  def self.listofsubjects
+  def self.list(cl)
       top
-      puts " Nr |        Nazwa |             Nauczyciel "
-      puts "----+--------------+------------------------"
-      Database.findall(Subject).each do |v|
-          t = Database.findbyid(Teacher,v[:teacher_id])
-          ts = t.name + " " + t.surname
-          printf("%3d |%13s |%23s\n" , v[:id] , v[:name] , ts )
+      cl.printlabels
+      Database.findall(cl).each do |v|
+        cl.new.sethash(v).printline
       end
       puts ""
-      puts "Wybierz przedmiot podając jego nr lub 0, aby wyjść"
+      puts "Wybierz nr lub 0, aby wyjść"
       print "podaj nr: "
-      n = gets.to_i
-      if (n == 0)
-          main
+      input = gets.to_i
+      if input == 0
+        main
       else
-          selectedsubject(n)
+        selected(cl,input)
       end
-  end
-
-  def self.listofteachers
-    top
-    puts " Nr |        Imię |     Nazwisko "
-    puts "----+-------------+--------------"
-    Database.findall(Teacher).each do |v|
-      printf("%3d |%12s |%13s\n" , v[:id] , v[:name] , v[:surname])
-    end
-    puts ""
-    puts "Wybierz nauczyciela podając jego nr lub 0, aby wyjść"
-    print "podaj nr: "
-    n = gets.to_i
-    if (n == 0)
-      main
-    else
-      selectedteacher(n)
-    end
   end
 
   def self.listofstudentsubjects(student_id)
@@ -148,14 +116,22 @@ class Menu
     end
   end
 
+  def self.selected(cl,id)
+      if cl == Student
+          selectedstudent(id)
+      end
+      if cl == Subject
+          selectedsubject(id)
+      end
+      if cl == Teacher
+          selectedteacher(id)
+      end
+  end
+
   def self.selectedstudent(student_id)
     top
-    student_hash = Database.findbyid(Student,student_id).gethash
-    puts "       Nr | " + student_hash[:id].to_s
-    puts "----------+---------"
-    puts "     Imię | " + student_hash[:name].to_s
-    puts "----------+---------"
-    puts " Nazwisko | " + student_hash[:surname].to_s
+    Student.printlabels
+    Database.findbyid(Student,student_id).printline
     puts ""
     puts "1. Lista przedmiotów"
     puts "2. Lista uwag"
@@ -187,14 +163,8 @@ class Menu
 
   def self.selectedsubject(subject_id)
     top
-    subject_hash = Database.findbyid(Subject,subject_id).gethash
-    teacher = Database.findbyid(Teacher,subject_hash[:teacher_id])
-    teacher_string = teacher.name + " " + teacher.surname
-    puts "         Nr | " + subject_hash[:id].to_s
-    puts "------------+---------"
-    puts "      Nazwa | " + subject_hash[:name].to_s
-    puts "------------+---------"
-    puts " Nauczyciel | " + teacher_string
+    Subject.printlabels
+    Database.findbyid(Subject,subject_id).printline
     puts ""
     puts "1. Edytuj nazwę"
     puts "2. Edytuj nauczyciela"
@@ -208,12 +178,8 @@ class Menu
 
   def self.selectedteacher(teacher_id)
     top
-    teacher_hash = Database.findbyid(Teacher,teacher_id).gethash
-    puts "       Nr | " + teacher_hash[:id].to_s
-    puts "----------+---------"
-    puts "     Imię | " + teacher_hash[:name].to_s
-    puts "----------+---------"
-    puts " Nazwisko | " + teacher_hash[:surname].to_s
+    Teacher.printlabels
+    Database.findbyid(Teacher,teacher_id).printline
     puts ""
     puts "1. Lista nauczanych przedmiotów"
     puts ""

@@ -23,6 +23,15 @@ class Teacher
         data
     end
 
+    def self.printlabels
+        puts " Nr |        Imię |     Nazwisko "
+        puts "----+-------------+--------------"
+    end
+
+    def printline
+        printf("%3d |%12s |%13s\n" , @id , @name , @surname )
+    end
+
 end
 
 

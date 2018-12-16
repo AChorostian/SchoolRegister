@@ -23,6 +23,17 @@ class Subject
         data
     end
 
+    def self.printlabels
+        puts " Nr |        Nazwa |             Nauczyciel "
+        puts "----+--------------+------------------------"
+    end
+
+    def printline
+        teacher = Database.findbyid(Teacher,@teacher_id)
+        ts = teacher.name + " " + teacher.surname
+        printf("%3d |%13s |%23s\n" , @id , @name , ts )
+    end
+
 end
 
 
