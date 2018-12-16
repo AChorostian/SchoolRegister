@@ -3,7 +3,7 @@ class Student
     attr_accessor :id, :name, :surname
 
     def initialize
-        @id = 0
+        @id = nil
         @name = ""
         @surname = ""
     end
@@ -22,5 +22,7 @@ class Student
         data[:surname] = @surname
         data
     end
+
+
 
 end

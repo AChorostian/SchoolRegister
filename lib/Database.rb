@@ -44,12 +44,12 @@ class Database
             date DATETIME NOT NULL DEFAULT (datetime('now','localtime')),
             studentsubject_id INTEGER NOT NULL REFERENCES StudentSubject(id)
             )"
-        @@db.execute "DELETE FROM Grade"
-        @@db.execute "DELETE FROM StudentSubject"
-        @@db.execute "DELETE FROM Note"
-        @@db.execute "DELETE FROM Subject"
-        @@db.execute "DELETE FROM Teacher"
-        @@db.execute "DELETE FROM Student"
+       # @@db.execute "DELETE FROM Grade"
+       # @@db.execute "DELETE FROM StudentSubject"
+       # @@db.execute "DELETE FROM Note"
+       # @@db.execute "DELETE FROM Subject"
+       # @@db.execute "DELETE FROM Teacher"
+       # @@db.execute "DELETE FROM Student"
     end
 
     def self.db

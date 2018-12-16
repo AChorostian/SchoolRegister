@@ -12,12 +12,12 @@ class Register
 
     def initialize
         Database.init
-        Database.addArray CsvManager.importFromCsv("data/students.csv", Student )
-        Database.addArray CsvManager.importFromCsv("data/teachers.csv", Teacher )
-        Database.addArray CsvManager.importFromCsv("data/subjects.csv", Subject )
-        Database.addArray CsvManager.importFromCsv("data/notes.csv", Note )
-        Database.addArray CsvManager.importFromCsv("data/studentsubjects.csv", StudentSubject )
-        Database.addArray CsvManager.importFromCsv("data/grades.csv", Grade )
+        #Database.addArray CsvManager.importFromCsv("data/students.csv", Student )
+        #Database.addArray CsvManager.importFromCsv("data/teachers.csv", Teacher )
+        #Database.addArray CsvManager.importFromCsv("data/subjects.csv", Subject )
+        #Database.addArray CsvManager.importFromCsv("data/notes.csv", Note )
+        #Database.addArray CsvManager.importFromCsv("data/studentsubjects.csv", StudentSubject )
+        #Database.addArray CsvManager.importFromCsv("data/grades.csv", Grade )
     end
 
     def run

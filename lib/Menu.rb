@@ -6,6 +6,7 @@ class Menu
       arr << method(:listofstudents)
       arr << method(:listofsubjects)
       arr << method(:listofteachers)
+      arr << method(:addstudent)
 
       puts "1. Lista Uczniów"
       puts "2. Lista Przedmiotów"
@@ -177,6 +178,9 @@ class Menu
         if (input == 2)
             listofnotes student_id
         end
+        if (input == 5)
+          editstudent(Database.findbyid(Student,student_id))
+        end
     end
   end
 
@@ -288,6 +292,114 @@ class Menu
     puts "0. Powrót"
     puts ""
     print "podaj nr: "
+  end
+
+  def self.addstudent()
+
+    student = Student.new
+    puts "Podaj dane ucznia albo wpisz 0 aby anulować operacje"
+    puts "     Imię | "
+    puts "----------+---------"
+    puts " Nazwisko | "
+
+    print "Podaj imie ucznia: "
+    string = getwithregex()
+    if (string == 0)
+      return
+    end
+    name = nameFormat(string)
+    puts "     Imię | " + name
+    puts "----------+---------"
+    puts " Nazwisko | "
+
+    string = getwithregex()
+    if (string == 0)
+      return
+    end
+    surname = nameFormat(string)
+    puts "     Imię | " + name
+    puts "----------+---------"
+    puts " Nazwisko | " + surname
+
+    student.name = name
+    student.surname = surname
+
+    puts "Wszystko sie zgadza? (T/N)"
+
+    accept = gets[0]
+
+    if (accept == "T")
+      Database.add student
+    else
+      puts "Czy chcesz poprawić dane? T/N)"
+      fixAccept = gets[0]
+      if (fixAccept == "T")
+        editstudent(student)
+      else
+        puts "Operacja dodawania ucznia anulowana"
+      end
+    end
+
+  end
+
+  def self.nameFormat(string)
+
+    return string.slice(0,1).capitalize + string.slice(1..-1).downcase
+
+  end
+
+
+  def self.editstudent(student)
+    input = 1
+    until input == 0
+      student_hash = student.gethash
+      puts "1     Imię | " + student_hash[:name].to_s
+      puts "----------+---------"
+      puts "2 Nazwisko | " + student_hash[:surname].to_s
+      puts ""
+      puts "Wybierz co chcesz poprawic"
+      puts "Jesli wszystko sie zgadza wpisz 0"
+      input = gets.to_i
+      if (input == 1)
+        print "Podaj imie ucznia: "
+        new_name = getwithregex()
+        if (new_name == 0)
+          return
+        end
+        student.name = nameFormat(new_name)
+      elsif (input == 2)
+        print "Podaj nazwisko ucznia: "
+        new_surname = getwithregex()
+        if (new_surname == 0)
+          return
+        end
+        student.surname = nameFormat(new_surname)
+      end
+    end
+
+    if (student.gethash[:id] == nil)
+      Database.add(student)
+    else
+      Database.update(student)
+    end
+
+
+  end
+
+  def self.getwithregex(regex = /^[a-z ĄąĆćĘęŁłŃńÓóŚśŹźŻż,.'-]+$/i)
+
+    begin
+      string = gets.chomp.to_s
+      if (string == "0")
+        puts "Przerwano operacje"
+        return 0
+      end
+      if (string =~ regex)
+        break
+      end
+      puts "Niepoprawne dane (podaj jeszcze raz albo anuluj wpisujac 0)"
+    end while true
+    return string
   end
 
   def self.exit
