@@ -28,8 +28,8 @@ class Student
         puts "----+-------------+--------------"
     end
 
-    def printline
-        printf("%3d |%12s |%13s\n" , @id , @name , @surname )
+    def printline(nr)
+        printf("%3d |%12s |%13s\n" , nr , @name , @surname )
     end
 
 end

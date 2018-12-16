@@ -1,6 +1,6 @@
 class Grade
 
-    attr_reader :id, :grade, :category, :date, :studentsubject_id
+    attr_reader :id, :grade, :comment, :date, :studentsubject_id
 
     def initialize
         @id = 0
@@ -52,6 +52,15 @@ class Grade
         data[:date] = @date
         data[:studentsubject_id] = @studentsubject_id
         data
+    end
+
+    def self.printlabels
+      puts " Nr | Ocena |       Komentarz |       Data "
+      puts "----+-------+-----------------+------------"
+    end
+
+    def printline(nr)
+      printf("%3d |%6s |%16s |%11s\n" , nr , @grade.to_s , @comment.to_s , @date.to_s)
     end
 
 end

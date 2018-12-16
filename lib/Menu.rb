@@ -18,101 +18,119 @@ class Menu
       case gets.to_i
       when 1
           list(Student)
+          main
       when 2
           list(Subject)
+          main
       when 3
           list(Teacher)
+          main
       when 4
           addstudent
+          main
       when 0
           exit
       else
-          main
+          "wtf"
       end
+
   end
 
   def self.list(cl)
       top
       cl.printlabels
-      Database.findall(cl).each do |v|
-        cl.new.sethash(v).printline
+      Database.findall(cl).each_with_index do |v,i|
+          cl.new.sethash(v).printline(i+1)
       end
       puts ""
       puts "Wybierz nr lub 0, aby wyjść"
       print "podaj nr: "
       input = gets.to_i
-      if input == 0
-        main
-      else
-        selected(cl,input)
+      if input != 0
+          selected(cl,input)
+          list(cl)
       end
   end
 
-  def self.listofstudentsubjects(student_id)
+  def self.listext(cl,key,value)
       top
-      puts " Nr |        Nazwa |             Nauczyciel "
-      puts "----+--------------+------------------------"
-      data = Database.findbykeyandvalue(StudentSubject,"student_id",student_id.to_s)
-      data.each_with_index do |studentsubject,i|
-          subject = Database.findbyid(Subject,studentsubject[:subject_id])
-          subject_name = subject.name
-
-          teacher = Database.findbyid(Teacher,subject.teacher_id)
-          teacher_string = teacher.name + " " + teacher.surname
-
-          nr = i+1
-          printf("%3d |%13s |%23s\n" , nr , subject_name , teacher_string )
+      puts "EXT"
+      cl.printlabels
+      data = Database.findbykeyandvalue(cl,key.to_s,value.to_s)
+      data.each_with_index do |obj,i|
+          obj.printline(i+1)
       end
       puts ""
-      puts "Wybierz przedmiot podając jego nr lub 0, aby wyjść"
+      puts "Wybierz nr lub 0, aby wyjść"
+      print "podaj nr: "
+      input = gets.to_i
+      if (input != 0)
+          case cl.to_s
+          when "StudentSubject"
+              selectedstudentsubject(data[input-1].id,input)
+              listext(cl,key,value)
+          when "Note"
+              selectednote(data[input-1].id,input)
+              listext(cl,key,value)
+          when "Grade"
+              selectedgrade(data[input-1].id,input)
+              listext(cl,key,value)
+          end
+      end
+  end
+
+
+  def self.listofstudentsubjects(student_id)
+      top
+      StudentSubject.printlabels
+      data = Database.findbykeyandvalue(StudentSubject,"student_id",student_id.to_s)
+      data.each_with_index do |studentsubject,i|
+          studentsubject.printline(i+1)
+      end
+      puts ""
+      puts "Wybierz nr lub 0, aby wyjść"
       print "podaj nr: "
       input = gets.to_i
       if (input == 0)
           selectedstudent(student_id)
       else
-          selectedstudentsubject(data[input-1][:id],input)
+          selectedstudentsubject(data[input-1].id,input)
       end
   end
 
   def self.listofnotes(student_id)
       top
-      puts " Nr |       Data |            Nauczyciel | Opis"
-      puts "----+------------+-----------------------|--------"
+      Note.printlabels
       data = Database.findbykeyandvalue(Note,"student_id",student_id.to_s)
       data.each_with_index do |note,i|
-          teacher = Database.findbyid(Teacher,note[:teacher_id])
-          teacher_string = teacher.name + " " + teacher.surname
-          nr = i+1
-          printf("%3d |%11s |%22s | %s\n" , nr , note[:date].to_s , teacher_string , note[:description].to_s )
+          note.printline(i+1)
       end
       puts ""
-      puts "Wybierz uwagę podając jej nr lub 0, aby wyjść"
+      puts "Wybierz nr lub 0, aby wyjść"
       print "podaj nr: "
       input = gets.to_i
       if (input == 0)
           selectedstudent(student_id)
       else
-          selectednote(data[input-1][:id],input)
+          selectednote(data[input-1].id,input)
       end
   end
 
   def self.listofgrades(studentsubject_id)
     top
-    puts " Nr | Ocena |       Komentarz |       Data "
-    puts "----+-------+-----------------+------------"
+    Grade.printlabels
     data = Database.findbykeyandvalue(Grade,"studentsubject_id",studentsubject_id.to_s)
-    data.each_with_index do |v,i|
-      nr = i+1
-      printf("%3d |%6s |%16s |%11s\n" , nr , v[:grade].to_s , v[:comment].to_s , v[:date].to_s)
+    data.each_with_index do |grade,i|
+        grade.printline(i+1)
     end
     puts ""
-    puts "Wybierz ocenę podając jej nr lub 0, aby wyjść"
+    puts "Wybierz nr lub 0, aby wyjść"
     print "podaj nr: "
     input = gets.to_i
     if (input == 0)
-      selectedstudentsubject(studentsubject_id,nr)
+        selectedstudentsubject(studentsubject_id,nr)
     else
-        selectedgrade(data[input-1][:id],input)
+        selectedgrade(data[input-1].id,input)
     end
   end
 
@@ -131,7 +149,7 @@ class Menu
   def self.selectedstudent(student_id)
     top
     Student.printlabels
-    Database.findbyid(Student,student_id).printline
+    Database.findbyid(Student,student_id).printline(student_id)
     puts ""
     puts "1. Lista przedmiotów"
     puts "2. Lista uwag"
@@ -149,10 +167,10 @@ class Menu
         main
     else
         if (input == 1)
-            listofstudentsubjects student_id
+            listext(StudentSubject,"student_id",student_id)
         end
         if (input == 2)
-            listofnotes student_id
+            listext(Note,"student_id",student_id)
         end
         if (input == 5)
           editstudent(Database.findbyid(Student,student_id),true)
@@ -164,7 +182,7 @@ class Menu
   def self.selectedsubject(subject_id)
     top
     Subject.printlabels
-    Database.findbyid(Subject,subject_id).printline
+    Database.findbyid(Subject,subject_id).printline(subject_id)
     puts ""
     puts "1. Edytuj nazwę"
     puts "2. Edytuj nauczyciela"
@@ -179,7 +197,7 @@ class Menu
   def self.selectedteacher(teacher_id)
     top
     Teacher.printlabels
-    Database.findbyid(Teacher,teacher_id).printline
+    Database.findbyid(Teacher,teacher_id).printline(teacher_id)
     puts ""
     puts "1. Lista nauczanych przedmiotów"
     puts ""
@@ -216,7 +234,7 @@ class Menu
       main
     else
       if (input == 1)
-        listofgrades(studentsubject_id,nr)
+        listofgrades(studentsubject_id)
       end
     end
   end
@@ -384,8 +402,9 @@ class Menu
   end
 
   def self.exit
-    top
-    puts "Dziękujemy za korzystanie z naszej aplikacji! ;)"
+      top
+      puts "Dziękujemy za korzystanie z naszej aplikacji! ;)"
+      abort
   end
 
   def self.top

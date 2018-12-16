@@ -98,12 +98,13 @@ class Database
         return res
     end
 
+    #returns array of objects
     def self.findbykeyandvalue(cl,key,value)
         res = []
         stmt = @@db.prepare("SELECT * FROM "+ cl.to_s + " WHERE " + key.to_s + " = " + value.to_s)
         stmt.execute do |result|
             result.each_hash do |item|
-                res << Hash[item.map{|(k,v)| [k.to_sym,v]}]
+                res << cl.new.sethash(Hash[item.map{|(k,v)| [k.to_sym,v]}])
             end
         end
 
