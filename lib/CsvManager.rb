@@ -3,7 +3,7 @@ require 'fileutils'
 
 class CsvManager
 
-  def self.saveToFile(filename, data, delimiter=',')
+  def self.saveToFile(filename, data)
 
     if (!data.is_a?(Array))
       raise ArgumentError, "Wrong data to export to CSV file!"
@@ -13,9 +13,13 @@ class CsvManager
     end
 
     FileUtils.mkdir_p 'data'
+
+    data.each do |elem|
+      elem.delete(:id)
+    end
+
     csv = CSV.open('data/'+filename,"w",
                    :write_headers => true,
-                   :col_sep => delimiter,
                    :headers => data.first.keys
     )
     data.each do |elem|
@@ -31,16 +35,26 @@ class CsvManager
         className = Student
       when "Teacher"
         className = Teacher
+      when "Note"
+        className = Note
+      when "Subject"
+        className = Subject
+      when "StudentSubject"
+        className = StudentSubject
+      when "Grade"
+        className = Grade
       end
     end
 
     returnArray = []
     data = CSV.read(filepath, encoding:"UTF-8",
                     headers: true,
+                    :col_sep => delimiter,
                     header_converters: :symbol,
                     converters: :all).map do |row| row.to_hash end
     data.each do |row|
       temp = className.new
+      row[:id] = nil
       temp.sethash(row)
       returnArray.push(temp)
     end
@@ -49,16 +63,4 @@ class CsvManager
   end
 
 
-  def self.getLengthOfFile(filepath,withHeader=false)
-    len = 0
-    CSV.open(filepath, :headers => withHeader) do |row|
-      len+=1
-    end
-    return len
-  end
-
-
 end
-
-
-
