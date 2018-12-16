@@ -33,8 +33,8 @@ class Database
             )"
         @@db.execute "CREATE TABLE IF NOT EXISTS StudentSubject(
             id INTEGER PRIMARY KEY,
-            subject_id INTEGER NOT NULL REFERENCES Subject(id),
-            student_id INTEGER NOT NULL REFERENCES Student(id)
+            student_id INTEGER NOT NULL REFERENCES Student(id),
+            subject_id INTEGER NOT NULL REFERENCES Subject(id)
             )"
         @@db.execute "CREATE TABLE IF NOT EXISTS Grade(
             id INTEGER PRIMARY KEY,

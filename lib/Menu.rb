@@ -1,14 +1,15 @@
 class Menu
 
   def self.main
+    top
     arr = [method(:exit)]
-    puts "==================== DZENNIK ===================="
-    puts "1. Lista Uczniów"
     arr << method(:listofstudents)
-    puts "2. Lista Przedmiotów"
     arr << method(:listofsubjects)
-    puts "3. Lista Nauczycieli"
     arr << method(:listofteachers)
+
+    puts "1. Lista Uczniów"
+    puts "2. Lista Przedmiotów"
+    puts "3. Lista Nauczycieli"
     puts ""
     puts "4. Dodaj Ucznia"
     puts "5. Dodaj Przedmiot"
@@ -23,11 +24,11 @@ class Menu
   end
 
   def self.listofstudents
-    puts "==================== DZENNIK ===================="
+    top
     puts " Nr |        Imię |     Nazwisko "
     puts "----+-------------+--------------"
     Database.findall(Student).each do |v|
-        printf("%3d |%12s |%13s\n" , v[:id] , v[:name] , v[:surname])
+      printf("%3d |%12s |%13s\n" , v[:id] , v[:name] , v[:surname])
     end
     puts ""
     puts "Wybierz ucznia podając jego nr lub 0, aby wyjść"
@@ -41,14 +42,13 @@ class Menu
   end
 
   def self.listofsubjects
-    puts "==================== DZENNIK ===================="
-    puts " Nr |       Nazwa |             Nauczyciel "
-    puts "----+-------------+------------------------"
-
+    top
+    puts " Nr |        Nazwa |             Nauczyciel "
+    puts "----+--------------+------------------------"
     Database.findall(Subject).each do |v|
         t = Database.findbyid(Teacher,v[:teacher_id])
         ts = t.name + " " + t.surname
-        printf("%3d |%12s |%23s\n" , v[:id] , v[:name] , ts )
+        printf("%3d |%13s |%23s\n" , v[:id] , v[:name] , ts )
     end
     puts ""
     puts "Wybierz przedmiot podając jego nr lub 0, aby wyjść"
@@ -62,7 +62,7 @@ class Menu
   end
 
   def self.listofteachers
-    puts "==================== DZENNIK ===================="
+    top
     puts " Nr |        Imię |     Nazwisko "
     puts "----+-------------+--------------"
     Database.findall(Teacher).each do |v|
@@ -79,8 +79,23 @@ class Menu
     end
   end
 
+  def self.listofstudentsubjects(n)
+      top
+      puts " Nr |        Nazwa "
+      puts "----+--------------"
+
+      Database.findbykeyandvalue(StudentSubject,"student_id",n.to_s).each_with_index do |v,i|
+          s = Database.findbyid(Subject,v[:subject_id]).name
+          nr = i+1
+          printf("%3d |%13s\n" , nr , s )
+      end
+      puts ""
+      puts "Wybierz przedmiot podając jego nr lub 0, aby wyjść"
+      print "podaj nr: "
+  end
+
   def self.selectedstudent(n)
-    puts "==================== DZENNIK ===================="
+    top
     h = Database.findbyid(Student,n).gethash
     puts "       Nr | " + h[:id].to_s
     puts "----------+---------"
@@ -99,10 +114,18 @@ class Menu
     puts "0. Powrót"
     puts ""
     print "podaj nr: "
+    n2 = gets.to_i
+    if (n2 == 0)
+        main
+    else
+        if (n2 == 1)
+            listofstudentsubjects n
+        end
+    end
   end
 
   def self.selectedsubject(n)
-    puts "==================== DZENNIK ===================="
+    top
     h = Database.findbyid(Subject,n).gethash
     t = Database.findbyid(Teacher,h[:teacher_id])
     ts = t.name + " " + t.surname
@@ -123,7 +146,7 @@ class Menu
   end
 
   def self.selectedteacher(n)
-    puts "==================== DZENNIK ===================="
+    top
     h = Database.findbyid(Teacher,n).gethash
     puts "       Nr | " + h[:id].to_s
     puts "----------+---------"
@@ -141,9 +164,14 @@ class Menu
     print "podaj nr: "
   end
 
-  def self.exit
-    puts "papa"
-  end
+    def self.exit
+        top
+        puts "Dziękujemy za korzystanie z naszej aplikacji! ;)"
+    end
 
+    def self.top
+        system 'clear'
+        puts "==================== DZENNIK ===================="
+    end
 
 end
