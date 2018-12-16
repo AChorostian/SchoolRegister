@@ -179,7 +179,8 @@ class Menu
             listofnotes student_id
         end
         if (input == 5)
-          editstudent(Database.findbyid(Student,student_id))
+          editstudent(Database.findbyid(Student,student_id),true)
+          main
         end
     end
   end
@@ -317,29 +318,52 @@ class Menu
       return
     end
     surname = nameFormat(string)
-    puts "     Imię | " + name
-    puts "----------+---------"
-    puts " Nazwisko | " + surname
 
     student.name = name
     student.surname = surname
 
-    puts "Wszystko sie zgadza? (T/N)"
+    while true do
+      puts "     Imię | " + name
+      puts "----------+---------"
+      puts " Nazwisko | " + surname
 
-    accept = gets[0]
+      puts "Wszystko sie zgadza? (T/N)"
 
-    if (accept == "T")
-      Database.add student
-    else
-      puts "Czy chcesz poprawić dane? T/N)"
-      fixAccept = gets[0]
-      if (fixAccept == "T")
-        editstudent(student)
+      accept = gets[0]
+
+      if (accept == "T")
+        Database.add student
+        break
       else
-        puts "Operacja dodawania ucznia anulowana"
+        puts "Czy chcesz poprawić dane? T/N)"
+        fixAccept = gets[0]
+        if (fixAccept == "T")
+          editstudent(student)
+          next
+        else
+          puts "Operacja dodawania ucznia anulowana"
+          break
+        end
       end
     end
+    main
 
+  end
+
+  def self.editstudent(student, existsindb=false)
+    input = 1
+    until input == 0
+      student_hash = student.gethash
+      puts "1     Imię | " + student_hash[:name].to_s
+      puts "----------+---------"
+      puts "2 Nazwisko | " + student_hash[:surname].to_s
+      puts ""
+      puts "0 Wszystko jest ok"
+      puts "1 Popraw imie"
+      puts "2 Popraw nazwisko"
+      input = gets.to_i
+      changestudentField(student,input, existsindb)
+    end
   end
 
   def self.nameFormat(string)
@@ -348,40 +372,31 @@ class Menu
 
   end
 
+  def self.changestudentField(student, field_num, existsindb=false)
 
-  def self.editstudent(student)
-    input = 1
-    until input == 0
-      student_hash = student.gethash
-      puts "1     Imię | " + student_hash[:name].to_s
-      puts "----------+---------"
-      puts "2 Nazwisko | " + student_hash[:surname].to_s
-      puts ""
-      puts "Wybierz co chcesz poprawic"
-      puts "Jesli wszystko sie zgadza wpisz 0"
-      input = gets.to_i
-      if (input == 1)
-        print "Podaj imie ucznia: "
-        new_name = getwithregex()
-        if (new_name == 0)
-          return
-        end
-        student.name = nameFormat(new_name)
-      elsif (input == 2)
-        print "Podaj nazwisko ucznia: "
-        new_surname = getwithregex()
-        if (new_surname == 0)
-          return
-        end
-        student.surname = nameFormat(new_surname)
+    if (field_num == 0)
+      return
+    end
+    if (field_num == 1)
+      print "Podaj imie ucznia: "
+      new_name = getwithregex()
+      if (new_name == 0)
+        return
       end
+      student.name = nameFormat(new_name)
+    elsif (field_num == 2)
+      print "Podaj nazwisko ucznia: "
+      new_surname = getwithregex()
+      if (new_surname == 0)
+        return
+      end
+      student.surname = nameFormat(new_surname)
     end
 
-    if (student.gethash[:id] == nil)
-      Database.add(student)
-    else
-      Database.update(student)
-    end
+
+      if (existsindb)
+        Database.update(student)
+      end
 
 
   end
