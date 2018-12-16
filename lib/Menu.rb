@@ -79,33 +79,55 @@ class Menu
     end
   end
 
-  def self.listofstudentsubjects(n)
+  def self.listofstudentsubjects(student_id)
       top
       puts " Nr |        Nazwa |             Nauczyciel "
       puts "----+--------------+------------------------"
-      data = Database.findbykeyandvalue(StudentSubject,"student_id",n.to_s)
-      data.each_with_index do |v,i|
-          s = Database.findbyid(Subject,v[:subject_id])
-          ss = s.name
+      data = Database.findbykeyandvalue(StudentSubject,"student_id",student_id.to_s)
+      data.each_with_index do |studentsubject,i|
+          subject = Database.findbyid(Subject,studentsubject[:subject_id])
+          subject_name = subject.name
 
-          t = Database.findbyid(Teacher,s.teacher_id)
-          ts = t.name + " " + t.surname
+          teacher = Database.findbyid(Teacher,subject.teacher_id)
+          teacher_string = teacher.name + " " + teacher.surname
 
           nr = i+1
-          printf("%3d |%13s |%23s\n" , nr , ss , ts)
+          printf("%3d |%13s |%23s\n" , nr , subject_name , teacher_string )
       end
       puts ""
       puts "Wybierz przedmiot podając jego nr lub 0, aby wyjść"
       print "podaj nr: "
-      n2 = gets.to_i
-      if (n2 == 0)
-          selectedstudent(n)
+      input = gets.to_i
+      if (input == 0)
+          selectedstudent(student_id)
       else
-          selectedstudentsubject(data[n2-1][:id],n2)
+          selectedstudentsubject(data[input-1][:id],input)
       end
   end
 
-  def self.listofgrades(studentsubject_id,nr)
+  def self.listofnotes(student_id)
+      top
+      puts " Nr |       Data |            Nauczyciel | Opis"
+      puts "----+------------+-----------------------|--------"
+      data = Database.findbykeyandvalue(Note,"student_id",student_id.to_s)
+      data.each_with_index do |note,i|
+          teacher = Database.findbyid(Teacher,note[:teacher_id])
+          teacher_string = teacher.name + " " + teacher.surname
+          nr = i+1
+          printf("%3d |%11s |%22s | %s\n" , nr , note[:date].to_s , teacher_string , note[:description].to_s )
+      end
+      puts ""
+      puts "Wybierz uwagę podając jej nr lub 0, aby wyjść"
+      print "podaj nr: "
+      input = gets.to_i
+      if (input == 0)
+          selectedstudent(student_id)
+      else
+          selectednote(data[input-1][:id],input)
+      end
+  end
+
+  def self.listofgrades(studentsubject_id)
     top
     puts " Nr | Ocena |       Komentarz |       Data "
     puts "----+-------+-----------------+------------"
@@ -127,12 +149,12 @@ class Menu
 
   def self.selectedstudent(student_id)
     top
-    student = Database.findbyid(Student,student_id).gethash
-    puts "       Nr | " + student[:id].to_s
+    student_hash = Database.findbyid(Student,student_id).gethash
+    puts "       Nr | " + student_hash[:id].to_s
     puts "----------+---------"
-    puts "     Imię | " + student[:name].to_s
+    puts "     Imię | " + student_hash[:name].to_s
     puts "----------+---------"
-    puts " Nazwisko | " + student[:surname].to_s
+    puts " Nazwisko | " + student_hash[:surname].to_s
     puts ""
     puts "1. Lista przedmiotów"
     puts "2. Lista uwag"
@@ -151,6 +173,9 @@ class Menu
     else
         if (input == 1)
             listofstudentsubjects student_id
+        end
+        if (input == 2)
+            listofnotes student_id
         end
     end
   end
@@ -176,14 +201,14 @@ class Menu
     print "podaj nr: "
   end
 
-  def self.selectedteacher(n)
+  def self.selectedteacher(teacher_id)
     top
-    h = Database.findbyid(Teacher,n).gethash
-    puts "       Nr | " + h[:id].to_s
+    teacher_hash = Database.findbyid(Teacher,teacher_id).gethash
+    puts "       Nr | " + teacher_hash[:id].to_s
     puts "----------+---------"
-    puts "     Imię | " + h[:name].to_s
+    puts "     Imię | " + teacher_hash[:name].to_s
     puts "----------+---------"
-    puts " Nazwisko | " + h[:surname].to_s
+    puts " Nazwisko | " + teacher_hash[:surname].to_s
     puts ""
     puts "1. Lista nauczanych przedmiotów"
     puts ""
@@ -195,17 +220,17 @@ class Menu
     print "podaj nr: "
   end
 
-  def self.selectedstudentsubject(n,nr)
+  def self.selectedstudentsubject(studentsubject_id,nr)
     top
-    ss = Database.findbyid(StudentSubject,n)
-    h = Database.findbyid(Subject,ss.subject_id).gethash
-    t = Database.findbyid(Teacher,h[:teacher_id])
-    ts = t.name + " " + t.surname
+    studentsubject = Database.findbyid(StudentSubject,studentsubject_id)
+    subject_hash = Database.findbyid(Subject,studentsubject.subject_id).gethash
+    teacher = Database.findbyid(Teacher,subject_hash[:teacher_id])
+    teacher_string = teacher.name + " " + teacher.surname
     puts "         Nr | " + nr.to_s
     puts "------------+---------"
-    puts "      Nazwa | " + h[:name].to_s
+    puts "      Nazwa | " + subject_hash[:name].to_s
     puts "------------+---------"
-    puts " Nauczyciel | " + ts
+    puts " Nauczyciel | " + teacher_string
     puts ""
     puts "1. Lista ocen"
     puts "2. Dodaj ocenę"
@@ -215,44 +240,54 @@ class Menu
     puts "0. Powrót"
     puts ""
     print "podaj nr: "
-    n2 = gets.to_i
-    if (n2 == 0)
+    input = gets.to_i
+    if (input == 0)
       main
     else
-      if (n2 == 1)
-        listofgrades(n,nr)
+      if (input == 1)
+        listofgrades(studentsubject_id,nr)
       end
     end
   end
 
-  def self.selectedgrade(n,nr)
+  def self.selectednote(note_id,nr)
     top
-    ss = Database.findbyid(StudentSubject,n)
-    h = Database.findbyid(Subject,ss.subject_id).gethash
-    t = Database.findbyid(Teacher,h[:teacher_id])
-    ts = t.name + " " + t.surname
+    note = Database.findbyid(Note,note_id)
+    teacher = Database.findbyid(Teacher,note.teacher_id)
+    teacher_string = teacher.name + " " + teacher.surname
     puts "         Nr | " + nr.to_s
     puts "------------+---------"
-    puts "      Nazwa | " + h[:name].to_s
+    puts "       Data | " + note.date.to_s
     puts "------------+---------"
-    puts " Nauczyciel | " + ts
+    puts " Nauczyciel | " + teacher_string
+    puts "------------+---------"
+    puts "       Opis | " + note.description
     puts ""
-    puts "1. Lista ocen"
-    puts "2. Dodaj ocenę"
-    puts ""
-    puts "3. Wypisz ucznia z tego przedmiotu (oraz usuń wszystkie powiązania)"
+    puts "1. Edytuj uwagę"
+    puts "2. Usuń uwagę"
     puts ""
     puts "0. Powrót"
     puts ""
     print "podaj nr: "
-    n2 = gets.to_i
-    if (n2 == 0)
-      main
-    else
-      if (n2 == 1)
-        listofgrades(n,nr)
-      end
-    end
+  end
+
+  def self.selectedgrade(grade_id,nr)
+    top
+    grade_hash = Database.findbyid(Grade,grade_id).gethash
+    puts "         Nr | " + nr.to_s
+    puts "------------+---------"
+    puts "      Ocena | " + grade_hash[:grade].to_s
+    puts "------------+---------"
+    puts "  Komentarz | " + grade_hash[:comment].to_s
+    puts "------------+---------"
+    puts "       Data | " + grade_hash[:date].to_s
+    puts ""
+    puts "1. Edytuj ocenę"
+    puts "2. Usuń ocenę"
+    puts ""
+    puts "0. Powrót"
+    puts ""
+    print "podaj nr: "
   end
 
   def self.exit
