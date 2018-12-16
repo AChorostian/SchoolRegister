@@ -112,7 +112,7 @@ class Menu
     data = Database.findbykeyandvalue(Grade,"studentsubject_id",studentsubject_id.to_s)
     data.each_with_index do |v,i|
       nr = i+1
-      printf("%3d |%6s |%16s |%11s\n" , nr , v[:grade].to_s , v[:category].to_s , v[:date].to_s)
+      printf("%3d |%6s |%16s |%11s\n" , nr , v[:grade].to_s , v[:comment].to_s , v[:date].to_s)
     end
     puts ""
     puts "Wybierz ocenę podając jej nr lub 0, aby wyjść"
