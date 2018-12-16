@@ -25,7 +25,7 @@ class Grade
         data = Hash.new
         data[:id] =  @id
         data[:grade] = @grade
-        data[:description] = @description
+        data[:category] = @category
         data[:date] = @date
         data[:student_id] = @student_id
         data[:teacher_id] = @teacher_id
