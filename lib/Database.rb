@@ -31,22 +31,20 @@ class Database
             student_id INTEGER NOT NULL REFERENCES Student(id),
             teacher_id INTEGER NOT NULL REFERENCES Teacher(id)
             )"
-
+        @@db.execute "CREATE TABLE IF NOT EXISTS StudentSubject(
+            id INTEGER PRIMARY KEY,
+            subject_id INTEGER NOT NULL REFERENCES Subject(id),
+            student_id INTEGER NOT NULL REFERENCES Student(id)
+            )"
         @@db.execute "CREATE TABLE IF NOT EXISTS Grade(
             id INTEGER PRIMARY KEY,
             grade INTEGER NOT NULL,
             category TEXT,
             date DATETIME NOT NULL DEFAULT (datetime('now','localtime')),
-            subject_id INTEGER NOT NULL REFERENCES Subject(id),
-            student_id INTEGER NOT NULL REFERENCES Student(id)
+            studentsubject_id INTEGER NOT NULL REFERENCES StudentSubject(id)
             )"
-        @@db.execute "CREATE TABLE IF NOT EXISTS StudentSubject(
-            subject_id INTEGER NOT NULL REFERENCES Subject(id),
-            student_id INTEGER NOT NULL REFERENCES Student(id),
-            PRIMARY KEY(subject_id, student_id)
-            )"
-        @@db.execute "DELETE FROM StudentSubject"
         @@db.execute "DELETE FROM Grade"
+        @@db.execute "DELETE FROM StudentSubject"
         @@db.execute "DELETE FROM Note"
         @@db.execute "DELETE FROM Subject"
         @@db.execute "DELETE FROM Teacher"
@@ -58,11 +56,9 @@ class Database
     end
 
     def self.addArray arr_of_obj
-
         arr_of_obj.each do |obj|
             self.add(obj)
         end
-
     end
 
     def self.add obj
@@ -92,6 +88,18 @@ class Database
     def self.findall(cl)
         res = []
         stmt = @@db.prepare("SELECT * FROM "+ cl.to_s)
+        stmt.execute do |result|
+            result.each_hash do |item|
+                res << Hash[item.map{|(k,v)| [k.to_sym,v]}]
+            end
+        end
+
+        return res
+    end
+
+    def self.findbykeyandvalue(cl,key,value)
+        res = []
+        stmt = @@db.prepare("SELECT * FROM "+ cl.to_s + " WHERE " + key.to_s + " = " + value.to_s)
         stmt.execute do |result|
             result.each_hash do |item|
                 res << Hash[item.map{|(k,v)| [k.to_sym,v]}]

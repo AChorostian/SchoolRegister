@@ -1,0 +1,101 @@
+id,description,date,student_id,teacher_id
+1,Uczeń jest arogancki względem nauczyciela,11.05.2018,7,10
+2,Uczeń nie stosuje się do poleceń nauczyciela,25.11.2018,14,5
+3,Uczeń rozmawia na lekcji,22.11.2018,4,3
+4,Uczeń jest arogancki względem nauczyciela,22.04.2018,14,3
+5,Uczeń nie stosuje się do poleceń nauczyciela,23.10.2018,11,8
+6,Uczeń jest arogancki względem nauczyciela,22.03.2018,14,6
+7,Uczeń ściąga na sprawdzianie,17.01.2018,19,9
+8,Uczeń jest arogancki względem nauczyciela,26.04.2018,11,8
+9,Uczeń nie stosuje się do poleceń nauczyciela,15.03.2018,9,3
+10,Uczeń jest niemiły dla drugiego ucznia,12.01.2018,6,6
+11,Uczeń biega po sali,01.08.2018,1,10
+12,Uczeń jest niemiły dla drugiego ucznia,08.04.2018,11,6
+13,Uczeń biega po sali,23.04.2018,9,8
+14,Uczeń jest arogancki względem nauczyciela,28.05.2018,14,2
+15,Uczeń nie stosuje się do poleceń nauczyciela,28.05.2018,19,5
+16,Uczeń jest niemiły dla drugiego ucznia,12.04.2018,14,2
+17,Uczeń je na lekcji,02.10.2018,14,9
+18,Uczeń ściąga na sprawdzianie,28.03.2018,15,9
+19,Uczeń rozmawia na lekcji,01.05.2018,20,9
+20,Uczeń ściąga na sprawdzianie,15.03.2018,14,3
+21,Uczeń biega po sali,12.04.2018,6,8
+22,Uczeń je na lekcji,20.04.2018,17,4
+23,Uczeń wychodzi z sali bez pytania,23.12.2017,11,1
+24,Uczeń ściąga na sprawdzianie,04.01.2018,9,1
+25,Uczeń biega po sali,20.04.2018,13,9
+26,Uczeń je na lekcji,26.06.2018,12,9
+27,Uczeń wychodzi z sali bez pytania,17.03.2018,11,5
+28,Uczeń nie stosuje się do poleceń nauczyciela,07.01.2018,17,5
+29,Uczeń ściąga na sprawdzianie,13.01.2018,8,7
+30,Uczeń ściąga na sprawdzianie,23.12.2017,20,5
+31,Uczeń jest niemiły dla drugiego ucznia,01.11.2018,10,4
+32,Uczeń ściąga na sprawdzianie,03.07.2018,10,2
+33,Uczeń jest niemiły dla drugiego ucznia,11.08.2018,16,1
+34,Uczeń je na lekcji,22.09.2018,14,7
+35,Uczeń ściąga na sprawdzianie,02.02.2018,14,3
+36,Uczeń ściąga na sprawdzianie,22.07.2018,15,9
+37,Uczeń rozmawia na lekcji,01.06.2018,2,2
+38,Uczeń nie stosuje się do poleceń nauczyciela,14.04.2018,9,4
+39,Uczeń nie stosuje się do poleceń nauczyciela,27.02.2018,11,8
+40,Uczeń jest niemiły dla drugiego ucznia,23.03.2018,1,6
+41,Uczeń nie stosuje się do poleceń nauczyciela,21.11.2018,13,1
+42,Uczeń jest niemiły dla drugiego ucznia,19.09.2018,8,5
+43,Uczeń jest niemiły dla drugiego ucznia,12.09.2018,2,2
+44,Uczeń rozmawia na lekcji,03.02.2018,10,3
+45,Uczeń je na lekcji,20.11.2018,2,9
+46,Uczeń biega po sali,12.05.2018,7,10
+47,Uczeń nie stosuje się do poleceń nauczyciela,07.04.2018,19,10
+48,Uczeń biega po sali,13.11.2018,4,3
+49,Uczeń biega po sali,03.04.2018,16,5
+50,Uczeń wychodzi z sali bez pytania,27.03.2018,7,5
+51,Uczeń je na lekcji,31.12.2017,8,3
+52,Uczeń rozmawia na lekcji,03.03.2018,10,4
+53,Uczeń nie stosuje się do poleceń nauczyciela,02.11.2018,13,3
+54,Uczeń jest niemiły dla drugiego ucznia,24.08.2018,6,2
+55,Uczeń nie stosuje się do poleceń nauczyciela,14.03.2018,8,8
+56,Uczeń rozmawia na lekcji,03.07.2018,1,10
+57,Uczeń jest arogancki względem nauczyciela,25.01.2018,2,1
+58,Uczeń wychodzi z sali bez pytania,21.07.2018,6,9
+59,Uczeń rozmawia na lekcji,12.03.2018,3,4
+60,Uczeń jest arogancki względem nauczyciela,25.04.2018,5,7
+61,Uczeń je na lekcji,28.09.2018,5,10
+62,Uczeń ściąga na sprawdzianie,18.09.2018,7,5
+63,Uczeń jest niemiły dla drugiego ucznia,03.07.2018,12,6
+64,Uczeń je na lekcji,10.08.2018,14,9
+65,Uczeń je na lekcji,28.11.2018,7,8
+66,Uczeń jest arogancki względem nauczyciela,10.01.2018,13,4
+67,Uczeń jest niemiły dla drugiego ucznia,22.08.2018,9,4
+68,Uczeń je na lekcji,21.08.2018,13,2
+69,Uczeń ściąga na sprawdzianie,03.03.2018,19,7
+70,Uczeń jest niemiły dla drugiego ucznia,11.01.2018,11,4
+71,Uczeń wychodzi z sali bez pytania,16.07.2018,13,1
+72,Uczeń jest arogancki względem nauczyciela,19.02.2018,10,8
+73,Uczeń jest arogancki względem nauczyciela,07.06.2018,4,1
+74,Uczeń biega po sali,28.03.2018,4,10
+75,Uczeń nie stosuje się do poleceń nauczyciela,03.03.2018,14,10
+76,Uczeń biega po sali,05.02.2018,14,4
+77,Uczeń je na lekcji,13.02.2018,18,10
+78,Uczeń ściąga na sprawdzianie,12.10.2018,8,9
+79,Uczeń ściąga na sprawdzianie,11.02.2018,11,1
+80,Uczeń biega po sali,19.01.2018,15,5
+81,Uczeń jest arogancki względem nauczyciela,03.02.2018,17,1
+82,Uczeń biega po sali,27.09.2018,4,1
+83,Uczeń je na lekcji,06.06.2018,15,9
+84,Uczeń nie stosuje się do poleceń nauczyciela,23.10.2018,14,10
+85,Uczeń wychodzi z sali bez pytania,23.08.2018,2,7
+86,Uczeń biega po sali,21.04.2018,13,7
+87,Uczeń je na lekcji,23.09.2018,13,7
+88,Uczeń biega po sali,05.02.2018,14,6
+89,Uczeń jest arogancki względem nauczyciela,07.03.2018,4,2
+90,Uczeń je na lekcji,23.05.2018,15,2
+91,Uczeń biega po sali,16.10.2018,18,4
+92,Uczeń nie stosuje się do poleceń nauczyciela,05.03.2018,16,3
+93,Uczeń ściąga na sprawdzianie,16.01.2018,17,6
+94,Uczeń jest niemiły dla drugiego ucznia,06.03.2018,4,3
+95,Uczeń jest niemiły dla drugiego ucznia,25.03.2018,12,6
+96,Uczeń wychodzi z sali bez pytania,07.11.2018,19,7
+97,Uczeń rozmawia na lekcji,27.05.2018,15,6
+98,Uczeń nie stosuje się do poleceń nauczyciela,17.06.2018,7,5
+99,Uczeń ściąga na sprawdzianie,04.09.2018,10,3
+100,Uczeń ściąga na sprawdzianie,31.08.2018,7,10

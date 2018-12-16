@@ -1,14 +1,13 @@
 class Grade
 
-    attr_reader :id, :grade, :category, :date, :student_id , :subject_id
+    attr_reader :id, :grade, :category, :date, :studentsubject_id , :subject_id
 
     def initialize
         @id = 0
         @grade = 0
         @category = ""
         @date = 0
-        @student_id = 0
-        @subject_id = 0
+        @studentsubject_id = 0
     end
 
     def sethash(data)
@@ -16,8 +15,7 @@ class Grade
         @grade = data[:grade]
         @category = data[:category]
         @date  = data[:date]
-        @student_id  = data[:student_id]
-        @teacher_id  = data[:teacher_id]
+        @studentsubject_id  = data[:studentsubject_id]
         self
     end
 
@@ -25,10 +23,9 @@ class Grade
         data = Hash.new
         data[:id] =  @id
         data[:grade] = @grade
-        data[:description] = @description
+        data[:category] = @category
         data[:date] = @date
-        data[:student_id] = @student_id
-        data[:teacher_id] = @teacher_id
+        data[:studentsubject_id] = @studentsubject_id
         data
     end
 
