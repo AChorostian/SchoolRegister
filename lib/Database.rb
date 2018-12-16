@@ -34,7 +34,8 @@ class Database
         @@db.execute "CREATE TABLE IF NOT EXISTS StudentSubject(
             id INTEGER PRIMARY KEY,
             student_id INTEGER NOT NULL REFERENCES Student(id),
-            subject_id INTEGER NOT NULL REFERENCES Subject(id)
+            subject_id INTEGER NOT NULL REFERENCES Subject(id),
+            UNIQUE(student_id,subject_id)
             )"
         @@db.execute "CREATE TABLE IF NOT EXISTS Grade(
             id INTEGER PRIMARY KEY,
@@ -64,7 +65,7 @@ class Database
     def self.add obj
         h = obj.gethash
         h.delete(:id)
-        @@db.execute "INSERT INTO " + obj.class.to_s + "(" + h.keys.to_s.delete("[:]") + ")
+        @@db.execute "INSERT OR IGNORE INTO " + obj.class.to_s + "(" + h.keys.to_s.delete("[:]") + ")
                       VALUES (" + h.values.to_s.delete("[:]") + ")"
     end
     def self.update obj

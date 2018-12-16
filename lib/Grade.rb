@@ -1,6 +1,6 @@
 class Grade
 
-    attr_reader :id, :grade, :category, :date, :studentsubject_id , :subject_id
+    attr_reader :id, :grade, :category, :date, :studentsubject_id
 
     def initialize
         @id = 0
