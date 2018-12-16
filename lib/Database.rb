@@ -39,7 +39,7 @@ class Database
         @@db.execute "CREATE TABLE IF NOT EXISTS Grade(
             id INTEGER PRIMARY KEY,
             grade INTEGER NOT NULL,
-            category TEXT,
+            comment TEXT,
             date DATETIME NOT NULL DEFAULT (datetime('now','localtime')),
             studentsubject_id INTEGER NOT NULL REFERENCES StudentSubject(id)
             )"
@@ -110,6 +110,3 @@ class Database
     end
 
 end
-
-
-

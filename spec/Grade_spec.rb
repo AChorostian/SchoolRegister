@@ -1,6 +1,7 @@
 require_relative '../lib/Grade.rb'
 
 describe "Checking class initialization" do
+
   before{
     @grade = Grade.new
   }
@@ -16,5 +17,17 @@ describe "Checking class initialization" do
   after{
     @grade = nil
   }
+
+end
+
+describe "Checking class correctness" do
+  before{ @grade = Grade.new }
+    it "test" do
+      expect(true).to eq(true)
+    end
+
+
+  after{ @grade = nil }
+
 
 end
