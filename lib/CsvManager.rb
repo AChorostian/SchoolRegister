@@ -3,46 +3,42 @@ require 'fileutils'
 
 class CsvManager
 
-  def self.saveToFile(filename, data)
-      raise ArgumentError, "Wrong data to export to CSV file!" unless data.is_a?(Array)
-      raise ArgumentError, "Wrong data" unless filename =~ /[^\0]+/
+    def self.saveToFile(filename,className)
 
-      FileUtils.mkdir_p 'data'
+        #raise ArgumentError, "Wrong data to export to CSV file!" unless data.is_a?(Array)
+        #raise ArgumentError, "Wrong data" unless filename =~ /[^\0]+/
 
-      data.each do |elem|
-        elem.delete(:id)
-      end
+        FileUtils.mkdir_p 'data'
 
-      csv = CSV.open('data/'+filename,"w",
-                     :write_headers => true,
-                     :headers => data.first.keys
-      )
-      data.each do |elem|
-        csv << elem
-      end
-  end
+        className.all.each do |elem|
+          elem.delete(:id)
+        end
 
-  def self.importFromCsv(filepath,className, delimiter=',')
-
-    if (className.is_a?(String))
-      className = Module.const_get(className)
+        csv = CSV.open('data/'+filename,"w",
+                       :write_headers => true,
+                       :headers => data.first.keys
+        )
+        data.each do |elem|
+          csv << elem
+        end
     end
 
-    returnArray = []
-    data = CSV.read(filepath, encoding:"UTF-8",
-                    headers: true,
-                    :col_sep => delimiter,
-                    header_converters: :symbol,
-                    converters: :all).map do |row| row.to_hash end
-    data.each do |row|
-      temp = className.new
-      row[:id] = nil
-      temp.sethash(row)
-      returnArray.push(temp)
-    end
-    return returnArray
+    def self.importFromCsv(filepath,className)
 
-  end
+        options = { encoding:"UTF-8", headers: true, col_sep: ',', header_converters: :symbol, converters: :all}
+
+        if className.is_a? String
+            className = Module.const_get(className)
+        end
+
+        CSV.read(filepath, options).map do |row|
+            h = row.to_hash
+            h.delete(:id)
+            xd = className.create(h)
+            puts xd.to_hash.to_s
+        end
+
+    end
 
 
 end
