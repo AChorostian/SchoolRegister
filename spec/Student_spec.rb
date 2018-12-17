@@ -71,3 +71,20 @@ describe "Checking Student class functionality" do
     @new_student = nil
   }
 end
+
+describe "Checking Student class validation" do
+  before{
+    @new_student = Student.new
+  }
+
+  it "lol" do
+    @new_student[:name] = nil
+    @new_student[:surname] = "binus"
+    expect{@new_student.save}.to raise_error(Sequel::ValidationFailed)
+  end
+
+  after{
+    @new_student = nil
+  }
+
+end
