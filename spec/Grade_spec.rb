@@ -16,7 +16,6 @@ describe "Checking class initialization" do
 
   after{
     @grade = nil
-    @data = nil
   }
 
 end
