@@ -7,6 +7,7 @@ require_relative 'StudentSubject'
 require_relative 'Database'
 require_relative 'CsvManager'
 require_relative 'Menu'
+require 'sequel'
 
 class Register
 
@@ -18,6 +19,10 @@ class Register
         #Database.addArray CsvManager.importFromCsv("data/notes.csv", Note )
         #Database.addArray CsvManager.importFromCsv("data/studentsubjects.csv", StudentSubject )
         #Database.addArray CsvManager.importFromCsv("data/grades.csv", Grade )
+    end
+
+    def load
+
     end
 
     def run

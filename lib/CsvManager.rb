@@ -4,46 +4,28 @@ require 'fileutils'
 class CsvManager
 
   def self.saveToFile(filename, data)
+      raise ArgumentError, "Wrong data to export to CSV file!" unless data.is_a?(Array)
+      raise ArgumentError, "Wrong data" unless filename =~ /[^\0]+/
 
-    if (!data.is_a?(Array))
-      raise ArgumentError, "Wrong data to export to CSV file!"
-    end
-    if (!(filename =~ /[^\0]+/))
-      raise ArgumentError, "Wrong data"
-    end
+      FileUtils.mkdir_p 'data'
 
-    FileUtils.mkdir_p 'data'
+      data.each do |elem|
+        elem.delete(:id)
+      end
 
-    data.each do |elem|
-      elem.delete(:id)
-    end
-
-    csv = CSV.open('data/'+filename,"w",
-                   :write_headers => true,
-                   :headers => data.first.keys
-    )
-    data.each do |elem|
-      csv << elem
-    end
+      csv = CSV.open('data/'+filename,"w",
+                     :write_headers => true,
+                     :headers => data.first.keys
+      )
+      data.each do |elem|
+        csv << elem
+      end
   end
 
   def self.importFromCsv(filepath,className, delimiter=',')
 
     if (className.is_a?(String))
-      case className
-      when "Student"
-        className = Student
-      when "Teacher"
-        className = Teacher
-      when "Note"
-        className = Note
-      when "Subject"
-        className = Subject
-      when "StudentSubject"
-        className = StudentSubject
-      when "Grade"
-        className = Grade
-      end
+      className = Module.const_get(className)
     end
 
     returnArray = []
