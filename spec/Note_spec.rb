@@ -1,7 +1,7 @@
 require_relative '../lib/Register.rb'
 
 
-describe "Checking class initialization" do
+describe "Checking Note class initialization" do
   before{
     @note = Note.new
   }
@@ -12,6 +12,10 @@ describe "Checking class initialization" do
 
   it "Returns instance of Note while created" do
     expect(@note).to be_instance_of(Note)
+  end
+
+  it "Note is a subclass of Sequel::Model" do
+    expect(@note).to be_a(Sequel::Model)
   end
 
   after{

@@ -20,27 +20,27 @@ class Database
         @@db.create_table :Subject do
             primary_key :id
             String :name
-            foreign_key :id_teacher, :Teacher, key: :id
+            foreign_key :teacher_id, :Teacher, key: :id
         end
         @@db.create_table :Note do
             primary_key :id
             String :description
             String :date
-            foreign_key :id_student, :Student, key: :id
-            foreign_key :id_teacher, :Teacher, key: :id
+            foreign_key :student_id, :Student, key: :id
+            foreign_key :teacher_id, :Teacher, key: :id
         end
         @@db.create_table :StudentSubject do
             primary_key :id
-            foreign_key :id_student, :Student, key: :id
-            foreign_key :id_subject, :Subject, key: :id
-            unique [:id_student, :id_subject]
+            foreign_key :student_id, :Student, key: :id
+            foreign_key :subject_id, :Subject, key: :id
+            unique [:student_id, :subject_id]
         end
         @@db.create_table :Grade do
             primary_key :id
             String :grade
             String :comment
             String :date
-            foreign_key :id_studentsubject, :StudentSubject, key: :id
+            foreign_key :studentsubject_id, :StudentSubject, key: :id
         end
     end
 

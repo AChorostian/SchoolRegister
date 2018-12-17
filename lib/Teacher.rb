@@ -1,4 +1,5 @@
 class Teacher < Sequel::Model(Database.db[:Teacher])
+    plugin :validation_helpers
 
     one_to_many :Subject
     one_to_many :Note

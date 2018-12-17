@@ -1,6 +1,6 @@
 require_relative '../lib/Register.rb'
 
-describe "Checking class initialization" do
+describe "Checking Subject class initialization" do
   before{
     @subject = Subject.new
   }
@@ -11,6 +11,10 @@ describe "Checking class initialization" do
 
   it "Returns instance of Subject while created" do
     expect(@subject).to be_instance_of(Subject)
+  end
+
+  it "Subject is a subclass of Sequel::Model" do
+    expect(@subject).to be_a(Sequel::Model)
   end
 
   after{

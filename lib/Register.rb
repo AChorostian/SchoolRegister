@@ -12,14 +12,14 @@ require_relative 'CsvManager'
 
 class Register
 
-    def initialize
+    def self.init
         #lolz = Sequel.sqlite ( "database.db")
         CsvManager.importFromCsv("data/students.csv", Student )
         CsvManager.importFromCsv("data/teachers.csv", Teacher )
-        CsvManager.importFromCsv("data/subjects.csv", Subject )
-        CsvManager.importFromCsv("data/notes.csv", Note )
-        CsvManager.importFromCsv("data/studentsubjects.csv", StudentSubject )
-        CsvManager.importFromCsv("data/grades.csv", Grade )
+        # CsvManager.importFromCsv("data/subjects.csv", Subject )
+        # CsvManager.importFromCsv("data/notes.csv", Note )
+        # CsvManager.importFromCsv("data/studentsubjects.csv", StudentSubject )
+        # CsvManager.importFromCsv("data/grades.csv", Grade )
     end
 
     def load

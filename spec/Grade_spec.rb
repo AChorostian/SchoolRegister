@@ -1,6 +1,6 @@
 require_relative '../lib/Register.rb'
 
-describe "Checking class initialization" do
+describe "Checking Grade class initialization" do
 
   before{
     @grade = Grade.new
@@ -14,13 +14,17 @@ describe "Checking class initialization" do
     expect(@grade).to be_instance_of(Grade)
   end
 
+  it "Grade is a subclass of Sequel::Model" do
+    expect(@grade).to be_a(Sequel::Model)
+  end
+
   after{
     @grade = nil
   }
 
 end
 
-describe "Checking class correctness" do
+describe "Checking Grade class correctness" do
   before{
     @grade = Grade.new
   }

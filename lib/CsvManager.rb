@@ -35,7 +35,6 @@ class CsvManager
             h = row.to_hash
             h.delete(:id)
             xd = className.create(h)
-            puts xd.to_hash.to_s
         end
 
     end
