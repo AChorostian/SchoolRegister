@@ -6,9 +6,10 @@ require 'sqlite3'
 
 class Database
 
-    @@db = SQLite3::Database.open "database.db"
+    @@db = Sequel.sqlite("database.db")
 
     def self.init
+        drops
         @@db.execute "CREATE TABLE IF NOT EXISTS Student(
             id INTEGER PRIMARY KEY,
             name TEXT NOT NULL,
@@ -50,6 +51,15 @@ class Database
        # @@db.execute "DELETE FROM Subject"
        # @@db.execute "DELETE FROM Teacher"
        # @@db.execute "DELETE FROM Student"
+    end
+
+    def self.drops
+        @@db.drop_table?(:Grade)
+        @@db.drop_table?(:StudentSubject)
+        @@db.drop_table?(:Note)
+        @@db.drop_table?(:Subject)
+        @@db.drop_table?(:Teacher)
+        @@db.drop_table?(:Student)
     end
 
     def self.db
