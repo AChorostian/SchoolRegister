@@ -1,4 +1,5 @@
-require_relative '../lib/Note.rb'
+require_relative '../lib/Register.rb'
+
 
 describe "Checking class initialization" do
   before{
@@ -15,6 +16,7 @@ describe "Checking class initialization" do
 
   after{
     @note = nil
+
   }
 
 end

@@ -56,4 +56,6 @@ class Database
     def self.db
         @@db
     end
+
+    Database.init
 end

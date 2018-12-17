@@ -1,4 +1,4 @@
-require_relative '../lib/Subject.rb'
+require_relative '../lib/Register.rb'
 
 describe "Checking class initialization" do
   before{
@@ -15,6 +15,7 @@ describe "Checking class initialization" do
 
   after{
     @subject = nil
+
   }
 
 end

@@ -1,4 +1,5 @@
-require_relative '../lib/Teacher.rb'
+require_relative '../lib/Register.rb'
+
 
 describe "Checking class initialization" do
   before{

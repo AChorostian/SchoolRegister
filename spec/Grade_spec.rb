@@ -1,4 +1,4 @@
-require_relative '../lib/Grade.rb'
+require_relative '../lib/Register.rb'
 
 describe "Checking class initialization" do
 
@@ -16,18 +16,22 @@ describe "Checking class initialization" do
 
   after{
     @grade = nil
+    @data = nil
   }
 
 end
 
 describe "Checking class correctness" do
-  before{ @grade = Grade.new }
+  before{
+    @grade = Grade.new
+  }
     it "test" do
       expect(true).to eq(true)
     end
 
 
-  after{ @grade = nil }
+  after{ @grade = nil
+  }
 
 
 end
