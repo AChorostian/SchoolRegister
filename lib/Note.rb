@@ -1,6 +1,9 @@
 require 'sequel'
 class Note < Sequel::Model(Database.db[:Note])
 
+    many_to_one :Teacher
+    many_to_one :Student
+
     def self.printlabels
         puts " Nr |       Data |            Nauczyciel | Opis"
         puts "----+------------+-----------------------|--------"

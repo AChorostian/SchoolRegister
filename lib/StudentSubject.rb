@@ -1,4 +1,9 @@
 class StudentSubject < Sequel::Model(Database.db[:StudentSubject])
+
+    one_to_many :Grade
+    many_to_one :Student
+    many_to_one :Subject
+
     def self.printlabels
         puts " Nr |        Nazwa |             Nauczyciel "
         puts "----+--------------+------------------------"

@@ -1,6 +1,8 @@
 require 'sequel'
 class Grade < Sequel::Model(Database.db[:Grade])
 
+    many_to_one :StudentSubject
+
     def self.printlabels
       puts " Nr | Ocena |       Komentarz |       Data "
       puts "----+-------+-----------------+------------"
