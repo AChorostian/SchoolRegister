@@ -28,14 +28,15 @@ describe "Checking Teacher class functionality" do
   before{
     Database.init
     @new_teacher = Teacher.new
+    @pre_add_len = Teacher.dataset.count
     @new_teacher[:name] = "Jan"
     @new_teacher[:surname] = "Abacki"
     @new_teacher.save
-    @curr_len = Teacher.dataset.count
+    @post_add_len = Teacher.dataset.count
   }
 
   it "Inserting value should increase dataset length" do
-    expect(Teacher.dataset.count).to eq(@curr_len+1)
+    expect(Teacher.dataset.count).to eq(@pre_add_len+1)
   end
 
   it "Checking if value is inserted correctly" do
@@ -46,7 +47,7 @@ describe "Checking Teacher class functionality" do
     @updated_teacher = @new_teacher
     @updated_teacher[:surname] = "New-Surname"
     @updated_teacher.save
-    expect(Teacher.dataset.count).to eq(@curr_len)
+    expect(Teacher.dataset.count).to eq(@post_add_len)
   end
 
   it "Checking if value is updated correctly" do
@@ -60,7 +61,7 @@ describe "Checking Teacher class functionality" do
     skip("no mocks implemented")
     @removed_teacher = Teacher.last
     @removed_teacher.delete
-    expect(Teacher.dataset.count).to eq(@curr_len-1)
+    expect(Teacher.dataset.count).to eq(@post_add_len-1)
   end
 
   it "Checking if value is removed correctly" do
