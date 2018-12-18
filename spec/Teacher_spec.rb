@@ -44,7 +44,7 @@ describe "Checking Teacher class functionality" do
 
   it "Updating value shouldn't increase dataset length" do
     @updated_teacher = Teacher.last
-    @updated_teacher[:surname] = "NewSurname"
+    @updated_teacher[:surname] = "New-Surname"
     @updated_teacher.save
     expect(Teacher.dataset.count).to eq(@post_add_len)
   end

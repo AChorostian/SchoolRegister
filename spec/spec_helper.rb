@@ -17,6 +17,9 @@ require 'simplecov'
 SimpleCov.start do
     add_filter '/bin/'
     add_filter '/db/'
+    add_filter '/lib/List.rb'
+    add_filter '/lib/Menu.rb'
+    add_filter '/lib/Single.rb'
     add_filter '/spec/' # for rspec
     add_filter '/test/' # for minitest
 end
