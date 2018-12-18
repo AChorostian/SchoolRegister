@@ -2,7 +2,7 @@ class Menu
 
   def self.main
       top
-      puts "1. Lista Uczniów".red
+      puts "1. Lista Uczniów"
       puts "2. Lista Przedmiotów"
       puts "3. Lista Nauczycieli"
       puts ""
@@ -14,135 +14,19 @@ class Menu
       puts ""
       puts "0. Wyjscie"
       puts ""
-
       print "podaj nr: "
 
-      # Student.where(id: 4).first.Note.each_with_index do |n,i|
-      #     puts Note.printmodel(n.id , i)
-      # end
-
-      show_single_key while(true)
-
-
-
-
-
-
       case gets.to_i
-      when 1 then List.Student
-      when 2 then List.Subject
-      when 3 then List.Teacher
-      when 4 then List.Note(4)
-      when 5 then List.StudentSubject(4)
-      when 6 then List.Grade(4)
-
-
-      # when 0
-      #     exit
-      # else "wtf"
+          when 1 then List.Student
+          when 2 then List.Subject
+          when 3 then List.Teacher
+          when 4 then exit
+          when 5 then exit
+          when 6 then exit
+          else exit
       end
+  end
 
-      end
-
-
-  # def self.list(cl)
-  #     top
-  #     cl.printlabels
-  #     Database.findall(cl).each_with_index do |v,i|
-  #         cl.new.sethash(v).printline(i+1)
-  #     end
-  #     puts ""
-  #     puts "Wybierz nr lub 0, aby wyjść"
-  #     print "podaj nr: "
-  #     input = gets.to_i
-  #     if input != 0
-  #         selected(cl,input)
-  #         list(cl)
-  #     end
-  # end
-  #
-  # def self.listext(cl,key,value)
-  #     top
-  #     puts "EXT"
-  #     cl.printlabels
-  #     data = Database.findbykeyandvalue(cl,key.to_s,value.to_s)
-  #     data.each_with_index do |obj,i|
-  #         obj.printline(i+1)
-  #     end
-  #     puts ""
-  #     puts "Wybierz nr lub 0, aby wyjść"
-  #     print "podaj nr: "
-  #     input = gets.to_i
-  #     if (input != 0)
-  #         case cl.to_s
-  #         when "StudentSubject"
-  #             selectedstudentsubject(data[input-1].id,input)
-  #             listext(cl,key,value)
-  #         when "Note"
-  #             selectednote(data[input-1].id,input)
-  #             listext(cl,key,value)
-  #         when "Grade"
-  #             selectedgrade(data[input-1].id,input)
-  #             listext(cl,key,value)
-  #         end
-  #     end
-  # end
-  #
-  #
-  # def self.listofstudentsubjects(student_id)
-  #     top
-  #     StudentSubject.printlabels
-  #     data = Database.findbykeyandvalue(StudentSubject,"student_id",student_id.to_s)
-  #     data.each_with_index do |studentsubject,i|
-  #         studentsubject.printline(i+1)
-  #     end
-  #     puts ""
-  #     puts "Wybierz nr lub 0, aby wyjść"
-  #     print "podaj nr: "
-  #     input = gets.to_i
-  #     if (input == 0)
-  #         selectedstudent(student_id)
-  #     else
-  #         selectedstudentsubject(data[input-1].id,input)
-  #     end
-  # end
-  #
-  # def self.listofnotes(student_id)
-  #     top
-  #     Note.printlabels
-  #     data = Database.findbykeyandvalue(Note,"student_id",student_id.to_s)
-  #     data.each_with_index do |note,i|
-  #         note.printline(i+1)
-  #     end
-  #     puts ""
-  #     puts "Wybierz nr lub 0, aby wyjść"
-  #     print "podaj nr: "
-  #     input = gets.to_i
-  #     if (input == 0)
-  #         selectedstudent(student_id)
-  #     else
-  #         selectednote(data[input-1].id,input)
-  #     end
-  # end
-  #
-  # def self.listofgrades(studentsubject_id)
-  #   top
-  #   Grade.printlabels
-  #   data = Database.findbykeyandvalue(Grade,"studentsubject_id",studentsubject_id.to_s)
-  #   data.each_with_index do |grade,i|
-  #       grade.printline(i+1)
-  #   end
-  #   puts ""
-  #   puts "Wybierz nr lub 0, aby wyjść"
-  #   print "podaj nr: "
-  #   input = gets.to_i
-  #   if (input == 0)
-  #       selectedstudentsubject(studentsubject_id,nr)
-  #   else
-  #       selectedgrade(data[input-1].id,input)
-  #   end
-  # end
-  #
   # def self.selected(cl,id)
   #     if cl == Student
   #         selectedstudent(id)

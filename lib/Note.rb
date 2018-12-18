@@ -11,7 +11,7 @@ class Note < Sequel::Model(Database.db[:Note])
 
     def printline(nr)
         teacher_string = self.Teacher.name + " " + self.Teacher.surname
-        printf("%3d |%11s |%22s | %s\n" , nr , date.to_s , teacher_string , description.to_s )
+        printf("%3d |%11s |%22s | %s\n" , nr+1 , date.to_s , teacher_string , description.to_s )
     end
 
 end
