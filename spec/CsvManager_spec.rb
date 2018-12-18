@@ -1,10 +1,10 @@
-require_relative '../lib/CsvManager.rb'
+require_relative '../lib/Register.rb'
 
 describe "Checking import from files" do
 
   before {
     @db = Sequel.sqlite("database.db")
-    Database
+    Database.init
   }
 
 

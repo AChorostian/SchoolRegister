@@ -5,6 +5,7 @@ class Database
 
     @@db = Sequel.sqlite("database.db")
 
+
     def self.init
         drops
         @@db.create_table :Student do
@@ -59,3 +60,5 @@ class Database
 
     Database.init
 end
+
+Database.init

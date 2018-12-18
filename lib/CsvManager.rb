@@ -5,9 +5,6 @@ class CsvManager
 
     def self.saveToFile(filename,className)
 
-        #raise ArgumentError, "Wrong data to export to CSV file!" unless data.is_a?(Array)
-        #raise ArgumentError, "Wrong data" unless filename =~ /[^\0]+/
-
         FileUtils.mkdir_p 'data'
 
         className.all.each do |elem|
@@ -34,7 +31,7 @@ class CsvManager
         CSV.read(filepath, options).map do |row|
             h = row.to_hash
             h.delete(:id)
-            xd = className.create(h)
+            className.create(h)
         end
 
     end

@@ -1,6 +1,5 @@
 require_relative '../lib/Register.rb'
 
-
 describe "Checking Teacher class initialization" do
   before{
     @teacher = Teacher.new
@@ -44,8 +43,8 @@ describe "Checking Teacher class functionality" do
   end
 
   it "Updating value shouldn't increase dataset length" do
-    @updated_teacher = Student.last
-    @updated_teacher[:surname] = "New-Surname"
+    @updated_teacher = Teacher.last
+    @updated_teacher[:surname] = "NewSurname"
     @updated_teacher.save
     expect(Teacher.dataset.count).to eq(@post_add_len)
   end

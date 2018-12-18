@@ -7,13 +7,12 @@ require_relative 'Grade'
 require_relative 'Note'
 require_relative 'StudentSubject'
 require_relative 'CsvManager'
-# require_relative 'Menu'
+require_relative 'Menu'
 
 
 class Register
 
     def self.init
-        #lolz = Sequel.sqlite ( "database.db")
         CsvManager.importFromCsv("data/students.csv", Student )
         CsvManager.importFromCsv("data/teachers.csv", Teacher )
         # CsvManager.importFromCsv("data/subjects.csv", Subject )
@@ -27,7 +26,7 @@ class Register
     end
 
     def run
-        #Menu.main
+        Menu.main
     end
 
     def exitandsave

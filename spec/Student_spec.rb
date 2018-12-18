@@ -34,7 +34,7 @@ describe "Checking Student class functionality" do
   }
 
   it "Inserting value should increase dataset length" do
-    expect(Student.dataset.count).to eq(@post_add_len+1)
+    expect(@post_add_len).to eq(@pre_add_len+1)
   end
 
   it "Checking if value is inserted correctly" do
