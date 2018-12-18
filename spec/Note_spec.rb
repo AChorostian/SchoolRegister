@@ -17,8 +17,17 @@ describe "Checking Note class initialization" do
     expect(@note).to be_a(Sequel::Model)
   end
 
+
   after{
     @note = nil
   }
 
 end
+
+describe "Checking Note Class functionality" do
+
+
+
+
+end
+
