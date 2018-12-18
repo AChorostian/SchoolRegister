@@ -10,7 +10,7 @@ class StudentSubject < Sequel::Model(Database.db[:StudentSubject])
     end
 
     def printline(nr)
-        Database.findbyid(Subject,@subject_id).printline(nr)
+        self.Subject.printline(nr)
     end
 
 end

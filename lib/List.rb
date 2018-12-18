@@ -1,0 +1,88 @@
+class List
+
+    def self.Student
+        Menu.top
+        Student.printlabels
+        Student.each_with_index { |s,i| s.printline(i)  }
+        puts ""
+        puts "Wybierz nr lub 0, aby wyjść."
+        print "podaj nr: "
+        input = gets.to_i
+        if input != 0
+            Single.Student(input)
+            self.Student
+        end
+    end
+
+    def self.Subject
+        Menu.top
+        Subject.printlabels
+        Subject.each_with_index { |s,i| s.printline(i)  }
+        puts ""
+        puts "Wybierz nr lub 0, aby wyjść."
+        print "podaj nr: "
+        input = gets.to_i
+        if input != 0
+            #selected(cl,input)
+            self.Subject
+        end
+    end
+
+    def self.Teacher
+        Menu.top
+        Teacher.printlabels
+        Teacher.each_with_index { |t,i| t.printline(i)  }
+        puts ""
+        puts "Wybierz nr lub 0, aby wyjść."
+        print "podaj nr: "
+        input = gets.to_i
+        if input != 0
+            #selected(cl,input)
+            self.Teacher
+        end
+    end
+
+    def self.Note(student_id)
+        Menu.top
+        Note.printlabels
+        Note.where(Student_id: student_id).each_with_index { |n,i| n.printline(i)  }
+        puts ""
+        puts "Wybierz nr lub 0, aby wyjść."
+        print "podaj nr: "
+        input = gets.to_i
+        if input != 0
+            #selected(cl,input)
+            self.Note(student_id)
+        end
+    end
+
+    def self.StudentSubject(student_id)
+        Menu.top
+        StudentSubject.printlabels
+        StudentSubject.where(Student_id: student_id).each_with_index { |ss,i| ss.printline(i)  }
+        puts ""
+        puts "Wybierz nr lub 0, aby wyjść."
+        print "podaj nr: "
+        input = gets.to_i
+        if input != 0
+            #selected(cl,input)
+            self.StudentSubject(student_id)
+        end
+    end
+
+    def self.Grade(studentsubject_id)
+        Menu.top
+        Grade.printlabels
+        Grade.where(StudentSubject_id: studentsubject_id).each_with_index { |ss,i| ss.printline(i)  }
+        puts ""
+        puts "Wybierz nr lub 0, aby wyjść."
+        print "podaj nr: "
+        input = gets.to_i
+        if input != 0
+            #selected(cl,input)
+            self.Grade(studentsubject_id)
+        end
+    end
+
+
+end

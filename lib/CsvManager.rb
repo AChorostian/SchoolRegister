@@ -22,7 +22,7 @@ class CsvManager
 
     def self.importFromCsv(filepath,className)
 
-        options = { encoding:"UTF-8", headers: true, col_sep: ',', header_converters: :symbol, converters: :all}
+        options = { encoding:"UTF-8", headers: true, col_sep: ','}
 
         if className.is_a? String
             className = Module.const_get(className)
@@ -30,7 +30,7 @@ class CsvManager
 
         CSV.read(filepath, options).map do |row|
             h = row.to_hash
-            h.delete(:id)
+            h.delete("id")
             className.create(h)
         end
 

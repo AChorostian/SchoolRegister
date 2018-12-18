@@ -25,7 +25,7 @@ end
 
 describe "Checking Teacher class functionality" do
   before{
-    Database.init
+    Database.testinit
     @new_teacher = Teacher.new
     @pre_add_len = Teacher.dataset.count
     @new_teacher[:name] = "Jan"

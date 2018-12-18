@@ -1,4 +1,4 @@
-id,description,date,student_id,teacher_id
+id,description,date,Student_id,Teacher_id
 1,Uczeń jest arogancki względem nauczyciela,11.05.2018,7,10
 2,Uczeń nie stosuje się do poleceń nauczyciela,25.11.2018,14,5
 3,Uczeń rozmawia na lekcji,22.11.2018,4,3

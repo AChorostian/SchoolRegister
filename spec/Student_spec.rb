@@ -24,7 +24,7 @@ end
 
 describe "Checking Student class functionality" do
   before{
-    Database.init
+    Database.testinit
     @new_student = Student.new
     @pre_add_len = Student.dataset.count
     @new_student[:name] = "Jan"

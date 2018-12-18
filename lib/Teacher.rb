@@ -18,9 +18,7 @@ class Teacher < Sequel::Model(Database.db[:Teacher])
     end
 
     def printline(nr)
-        printf("%3d |%12s |%13s\n" , nr , @name , @surname )
+        printf("%3d |%12s |%13s\n" , nr+1 , name , surname )
     end
 
 end
-
-

@@ -1,8 +1,8 @@
 class Menu
 
   def self.main
-      #top
-      puts "1. Lista Uczniów" ;  puts "xd"
+      top
+      puts "1. Lista Uczniów".red
       puts "2. Lista Przedmiotów"
       puts "3. Lista Nauczycieli"
       puts ""
@@ -14,21 +14,33 @@ class Menu
       puts ""
       puts "0. Wyjscie"
       puts ""
-      #print "podaj nr: "
+
+      print "podaj nr: "
+
+      # Student.where(id: 4).first.Note.each_with_index do |n,i|
+      #     puts Note.printmodel(n.id , i)
+      # end
+
+      show_single_key while(true)
 
 
-        Student.plist
 
 
-      # case gets.to_i
-      # when 1 then list(Student)
-      # when 2 then list(Subject)
-      # when 3 then list(Teacher)
-      # when 4 then addstudent
+
+
+      case gets.to_i
+      when 1 then List.Student
+      when 2 then List.Subject
+      when 3 then List.Teacher
+      when 4 then List.Note(4)
+      when 5 then List.StudentSubject(4)
+      when 6 then List.Grade(4)
+
+
       # when 0
       #     exit
       # else "wtf"
-      #end
+      end
 
       end
 
@@ -406,7 +418,7 @@ class Menu
 
   def self.top
     system 'clear'
-    puts "==================== DZENNIK ===================="
+    puts "==================== DZIENNIK ===================="
   end
 
 end

@@ -1,4 +1,4 @@
-id,grade,comment,date,studentsubject_id
+id,grade,comment,date,StudentSubject_id
 1,4,praca domowa,21.09.2018,24
 2,1,sprawdzian,26.09.2018,32
 3,2,praca domowa,12.06.2018,86
