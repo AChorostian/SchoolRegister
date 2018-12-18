@@ -44,7 +44,7 @@ describe "Checking Teacher class functionality" do
   end
 
   it "Updating value shouldn't increase dataset length" do
-    @updated_teacher = @new_teacher
+    @updated_teacher = Student.last
     @updated_teacher[:surname] = "New-Surname"
     @updated_teacher.save
     expect(Teacher.dataset.count).to eq(@post_add_len)
@@ -58,14 +58,14 @@ describe "Checking Teacher class functionality" do
   end
 
   it "Deleting value should decrease dataset length" do
-    skip("no mocks implemented")
+    # skip("no mocks implemented")
     @removed_teacher = Teacher.last
     @removed_teacher.delete
     expect(Teacher.dataset.count).to eq(@post_add_len-1)
   end
 
   it "Checking if value is removed correctly" do
-    skip("no mocks implemented")
+    # skip("no mocks implemented")
     @removed_teacher = Teacher.last
     @removed_teacher.delete
     expect(Teacher.last).not_to eq(@removed_teacher)

@@ -25,46 +25,48 @@ end
 describe "Checking Student class functionality" do
   before{
     Database.init
-    Register.init
     @new_student = Student.new
+    @pre_add_len = Student.dataset.count
     @new_student[:name] = "Jan"
     @new_student[:surname] = "Abacki"
-    @updated_student = Student[10]
-    @updated_student[:surname] = "New-Surname"
-    @curr_len = Student.dataset.count
-    @removed_student = Student[20]
+    @new_student.save
+    @post_add_len = Student.dataset.count
   }
 
   it "Inserting value should increase dataset length" do
-    @new_student.save
-    expect(Student.dataset.count).to eq(@curr_len+1)
+    expect(Student.dataset.count).to eq(@post_add_len+1)
   end
 
   it "Checking if value is inserted correctly" do
-    @new_student.save
     expect(Student.last).to eq(@new_student)
   end
 
   it "Updating value shouldn't increase dataset length" do
+    @updated_student = Student.last
+    @updated_student[:surname] = "New-Surname"
     @updated_student.save
-    expect(Student.dataset.count).to eq(@curr_len)
+    expect(Student.dataset.count).to eq(@post_add_len)
   end
 
   it "Checking if value is updated correctly" do
+    @updated_student = Student.last
+    @updated_student[:surname] = "New-Surname"
     @updated_student.save
-    expect(Student[10]).to eq(@updated_student)
+    expect(Student.last]).to eq(@updated_student)
   end
 
   it "Deleting value should decrease dataset length" do
-    skip("no mocks implemented")
+    # skip("no mocks implemented")
+    @removed_student = Student.last
     @removed_student.delete
-    expect(Student.dataset.count).to eq(@curr_len-1)
+    expect(Student.dataset.count).to eq(@post_add_len-1)
   end
 
   it "Checking if value is removed correctly" do
-    skip("no mocks implemented")
+    # skip("no mocks implemented")
+    @removed_student = Student.last
     @removed_student.delete
-    expect(Student[19]).not_to eq(@removed_student)
+    expect(Student.last).not_to eq(@removed_student)
   end
 
   after{
