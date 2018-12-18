@@ -52,7 +52,7 @@ describe "Checking Student class functionality" do
     @updated_student = Student.last
     @updated_student[:surname] = "New-Surname"
     @updated_student.save
-    expect(Student.last]).to eq(@updated_student)
+    expect(Student.last).to eq(@updated_student)
   end
 
   it "Deleting value should decrease dataset length" do
