@@ -38,7 +38,7 @@ class Database
         end
         @@db.create_table :Grade do
             primary_key :id
-            String :grade
+            Integer :grade
             String :comment
             String :date
             foreign_key :StudentSubject_id, :StudentSubject, key: :id
