@@ -67,7 +67,7 @@ describe "Checking Teacher class functionality" do
     skip("no mocks implemented")
     @removed_teacher = Teacher.last
     @removed_teacher.delete
-    expect(Teacher.last).not_to eq(@removed_student)
+    expect(Teacher.last).not_to eq(@removed_teacher)
   end
 
   after{
@@ -75,9 +75,9 @@ describe "Checking Teacher class functionality" do
   }
 end
 
-describe "Checking Student class validation" do
+describe "Checking Teacher class validation" do
   before{
-    @new_teacher = Student.new
+    @new_teacher = Teacher.new
   }
 
   it "lol" do
@@ -89,3 +89,4 @@ describe "Checking Student class validation" do
   after{
     @new_teacher = nil
   }
+end
