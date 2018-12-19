@@ -75,18 +75,64 @@ describe "Checking Teacher class functionality" do
   }
 end
 
-describe "Checking Teacher class validation" do
+describe "Checking Student class validation" do
   before{
     @new_teacher = Teacher.new
   }
 
-  it "lol" do
+  it "Checking error when name is nil" do
     @new_teacher[:name] = nil
-    @new_teacher[:surname] = "surname"
+    @new_teacher[:surname] = "Kowalski"
     expect{@new_teacher.save}.to raise_error(Sequel::ValidationFailed)
   end
+
+  it "Checking error when name is too short" do
+    @new_teacher[:name] = "D"
+    @new_teacher[:surname] = "Kowalski"
+    expect{@new_teacher.save}.to raise_error(Sequel::ValidationFailed)
+  end
+
+  it "Checking error when name format is invalid" do
+    @new_teacher[:name] = "D4wid"
+    @new_teacher[:surname] = "Kowalski"
+    expect{@new_teacher.save}.to raise_error(Sequel::ValidationFailed)
+  end
+
+  it "Checking error when name is not string" do
+    @new_teacher[:name] = 4
+    @new_teacher[:surname] = "Kowalski"
+    expect{@new_teacher.save}.to raise_error(Sequel::ValidationFailed)
+  end
+
+  it "Checking error when surname is nil" do
+    @new_teacher[:name] = "Jan"
+    @new_teacher[:surname] = nil
+    expect{@new_teacher.save}.to raise_error(Sequel::ValidationFailed)
+  end
+
+  it "Checking error when surname is too short" do
+    @new_teacher[:name] = "Jan"
+    @new_teacher[:surname] = "Ko"
+    expect{@new_teacher.save}.to raise_error(Sequel::ValidationFailed)
+  end
+
+  it "Checking error when surname format is invalid" do
+    @new_teacher[:name] = "Jan"
+    @new_teacher[:surname] = "kOwAlSkI"
+    expect{@new_teacher.save}.to raise_error(Sequel::ValidationFailed)
+  end
+
+  it "Checking error when surname is not string" do
+    @new_teacher[:name] = "Jan"
+    @new_teacher[:surname] = ["Kowalski"]
+    expect{@new_teacher.save}.to raise_error(Sequel::ValidationFailed)
+  end
+
+
 
   after{
     @new_teacher = nil
   }
+
 end
+
