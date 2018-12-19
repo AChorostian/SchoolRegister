@@ -1,4 +1,4 @@
-require_relative '../lib/Register.rb'
+require_relative '../../lib/Register.rb'
 
 describe "Checking Grade class initialization" do
 

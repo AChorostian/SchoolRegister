@@ -1,4 +1,4 @@
-require_relative '../lib/Register.rb'
+require_relative '../../lib/Register.rb'
 
 describe "Checking Teacher class initialization" do
   before{
@@ -128,4 +128,3 @@ describe "Checking Student class validation" do
   }
 
 end
-
