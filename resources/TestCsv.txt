@@ -1,2 +1,2 @@
-resources/CsvTestFiles/students.csv Student
-resources/CsvTestFiles/teachers.csv Teacher
+resources/CsvTestFiles/students.csv Student 20
+resources/CsvTestFiles/teachers.csv Teacher 10
