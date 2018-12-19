@@ -163,12 +163,12 @@ describe "Checking Note Class validation" do
     expect{@note.save}.to raise_error(Sequel::ValidationFailed)
   end
 
-  it "Checking error when teacher_id is not integer" do
+  it "Checking error when student_id is not integer" do
     @note[:Student_id] = "test"
     expect{@note.save}.to raise_error(Sequel::ValidationFailed)
   end
 
-  it "Checking error when teacher_id is negative integer" do
+  it "Checking error when student_id is negative integer" do
     @note[:Student_id] = -1
     expect{@note.save}.to raise_error(Sequel::ValidationFailed)
   end

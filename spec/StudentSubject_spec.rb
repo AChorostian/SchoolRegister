@@ -110,3 +110,61 @@ describe "Checking StudentSubject Class functionality" do
 
 
 end
+
+describe "Checking StudentSubject Class validation" do
+
+  before {
+    @test_student = Student.new
+    @test_student[:name] = "Test"
+    @test_student[:surname] = "Student"
+    @test_student.save
+
+    @test_teacher = Teacher.new
+    @test_teacher[:name] = "Test"
+    @test_teacher[:surname] = "Teacher"
+    @test_teacher.save
+
+    @test_subject = Subject.new
+    @test_subject[:name] = "Test"
+    @test_subject[:Teacher_id] = @test_teacher[:id]
+    @test_subject.save
+
+    @studentSubject = StudentSubject.new
+    @studentSubject[:Student_id] = @test_student[:id]
+    @studentSubject[:Subject_id] = @test_subject[:id]
+
+  }
+
+
+  it "Checking error when student_id is nil" do
+    @studentSubject[:Student_id] = nil
+    expect{@studentSubject.save}.to raise_error(Sequel::ValidationFailed)
+  end
+
+  it "Checking error when student_id is not integer" do
+    @studentSubject[:Student_id] = "test"
+    expect{@studentSubject.save}.to raise_error(Sequel::ValidationFailed)
+  end
+
+  it "Checking error when student_id is negative integer" do
+    @studentSubject[:Student_id] = -1
+    expect{@studentSubject.save}.to raise_error(Sequel::ValidationFailed)
+  end
+
+
+  it "Checking error when subject_id is nil" do
+    @studentSubject[:Subject_id] = nil
+    expect{@studentSubject.save}.to raise_error(Sequel::ValidationFailed)
+  end
+
+  it "Checking error when subject_id is not integer" do
+    @studentSubject[:Subject_id] = "test"
+    expect{@studentSubject.save}.to raise_error(Sequel::ValidationFailed)
+  end
+
+  it "Checking error when subject_id is negative integer" do
+    @studentSubject[:Subject_id] = -1
+    expect{@studentSubject.save}.to raise_error(Sequel::ValidationFailed)
+  end
+
+  end
