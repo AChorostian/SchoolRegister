@@ -26,6 +26,7 @@ end
 
 describe "Checking Grade class functionality" do
   before{
+    Database.init
     @test_student = Student.new
     @test_student[:name] = "Test"
     @test_student[:surname] = "Student"
@@ -108,9 +109,29 @@ describe "Checking Grade class functionality" do
 
 end
 
+describe "Negative cases - Grade"  do
+  before(:each) do
+    Database.init
+    @grade = Grade.new
+    @grade[:grade] = 5
+    @grade[:comment] = "Za projekt z ruby"
+    @grade[:date] = "08.01.2019"
+  end
+
+  it "Assigning id of non existing StudentSubject" do
+    @grade[:StudentSubject_id] = 1
+    expect{@grade.save}.to raise_error(Sequel::ValidationFailed)
+  end
+
+  after(:each) do
+    @grade = nil
+  end
+  end
+
 
 describe "Checking Grade class functionality" do
   before{
+    Database.init
     @test_student = Student.new
     @test_student[:name] = "Test"
     @test_student[:surname] = "Student"

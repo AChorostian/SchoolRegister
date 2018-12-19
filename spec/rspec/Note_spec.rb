@@ -96,6 +96,29 @@ describe "Checking Note Class functionality" do
 
 end
 
+describe "Negative cases - Note" do
+
+  before(:each) do
+    Database.init
+    @note = Note.new
+  end
+
+  it "Assigning id of non existing Teacher" do
+    @note[:Teacher_id] = 1
+    expect{@note.save}.to raise_error(Sequel::ValidationFailed)
+  end
+
+  it "Assigning id of non existing Student" do
+    @note[:Student_id] = 1
+    expect{@note.save}.to raise_error(Sequel::ValidationFailed)
+  end
+
+  after(:each) do
+    @note = nil
+  end
+
+end
+
 describe "Checking Note Class validation" do
 
   before {
