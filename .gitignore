@@ -37,3 +37,7 @@ build/
 
 # File-based project format
 *.iws
+.DS_Store
+sqllite/mac/sqldiff
+sqllite/mac/sqlite3
+sqllite/mac/sqlite3_analyzer
