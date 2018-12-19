@@ -167,4 +167,19 @@ describe "Checking StudentSubject Class validation" do
     expect{@studentSubject.save}.to raise_error(Sequel::ValidationFailed)
   end
 
+  it "Checking error when subject_id and student_id is not unique pair" do
+    @studentSubject_test = StudentSubject.new
+    @studentSubject_test[:Student_id] = @test_student[:id]
+    @studentSubject_test[:Subject_id] = @test_subject[:id]
+    @studentSubject_test.save
+    expect{@studentSubject.save}.to raise_error(Sequel::ValidationFailed)
+  end
+
+  after {
+    @studentSubject = nil
+    @test_teacher = nil
+    @test_student = nil
+    @test_subject = nil
+  }
+
   end
