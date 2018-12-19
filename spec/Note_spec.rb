@@ -96,3 +96,116 @@ describe "Checking Note Class functionality" do
 
 end
 
+describe "Checking Note Class validation" do
+
+  before {
+    @test_student = Student.new
+    @test_student[:name] = "Test"
+    @test_student[:surname] = "Student"
+    @test_student.save
+
+    @test_teacher = Teacher.new
+    @test_teacher[:name] = "Test"
+    @test_teacher[:surname] = "Teacher"
+    @test_teacher.save
+
+    @note = Note.new
+
+  }
+
+
+  it "Checking error when description is nil" do
+    @note[:description] = nil
+    @note[:date] = "01.01.2019"
+    @note[:Teacher_id] = @test_teacher[:id]
+    @note[:Student_id] = @test_student[:id]
+    expect{@note.save}.to raise_error(Sequel::ValidationFailed)
+  end
+
+  it "Checking error when description is too short" do
+    @note[:description] = "D"
+    @note[:date] = "01.01.2019"
+    @note[:Teacher_id] = @test_teacher[:id]
+    @note[:Student_id] = @test_student[:id]
+    expect{@note.save}.to raise_error(Sequel::ValidationFailed)
+  end
+
+  it "Checking error when description is not string" do
+    @note[:description] = 1
+    @note[:date] = "01.01.2019"
+    @note[:Teacher_id] = @test_teacher[:id]
+    @note[:Student_id] = @test_student[:id]
+    expect{@note.save}.to raise_error(Sequel::ValidationFailed)
+  end
+
+  it "Checking error when date is in invalid format" do
+    @note[:description] = "Description"
+    @note[:date] = "2019.01.01"
+    @note[:Teacher_id] = @test_teacher[:id]
+    @note[:Student_id] = @test_student[:id]
+    expect{@note.save}.to raise_error(Sequel::ValidationFailed)
+  end
+
+  it "Checking error when date is nil" do
+    @note[:description] = "Description"
+    @note[:date] = nil
+    @note[:Teacher_id] = @test_teacher[:id]
+    @note[:Student_id] = @test_student[:id]
+    expect{@note.save}.to raise_error(Sequel::ValidationFailed)
+  end
+
+  it "Checking error when teacher_id is nil" do
+    @note[:description] = "Description"
+    @note[:date] = "01.01.2019"
+    @note[:Teacher_id] = nil
+    @note[:Student_id] = @test_student[:id]
+    expect{@note.save}.to raise_error(Sequel::ValidationFailed)
+  end
+
+  it "Checking error when teacher_id is not integer" do
+    @note[:description] = "Description"
+    @note[:date] = "01.01.2019"
+    @note[:Teacher_id] = "test"
+    @note[:Student_id] = @test_student[:id]
+    expect{@note.save}.to raise_error(Sequel::ValidationFailed)
+  end
+
+  it "Checking error when teacher_id is negative integer" do
+    @note[:description] = "Description"
+    @note[:date] = "01.01.2019"
+    @note[:Teacher_id] = -1
+    @note[:Student_id] = @test_student[:id]
+    expect{@note.save}.to raise_error(Sequel::ValidationFailed)
+  end
+
+  it "Checking error when student_id is nil" do
+    @note[:description] = "Description"
+    @note[:date] = "01.01.2019"
+    @note[:Teacher_id] = @test_teacher[:id]
+    @note[:Student_id] = nil
+    expect{@note.save}.to raise_error(Sequel::ValidationFailed)
+  end
+
+  it "Checking error when teacher_id is not integer" do
+    @note[:description] = "Description"
+    @note[:date] = "01.01.2019"
+    @note[:Teacher_id] = @test_teacher[:id]
+    @note[:Student_id] = "test"
+    expect{@note.save}.to raise_error(Sequel::ValidationFailed)
+  end
+
+  it "Checking error when teacher_id is negative integer" do
+    @note[:description] = "Description"
+    @note[:date] = "01.01.2019"
+    @note[:Teacher_id] = @test_teacher[:id]
+    @note[:Student_id] = -1
+    expect{@note.save}.to raise_error(Sequel::ValidationFailed)
+  end
+
+  after{
+    @note = nil
+    @test_teacher = nil
+    @test_student = nil
+  }
+
+end

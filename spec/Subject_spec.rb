@@ -143,6 +143,10 @@ describe "Checking Subject class validation" do
     expect{@subject.save}.to raise_error(Sequel::ValidationFailed,'Teacher_id Teacher_id value is lower than 0')
   end
 
+  after {
 
+    @subject = nil
+    @test_teacher = nil
+  }
 
 end
