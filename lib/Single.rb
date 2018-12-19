@@ -117,4 +117,37 @@ class Single
         end
     end
 
+    def self.StudentSubject(id,nr)
+        Menu.top
+        puts "== Uczeń =="
+        Student.printlabels
+        StudentSubject.where(id: id).first.Student.printline(StudentSubject.where(id: id).first.Student.id-1)
+        puts "== Przedmiot =="
+        Subject.printlabels
+        Subject.where(id: id).first.printline(nr)
+        puts ""
+        puts "1. Lista ocen"
+        puts ""
+        puts "2. Wypisz ucznia"
+        puts ""
+        #puts "3. Przejdź do podglądu przedmiotu"
+        #puts "4. Przejdź do podglądu nauczyciela"
+        #puts "5. Pokaż listę uczęszczających uczniów"
+        #puts "6. Pokaż dane statystyczne" #np srednia z ocen, laczna ilosc ocen...
+        puts ""
+        puts "0. Powrót"
+        puts ""
+        print "podaj nr: "
+
+        case gets.to_i
+        when 1 then List.Grade(id)
+        when 2 then exit
+        when 3 then exit
+        when 4 then exit
+        when 5 then exit
+        when 6 then exit
+        else exit
+        end
+    end
+
 end

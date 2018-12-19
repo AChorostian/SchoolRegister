@@ -91,15 +91,15 @@ end
 describe "Checking Subject class validation" do
 
   before {
-    Database.init
-    @test_teacher = Teacher.new
-    @test_teacher[:name] = "Test"
-    @test_teacher[:surname] = "Teacher"
-    @test_teacher.save
+      Database.init
+      @test_teacher = Teacher.new
+      @test_teacher[:name] = "Test"
+      @test_teacher[:surname] = "Teacher"
+      @test_teacher.save
 
-    @subject = Subject.new
-    @subject[:Teacher_id] = @test_teacher[:id]
-    @subject[:name] = "Test"
+      @subject = Subject.new
+      @subject[:Teacher_id] = @test_teacher[:id]
+      @subject[:name] = "Test"
   }
 
   it "Checking error when name is nil" do

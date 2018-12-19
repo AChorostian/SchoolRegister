@@ -14,8 +14,8 @@ class StudentSubject < Sequel::Model(Database.db[:StudentSubject])
     end
 
     def self.printlabels
-        puts " Nr |        Nazwa |             Nauczyciel "
-        puts "----+--------------+------------------------"
+        puts " Nr |           Nazwa |             Nauczyciel "
+        puts "----+-----------------+------------------------"
     end
 
     def printline(nr)
