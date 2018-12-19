@@ -98,48 +98,42 @@ describe "Checking Subject class validation" do
     @test_teacher.save
 
     @subject = Subject.new
-
+    @subject[:Teacher_id] = @test_teacher[:id]
+    @subject[:name] = "Test"
   }
 
   it "Checking error when name is nil" do
-    @subject[:Teacher_id] = @test_teacher[:id]
     @subject[:name] = nil
     expect{@subject.save}.to raise_error(Sequel::ValidationFailed)
   end
 
   it "Checking error when name is too short" do
-    @subject[:Teacher_id] = @test_teacher[:id]
     @subject[:name] = "T"
     expect{@subject.save}.to raise_error(Sequel::ValidationFailed)
   end
 
   it "Checking error when name is not String" do
-    @subject[:Teacher_id] = @test_teacher[:id]
     @subject[:name] = [:name => "Test"]
     expect{@subject.save}.to raise_error(Sequel::ValidationFailed)
   end
 
   it "Checking error when name is in invalid format" do
-    @subject[:Teacher_id] = @test_teacher[:id]
     @subject[:name] = "TEsting SUBJECT"
     expect{@subject.save}.to raise_error(Sequel::ValidationFailed)
   end
 
   it "Checking error when teacher_id is nil" do
     @subject[:Teacher_id] = nil
-    @subject[:name] = "Test Subject"
     expect{@subject.save}.to raise_error(Sequel::ValidationFailed)
   end
 
   it "Checking error when teacher_id is not integer" do
     @subject[:Teacher_id] = "Test"
-    @subject[:name] = "Test Subject"
     expect{@subject.save}.to raise_error(Sequel::ValidationFailed)
   end
 
   it "Checking error when teacher_id is negative integer" do
     @subject[:Teacher_id] = -1
-    @subject[:name] = "Test Subject"
     expect{@subject.save}.to raise_error(Sequel::ValidationFailed,'Teacher_id Teacher_id value is lower than 0')
   end
 
