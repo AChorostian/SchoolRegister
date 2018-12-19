@@ -1,4 +1,4 @@
-require_relative '../lib/Register.rb'
+require_relative '../../lib/Register.rb'
 
 describe "Checking Student class initialization" do
     before{
@@ -77,13 +77,51 @@ end
 describe "Checking Student class validation" do
   before{
     @new_student = Student.new
+    @new_student[:name] = "Jan"
+    @new_student[:surname] = "Kowalski"
   }
 
-  it "lol" do
+  it "Checking error when name is nil" do
     @new_student[:name] = nil
-    @new_student[:surname] = "binus"
     expect{@new_student.save}.to raise_error(Sequel::ValidationFailed)
   end
+
+  it "Checking error when name is too short" do
+    @new_student[:name] = "a"
+    expect{@new_student.save}.to raise_error(Sequel::ValidationFailed)
+  end
+
+  it "Checking error when name format is invalid" do
+    @new_student[:name] = "D4wid"
+    expect{@new_student.save}.to raise_error(Sequel::ValidationFailed)
+  end
+
+  it "Checking error when name is not string" do
+    @new_student[:name] = 4
+    expect{@new_student.save}.to raise_error(Sequel::ValidationFailed)
+  end
+
+  it "Checking error when surname is nil" do
+    @new_student[:surname] = nil
+    expect{@new_student.save}.to raise_error(Sequel::ValidationFailed)
+  end
+
+  it "Checking error when surname is too short" do
+    @new_student[:surname] = "Ko"
+    expect{@new_student.save}.to raise_error(Sequel::ValidationFailed)
+  end
+
+  it "Checking error when surname format is invalid" do
+    @new_student[:surname] = "kOwAlSkI"
+    expect{@new_student.save}.to raise_error(Sequel::ValidationFailed)
+  end
+
+  it "Checking error when surname is not string" do
+    @new_student[:surname] = ["Kowalski"]
+    expect{@new_student.save}.to raise_error(Sequel::ValidationFailed)
+  end
+
+
 
   after{
     @new_student = nil

@@ -1,4 +1,4 @@
-require_relative '../lib/Register.rb'
+require_relative '../../lib/Register.rb'
 
 describe "Checking Teacher class initialization" do
   before{
@@ -44,7 +44,7 @@ describe "Checking Teacher class functionality" do
 
   it "Updating value shouldn't increase dataset length" do
     @updated_teacher = Teacher.last
-    @updated_teacher[:surname] = "NewSurname"
+    @updated_teacher[:surname] = "New-Surname"
     @updated_teacher.save
     expect(Teacher.dataset.count).to eq(@post_add_len)
   end
@@ -75,18 +75,56 @@ describe "Checking Teacher class functionality" do
   }
 end
 
-describe "Checking Teacher class validation" do
+describe "Checking Student class validation" do
   before{
     @new_teacher = Teacher.new
+    @new_teacher[:name] = "Jan"
+    @new_teacher[:surname] = "Kowalski"
   }
 
-  it "lol" do
+  it "Checking error when name is nil" do
     @new_teacher[:name] = nil
-    @new_teacher[:surname] = "surname"
     expect{@new_teacher.save}.to raise_error(Sequel::ValidationFailed)
   end
+
+  it "Checking error when name is too short" do
+    @new_teacher[:name] = "D"
+    expect{@new_teacher.save}.to raise_error(Sequel::ValidationFailed)
+  end
+
+  it "Checking error when name format is invalid" do
+    @new_teacher[:name] = "D4wid"
+    expect{@new_teacher.save}.to raise_error(Sequel::ValidationFailed)
+  end
+
+  it "Checking error when name is not string" do
+    @new_teacher[:name] = 4
+    expect{@new_teacher.save}.to raise_error(Sequel::ValidationFailed)
+  end
+
+  it "Checking error when surname is nil" do
+    @new_teacher[:surname] = nil
+    expect{@new_teacher.save}.to raise_error(Sequel::ValidationFailed)
+  end
+
+  it "Checking error when surname is too short" do
+    @new_teacher[:surname] = "Ko"
+    expect{@new_teacher.save}.to raise_error(Sequel::ValidationFailed)
+  end
+
+  it "Checking error when surname format is invalid" do
+    @new_teacher[:surname] = "kOwAlSkI"
+    expect{@new_teacher.save}.to raise_error(Sequel::ValidationFailed)
+  end
+
+  it "Checking error when surname is not string" do
+    @new_teacher[:surname] = ["Kowalski"]
+    expect{@new_teacher.save}.to raise_error(Sequel::ValidationFailed)
+  end
+
 
   after{
     @new_teacher = nil
   }
+
 end
