@@ -22,6 +22,7 @@ class Database
             primary_key :id
             String :name
             foreign_key :Teacher_id, :Teacher, key: :id
+            unique :name
         end
         @@db.create_table :Note do
             primary_key :id

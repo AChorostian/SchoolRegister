@@ -26,7 +26,7 @@ end
 
 describe "Checking Subject class functionality" do
 
-  before {
+  before(:each) do
     Database.init
     @test_teacher = Teacher.new
     @test_teacher[:name] = "Test"
@@ -41,7 +41,8 @@ describe "Checking Subject class functionality" do
     @subject.save
 
     @post_add_len = Subject.dataset.count
-  }
+
+  end
 
 
   it "Inserting value should increase dataset length" do
@@ -80,12 +81,27 @@ describe "Checking Subject class functionality" do
     expect(Subject.last).not_to eq(@removed_subject)
   end
 
-  after{
+  after(:each) do
     @test_teacher = nil
     @subject = nil
+  end
+end
+
+describe "Negative cases" do
+  before{
+    Database.init
+    @subject = Subject.new
+    @subject[:name] = "Testing subjects"
   }
 
+  it "Assigning id of non existing teacher" do
+    @subject[:Teacher_id] = 1
+    expect{@subject.save}.to raise_error{Sequel::ValidationFailed}
+  end
 
+  after{
+    @subject = nil
+  }
 end
 
 describe "Checking Subject class validation" do
@@ -134,7 +150,7 @@ describe "Checking Subject class validation" do
 
   it "Checking error when teacher_id is negative integer" do
     @subject[:Teacher_id] = -1
-    expect{@subject.save}.to raise_error(Sequel::ValidationFailed,'Teacher_id Teacher_id value is lower than 0')
+    expect{@subject.save}.to raise_error(Sequel::ValidationFailed)
   end
 
   after {

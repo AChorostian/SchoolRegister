@@ -27,6 +27,7 @@ end
 describe "Checking StudentSubject Class functionality" do
 
   before {
+    Database.init
     @test_student = Student.new
     @test_student[:name] = "Test"
     @test_student[:surname] = "Student"
@@ -107,6 +108,28 @@ describe "Checking StudentSubject Class functionality" do
     @test_update_student = nil
     @studentSubject = nil
   }
+end
+
+describe "Negative cases - StudentSubject" do
+
+  before(:each) do
+    Database.init
+    @studentSubject = StudentSubject.new
+  end
+
+  it "Assigning id of non existing Student" do
+    @studentSubject[:Student_id] = 1
+    expect{@studentSubject.save}.to raise_error(Sequel::ValidationFailed)
+  end
+
+  it "Assigning id of non existing Subject" do
+    @studentSubject[:Subject_id] = 1
+    expect{@studentSubject.save}.to raise_error(Sequel::ValidationFailed)
+  end
+
+  after(:each) do
+    @studentSubject = nil
+  end
 
 
 end
@@ -114,6 +137,7 @@ end
 describe "Checking StudentSubject Class validation" do
 
   before {
+    Database.init
     @test_student = Student.new
     @test_student[:name] = "Test"
     @test_student[:surname] = "Student"

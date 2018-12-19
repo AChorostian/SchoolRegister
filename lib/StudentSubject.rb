@@ -10,6 +10,8 @@ class StudentSubject < Sequel::Model(Database.db[:StudentSubject])
         validates_type Integer, [:Student_id,:Subject_id], message: 'wrong value type'
         errors.add(:Student_id, 'Student_id value is lower than 0') if self[:Student_id].to_i <= 0
         errors.add(:Subject_id, 'Subject_id value is lower than 0') if self[:Subject_id].to_i <= 0
+        errors.add(:Student_id, 'Student does not exist') if Student[self[:Student_id].to_i].nil?
+        errors.add(:Subject_id, 'Subject does not exist') if Subject[self[:Subject_id].to_i].nil?
         validates_unique([:Student_id,:Subject_id])
     end
 
