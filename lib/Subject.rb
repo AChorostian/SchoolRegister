@@ -10,7 +10,7 @@ class Subject < Sequel::Model(Database.db[:Subject])
         validates_type String , :name, message: 'wrong value type'
         validates_type Integer, :Teacher_id, message: 'wrong value type'
         validates_length_range 3..50, :name, message: lambda{|s| "should be more than #{s} characters"}
-        errors.add(:Teacher_id, 'Teacher_id value is lower than 0') if self[:Teacher_id] <= 0
+        errors.add(:Teacher_id, 'Teacher_id value is lower than 0') if self[:Teacher_id].to_i <= 0
         validates_format /^[A-ZĄĆĘŁŃÓŚŹŻ][a-ząćęłńóśźż]+(([ ])[A-ZĄĆĘŁŃÓŚŹŻa-ząćęłńóśźż]+)*$/, :name, message: "contains invalid characters"
 
     end
