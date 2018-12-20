@@ -21,7 +21,7 @@ class Database
         @@db.create_table :Subject do
             primary_key :id
             String :name
-            foreign_key :Teacher_id, :Teacher, key: :id
+            foreign_key :Teacher_id, :Teacher, key: :id, on_delete: :set_null
             unique :name
         end
         @@db.create_table :Note do

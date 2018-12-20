@@ -13,6 +13,7 @@ class Teacher < Sequel::Model(Database.db[:Teacher])
         validates_format /^[A-ZĄĆĘŁŃÓŚŹŻ][a-ząćęłńóśźż]+(([-][A-ZĄĆĘŁŃÓŚŹŻ])[a-ząćęłńóśźż]+)?$/, :surname, message: "contains invalid characters"
     end
 
+
     def self.printlabels
         puts " Nr |        Imię |     Nazwisko "
         puts "----+-------------+--------------"
