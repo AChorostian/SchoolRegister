@@ -24,12 +24,4 @@ class StudentSubject < Sequel::Model(Database.db[:StudentSubject])
         self.Subject.printline(nr)
     end
 
-    def cascadedelete
-        grades = Grade.where(StudentSubject_id: self.id)
-        grades.each do |n|
-            n.delete
-        end
-        self.delete
-    end
-
 end

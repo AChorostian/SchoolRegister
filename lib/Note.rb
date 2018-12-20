@@ -31,10 +31,6 @@ class Note < Sequel::Model(Database.db[:Note])
         printf("%3d |%11s |%22s | %s\n" , nr+1 , date.to_s , teacher_string , description.to_s )
     end
 
-    def cascadedelete
-        self.delete
-    end
-
 end
 
 
