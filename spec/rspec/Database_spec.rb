@@ -18,3 +18,18 @@ describe "Checking class initialization" do
   }
 
 end
+
+describe "Checking Database class functionality" do
+  before(:each) do
+    @data = Database.init
+  end
+
+  it "Checking if Student table was created correctly" do
+    puts Database.db.schema(:Student)
+  end
+
+  before(:each) do
+    @data = nil
+  end
+
+end

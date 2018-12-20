@@ -41,7 +41,6 @@ describe "Checking Subject class functionality" do
     @subject.save
 
     @post_add_len = Subject.dataset.count
-
   end
 
 
@@ -80,6 +79,34 @@ describe "Checking Subject class functionality" do
     @removed_subject.delete
     expect(Subject.last).not_to eq(@removed_subject)
   end
+
+  it "Associating subject to StudentSubject and removing subject should remove StudentSubject" do
+
+    @test_student = Student.new
+    @test_student[:name] = "Test"
+    @test_student[:surname] = "Teacher"
+    @test_student.save
+
+    @removed_subject = Subject.last
+
+    @studentSubject = StudentSubject.new
+    @studentSubject[:Student_id] = @test_student[:id]
+    @studentSubject[:Subject_id] = @removed_subject[:id]
+    @studentSubject.save
+
+    @removed_subject.delete
+
+    expect(StudentSubject.last).not_to be(@studentSubject)
+  end
+
+  it "Checking print function" do
+    expect{@subject.printline(1)}.to output(/2[ |]+Testing subjects[ |]+Test[ |]+Teacher$/).to_stdout
+  end
+
+  it "Checking print label function" do
+    expect{Subject.printlabels}.to output.to_stdout
+  end
+
 
   after(:each) do
     @test_teacher = nil
@@ -125,6 +152,11 @@ describe "Checking Subject class validation" do
 
   it "Checking error when name is too short" do
     @subject[:name] = "T"
+    expect{@subject.save}.to raise_error(Sequel::ValidationFailed)
+  end
+
+  it "Checking error when name is too long" do
+    @subject[:name] = "Test too long too long too long too long too long too long too long too long"
     expect{@subject.save}.to raise_error(Sequel::ValidationFailed)
   end
 

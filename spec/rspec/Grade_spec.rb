@@ -97,6 +97,14 @@ describe "Checking Grade class functionality" do
     expect(Grade.last).not_to eq(@removed_grade)
   end
 
+  it "Checking print function" do
+    expect{@grade.printline(1)}.to output(/2[ |]+5[ |]+Za projekt z ruby[ |]+08.01.2019$/).to_stdout
+  end
+
+  it "Checking print label function" do
+    expect{Grade.printlabels}.to output.to_stdout
+  end
+
   after{
     @test_teacher = nil
     @test_subject = nil
@@ -104,8 +112,6 @@ describe "Checking Grade class functionality" do
     @grade = nil
     @test_studentSubject = nil
   }
-
-
 
 end
 
@@ -190,6 +196,12 @@ describe "Checking Grade class functionality" do
 
   it "Checking error when comment is too short" do
     @grade[:comment] = "T"
+    expect{@grade.save}.to raise_error(Sequel::ValidationFailed)
+  end
+
+  it "Checking error when comment is too long" do
+    long_comment = "Too long comment " * 50
+    @grade[:comment] = long_comment
     expect{@grade.save}.to raise_error(Sequel::ValidationFailed)
   end
 

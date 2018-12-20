@@ -39,7 +39,7 @@ describe "Checking StudentSubject Class functionality" do
     @test_teacher.save
 
     @test_subject = Subject.new
-    @test_subject[:name] = "Test"
+    @test_subject[:name] = "Testing subject"
     @test_subject[:Teacher_id] = @test_teacher[:id]
     @test_subject.save
 
@@ -100,6 +100,31 @@ describe "Checking StudentSubject Class functionality" do
     @removed_studentSubject.delete
     expect(StudentSubject.last).not_to eq(@removed_studentSubject)
   end
+
+  it "Associating studentSubject to grade and removing studentSubject should remove grade" do
+
+    @removed_studentSubject = StudentSubject.last
+
+    @grade = Grade.new
+    @grade[:grade] = 5
+    @grade[:comment] = "Za projekt z ruby"
+    @grade[:date] = "08.01.2019"
+    @grade[:StudentSubject_id] = @removed_studentSubject[:id]
+    @grade.save
+
+    @removed_studentSubject.delete
+
+    expect(Grade.last).not_to be(@grade)
+  end
+
+  it "Checking print function" do
+    expect{@studentSubject.printline(1)}.to output(/2[ |]+Testing subject[ |]+Test[ |]+Teacher$/).to_stdout
+  end
+
+  it "Checking print label function" do
+    expect{StudentSubject.printlabels}.to output.to_stdout
+  end
+
 
   after{
     @test_teacher = nil

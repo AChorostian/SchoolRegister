@@ -87,6 +87,15 @@ describe "Checking Note Class functionality" do
     expect(Note.last).not_to eq(@removed_note)
   end
 
+  it "Checking print function" do
+    expect{@note.printline(1)}.to output(/2[ |]+01.01.2018[ |]+Test[ |]+Teacher[ |]+Description of the note$/).to_stdout
+  end
+
+  it "Checking print label function" do
+    expect{Note.printlabels}.to output.to_stdout
+  end
+
+
 
   after {
     @test_teacher = nil
@@ -148,6 +157,12 @@ describe "Checking Note Class validation" do
 
   it "Checking error when description is too short" do
     @note[:description] = "D"
+    expect{@note.save}.to raise_error(Sequel::ValidationFailed)
+  end
+
+  it "Checking error when description is too long" do
+    long_description = "Too long description " * 50
+    @note[:description] = long_description
     expect{@note.save}.to raise_error(Sequel::ValidationFailed)
   end
 

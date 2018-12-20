@@ -29,7 +29,7 @@ describe "Checking Teacher class functionality" do
     @new_teacher = Teacher.new
     @pre_add_len = Teacher.dataset.count
     @new_teacher[:name] = "Jan"
-    @new_teacher[:surname] = "Abacki"
+    @new_teacher[:surname] = "Kowalski"
     @new_teacher.save
     @post_add_len = Teacher.dataset.count
   }
@@ -104,6 +104,14 @@ describe "Checking Teacher class functionality" do
 
   end
 
+  it "Checking print function" do
+    expect{@new_teacher.printline(1)}.to output(/2[ |]+Jan[ |]+Kowalski$/).to_stdout
+  end
+
+  it "Checking print label function" do
+    expect{Teacher.printlabels}.to output.to_stdout
+  end
+
   after{
     @new_teacher = nil
   }
@@ -126,6 +134,11 @@ describe "Checking Teacher class validation" do
     expect{@new_teacher.save}.to raise_error(Sequel::ValidationFailed)
   end
 
+  it "Checking error when name is too long" do
+    @new_teacher[:name] = "Testlongnamenamenamenamenamenamenamenamenamenamenamenamenamenamenamename"
+    expect{@new_teacher.save}.to raise_error(Sequel::ValidationFailed)
+  end
+
   it "Checking error when name format is invalid" do
     @new_teacher[:name] = "D4wid"
     expect{@new_teacher.save}.to raise_error(Sequel::ValidationFailed)
@@ -143,6 +156,11 @@ describe "Checking Teacher class validation" do
 
   it "Checking error when surname is too short" do
     @new_teacher[:surname] = "Ko"
+    expect{@new_teacher.save}.to raise_error(Sequel::ValidationFailed)
+  end
+
+  it "Checking error when surname is too long" do
+    @new_teacher[:surname] = "Testlongnamenamenamenamenamenamenamenamenamenamenamenamenamenamenamename"
     expect{@new_teacher.save}.to raise_error(Sequel::ValidationFailed)
   end
 
