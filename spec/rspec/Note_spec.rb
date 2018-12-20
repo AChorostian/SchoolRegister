@@ -17,6 +17,10 @@ describe "Checking Note class initialization" do
     expect(@note).to be_a(Sequel::Model)
   end
 
+  it "Note is associated with :Student table" do
+    expect(Note.table_name).to eq(:Note)
+  end
+
 
   after{
     @note = nil

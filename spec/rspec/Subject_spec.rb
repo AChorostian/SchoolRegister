@@ -17,6 +17,10 @@ describe "Checking Subject class initialization" do
     expect(@subject).to be_a(Sequel::Model)
   end
 
+  it "Subject is associated with :Student table" do
+    expect(Subject.table_name).to eq(:Subject)
+  end
+
   after{
     @subject = nil
 
