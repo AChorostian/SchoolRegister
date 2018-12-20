@@ -12,5 +12,4 @@ end
    t.warning = false
  end
 
-task default: :spec
-task :default => :test
+task default: [:spec,:test]
