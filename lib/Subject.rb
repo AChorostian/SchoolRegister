@@ -7,7 +7,7 @@ class Subject < Sequel::Model(Database.db[:Subject])
     def validate
         super
         validates_presence [:name,:Teacher_id], message: 'Nie podano wszystkich niezbędnych danych.'
-        validates_type String , :name, message: 'Nieprawidłowy typ danych dla imienia/nazwiska.'
+        validates_type String , :name, message: 'Nieprawidłowy typ danych dla nazwy przedmiotu.'
         validates_type Integer, :Teacher_id, message: 'Nieprawidłowy typ danych dla nauczyciela'
         validates_length_range 2..50, :name, message: lambda{|s| "Imie powinno mieć więcej niż #{s} znaków"}
         validates_unique :name, message: 'Przedmiot o takiej nazwie już istnieje.'

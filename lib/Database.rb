@@ -10,24 +10,24 @@ class Database
         drops
         @@db.create_table :Student do
             primary_key :id
-            String :name
-            String :surname
+            String :name, size: 50, null: false
+            String :surname, size: 50, null: false
         end
         @@db.create_table :Teacher do
             primary_key :id
-            String :name
-            String :surname
+            String :name, size: 50, null: false
+            String :surname, size: 50, null: false
         end
         @@db.create_table :Subject do
             primary_key :id
-            String :name
+            String :name, size: 50, null: false
             foreign_key :Teacher_id, :Teacher, key: :id, on_delete: :cascade
             unique :name
         end
         @@db.create_table :Note do
             primary_key :id
-            String :description
-            String :date
+            String :description, size: 500, null: false
+            String :date, size: 30, null: false
             foreign_key :Student_id, :Student, key: :id, on_delete: :cascade
             foreign_key :Teacher_id, :Teacher, key: :id, on_delete: :cascade
         end
@@ -40,9 +40,10 @@ class Database
         @@db.create_table :Grade do
             primary_key :id
             Integer :grade
-            String :comment
-            String :date
+            String :comment, size: 500, null: false
+            String :date, size: 30, null: false
             foreign_key :StudentSubject_id, :StudentSubject, key: :id, on_delete: :cascade
+            check{grade >0 and grade <7}
         end
     end
 
