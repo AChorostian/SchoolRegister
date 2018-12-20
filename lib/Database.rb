@@ -21,20 +21,20 @@ class Database
         @@db.create_table :Subject do
             primary_key :id
             String :name
-            foreign_key :Teacher_id, :Teacher, key: :id, on_delete: :set_null
+            foreign_key :Teacher_id, :Teacher, key: :id, on_delete: :cascade
             unique :name
         end
         @@db.create_table :Note do
             primary_key :id
             String :description
             String :date
-            foreign_key :Student_id, :Student, key: :id
-            foreign_key :Teacher_id, :Teacher, key: :id
+            foreign_key :Student_id, :Student, key: :id, on_delete: :cascade
+            foreign_key :Teacher_id, :Teacher, key: :id, on_delete: :cascade
         end
         @@db.create_table :StudentSubject do
             primary_key :id
-            foreign_key :Student_id, :Student, key: :id
-            foreign_key :Subject_id, :Subject, key: :id
+            foreign_key :Student_id, :Student, key: :id, on_delete: :cascade
+            foreign_key :Subject_id, :Subject, key: :id, on_delete: :cascade
             unique [:Student_id, :Subject_id]
         end
         @@db.create_table :Grade do
@@ -42,7 +42,7 @@ class Database
             Integer :grade
             String :comment
             String :date
-            foreign_key :StudentSubject_id, :StudentSubject, key: :id
+            foreign_key :StudentSubject_id, :StudentSubject, key: :id, on_delete: :cascade
         end
     end
 
