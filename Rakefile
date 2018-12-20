@@ -12,5 +12,5 @@ end
    t.warning = false
  end
 
-#task default: :spec
+task default: :spec
 task :default => :test
