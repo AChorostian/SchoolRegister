@@ -22,11 +22,11 @@ SimpleCov.start do
     add_filter '/lib/Menu.rb'
     add_filter '/lib/Single.rb'
     add_filter '/spec/' # for rspec
-    add_filter '/test/' # for minitest
+    add_filter '/test/' # for test
 end
 RSpec.configure do |config|
     # rspec-expectations config goes here. You can use an alternate
-    # assertion/expectation library such as wrong or the stdlib/minitest
+    # assertion/expectation library such as wrong or the stdlib/test
     # assertions if you prefer.
     config.expect_with :rspec do |expectations|
         # This option will default to `true` in RSpec 4. It makes the `description`
