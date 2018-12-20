@@ -27,8 +27,4 @@ class Grade < Sequel::Model(Database.db[:Grade])
         printf("%3d |%6s |%16s |%11s\n" , nr+1 , grade.to_s , comment.to_s , date.to_s)
     end
 
-    def cascadedelete
-        self.delete
-    end
-
 end

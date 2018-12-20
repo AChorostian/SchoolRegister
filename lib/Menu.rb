@@ -20,9 +20,9 @@ class Menu
           when 1 then List.Student
           when 2 then List.Subject
           when 3 then List.Teacher
-          when 4 then exit
-          when 5 then exit
-          when 6 then exit
+          when 4 then Add.Student
+          when 5 then Add.Subject
+          when 6 then Add.Teacher
           else exit
       end
   end

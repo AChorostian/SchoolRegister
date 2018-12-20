@@ -13,7 +13,8 @@ class Subject < Sequel::Model(Database.db[:Subject])
         validates_unique :name, message: 'Przedmiot o takiej nazwie już istnieje.'
         errors.add(:Teacher_id, 'Błędne przypisanie dla nauczyciela!') if self[:Teacher_id].to_i <= 0
         errors.add(:Teacher_id, 'Dany nauczyciel nie istnieje!') if Teacher[self[:Teacher_id].to_i] == nil
-        validates_format /^[A-ZĄĆĘŁŃÓŚŹŻ]?[a-ząćęłńóśźż]+(([ ])[A-ZĄĆĘŁŃÓŚŹŻa-ząćęłńóśźż]+)*$/, :name, message: "Błędny format imienia"
+        validates_format /^[A-ZĄĆĘŁŃÓŚŹŻ]?[a-ząćęłńóśźż]+(([ ])[A-ZĄĆĘŁŃÓŚŹŻa-ząćęłńóśźż]+)*$/, :name, message:
+        "Błędny format nazwy"
 
     end
 
@@ -24,13 +25,6 @@ class Subject < Sequel::Model(Database.db[:Subject])
 
     def printline(nr)
         printf("%3d |%16s |%23s\n" , nr+1 , name , self.Teacher.name + " " + self.Teacher.surname )
-    end
-
-    def cascadedelete
-        self.StudentSubject.each do |n|
-            n.cascadedelete
-        end
-        self.delete
     end
 
 end

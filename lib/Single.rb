@@ -28,10 +28,10 @@ class Single
         when 1 then List.StudentSubject(student_id); self.Student(student_id,student_nr)
         when 2 then List.Note(student_id) ; self.Student(student_id,student_nr)
         when 3 then exit
-        when 4 then exit
+        when 4 then Add.Note(student_id) ; self.Student(student_id,student_nr)
         when 5 then exit
         when 6 then exit
-        when 7 then student.cascadedelete
+        when 7 then student.delete
         end
     end
 
@@ -58,7 +58,7 @@ class Single
         case gets.to_i
         when 1 then exit
         when 2 then exit
-        when 3 then subject.cascadedelete
+        when 3 then subject.delete
         when 4 then exit
         when 5 then exit
         else exit
@@ -88,7 +88,7 @@ class Single
         case gets.to_i
         when 1 then exit
         when 2 then exit
-        when 3 then teacher.cascadedelete
+        when 3 then teacher.delete
         when 4 then exit
         when 5 then exit
         else exit
@@ -123,7 +123,7 @@ class Single
         when 1 then exit
         when 2 then exit
         when 3 then exit
-        when 4 then note.cascadedelete
+        when 4 then note.delete
         when 5 then exit
         else exit
         end
@@ -157,7 +157,7 @@ class Single
 
         case gets.to_i
         when 1 then List.Grade(studentsubject_id,studentsubject_nr); self.StudentSubject(studentsubject_id,studentsubject_nr)
-        when 2 then studentsubject.cascadedelete
+        when 2 then studentsubject.delete
         when 3 then exit
         when 4 then exit
         when 5 then exit
@@ -197,7 +197,7 @@ class Single
         when 1 then exit
         when 2 then exit
         when 3 then exit
-        when 4 then grade.cascadedelete
+        when 4 then grade.delete
         else exit
         end
     end
