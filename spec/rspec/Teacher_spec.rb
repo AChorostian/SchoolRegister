@@ -76,7 +76,7 @@ describe "Checking Teacher class functionality" do
     @subject[:Teacher_id] = @new_teacher[:id]
     @subject.save
     @new_teacher.delete
-    expect(Subject[1][:Teacher_id]).to be nil
+    expect(Subject.first).to be(nil)
   end
 
   after{

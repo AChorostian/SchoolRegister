@@ -28,7 +28,7 @@ describe "Checking Student class functionality" do
     @new_student = Student.new
     @pre_add_len = Student.dataset.count
     @new_student[:name] = "Jan"
-    @new_student[:surname] = "Abacki"
+    @new_student[:surname] = "Kowalski"
     @new_student.save
     @post_add_len = Student.dataset.count
   }
