@@ -87,6 +87,11 @@ describe "Checking Note Class functionality" do
     expect(Note.last).not_to eq(@removed_note)
   end
 
+  it "Checking print function" do
+    expect{@note.printline(1)}.to output(/2[ |]+01.01.2018[ |]+Test[ |]+Teacher[ |]+Description of the note$/).to_stdout
+  end
+
+
 
   after {
     @test_teacher = nil

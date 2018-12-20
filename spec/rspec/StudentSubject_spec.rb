@@ -39,7 +39,7 @@ describe "Checking StudentSubject Class functionality" do
     @test_teacher.save
 
     @test_subject = Subject.new
-    @test_subject[:name] = "Test"
+    @test_subject[:name] = "Testing subject"
     @test_subject[:Teacher_id] = @test_teacher[:id]
     @test_subject.save
 
@@ -115,6 +115,10 @@ describe "Checking StudentSubject Class functionality" do
     @removed_studentSubject.delete
 
     expect(Grade.last).not_to be(@grade)
+  end
+
+  it "Checking print function" do
+    expect{@studentSubject.printline(1)}.to output(/2[ |]+Testing subject[ |]+Test[ |]+Teacher$/).to_stdout
   end
 
 

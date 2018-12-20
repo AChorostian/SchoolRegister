@@ -99,6 +99,10 @@ describe "Checking Subject class functionality" do
     expect(StudentSubject.last).not_to be(@studentSubject)
   end
 
+  it "Checking print function" do
+    expect{@subject.printline(1)}.to output(/2[ |]+Testing subjects[ |]+Test[ |]+Teacher$/).to_stdout
+  end
+
 
   after(:each) do
     @test_teacher = nil

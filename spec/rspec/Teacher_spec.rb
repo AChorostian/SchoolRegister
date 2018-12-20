@@ -29,7 +29,7 @@ describe "Checking Teacher class functionality" do
     @new_teacher = Teacher.new
     @pre_add_len = Teacher.dataset.count
     @new_teacher[:name] = "Jan"
-    @new_teacher[:surname] = "Abacki"
+    @new_teacher[:surname] = "Kowalski"
     @new_teacher.save
     @post_add_len = Teacher.dataset.count
   }
@@ -102,6 +102,10 @@ describe "Checking Teacher class functionality" do
     @removed_teacher.delete
     expect(Note.last).not_to be(@note)
 
+  end
+
+  it "Checking print function" do
+    expect{@new_teacher.printline(1)}.to output(/2[ |]+Jan[ |]+Kowalski$/).to_stdout
   end
 
   after{

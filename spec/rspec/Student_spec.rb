@@ -113,6 +113,10 @@ describe "Checking Student class functionality" do
     expect(StudentSubject.last).not_to be(@studentSubject)
   end
 
+  it "Checking print function" do
+    expect{@new_student.printline(1)}.to output(/2[ |]+Jan[ |]+Kowalski$/).to_stdout
+  end
+
   after{
     @new_student = nil
   }

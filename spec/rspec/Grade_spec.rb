@@ -97,6 +97,10 @@ describe "Checking Grade class functionality" do
     expect(Grade.last).not_to eq(@removed_grade)
   end
 
+  it "Checking print function" do
+    expect{@grade.printline(1)}.to output(/2[ |]+5[ |]+Za projekt z ruby[ |]+08.01.2019$/).to_stdout
+  end
+
   after{
     @test_teacher = nil
     @test_subject = nil
