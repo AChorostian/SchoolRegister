@@ -8,8 +8,10 @@ class Note < Sequel::Model(Database.db[:Note])
     def validate
         super
         validates_presence [:description,:date,:Student_id,:Teacher_id], message: 'Nie podano wszystkich niezbędnych danych.'
-        validates_type String, [:description,:date], message: 'Nieprawidłowy typ danych dla opisu.'
-        validates_type Integer, [:Teacher_id,:Student_id], message: 'Nieprawidłowy typ danych dla nauczyciela/ucznia.'
+        validates_type String, :description, message: 'Nieprawidłowy typ danych dla opisu.'
+        validates_type String, :date, message: 'Nieprawidłowy typ danych dla daty.'
+        validates_type Integer, :Teacher_id, message: 'Nieprawidłowy typ danych dla nauczyciela.'
+        validates_type Integer, :Student_id, message: 'Nieprawidłowy typ danych dla ucznia.'
         validates_length_range 3..500, :description, message: lambda{|s| "Opis powinien mieć więcej niż #{s} znaków"}
         errors.add(:Teacher_id, 'Dany nauczyciel nie istnieje!') if Teacher[self[:Teacher_id].to_i] == nil
         errors.add(:Student_id, 'Dany uczeń nie istnieje!') if Student[self[:Student_id].to_i] == nil

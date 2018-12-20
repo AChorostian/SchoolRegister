@@ -12,7 +12,7 @@ class StudentSubject < Sequel::Model(Database.db[:StudentSubject])
         errors.add(:Subject_id, 'Błędne przypisanie dla przedmiotu!') if self[:Subject_id].to_i <= 0
         errors.add(:Student_id, 'Dany student nie istnieje!') if Student[self[:Student_id].to_i].nil?
         errors.add(:Subject_id, 'Dany przedmiot nie istnieje!') if Subject[self[:Subject_id].to_i].nil?
-        validates_unique([:Student_id,:Subject_id])
+        validates_unique([:Student_id,:Subject_id], message: 'Uczeń jest już przypisany do tego przedmiotu.')
     end
 
     def self.printlabels
