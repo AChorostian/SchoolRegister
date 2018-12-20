@@ -70,12 +70,21 @@ describe "Checking Teacher class functionality" do
     expect(Teacher.last).not_to eq(@removed_teacher)
   end
 
+  it "Associating teacher to subject and removing teacher should set teacher_id to nil" do
+    @subject = Subject.new
+    @subject[:name] = "Testing subjects"
+    @subject[:Teacher_id] = @new_teacher[:id]
+    @subject.save
+    @new_teacher.delete
+    expect(Subject[1][:Teacher_id]).to be nil
+  end
+
   after{
     @new_teacher = nil
   }
 end
 
-describe "Checking Student class validation" do
+describe "Checking Teacher class validation" do
   before{
     @new_teacher = Teacher.new
     @new_teacher[:name] = "Jan"
