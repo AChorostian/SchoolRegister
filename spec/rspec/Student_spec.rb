@@ -69,6 +69,50 @@ describe "Checking Student class functionality" do
     expect(Student.last).not_to eq(@removed_student)
   end
 
+  it "Associating student to note and removing student should remove note" do
+
+    @test_teacher = Teacher.new
+    @test_teacher[:name] = "Test"
+    @test_teacher[:surname] = "Teacher"
+    @test_teacher.save
+
+    @removed_student = Student.last
+
+    @note = Note.new
+    @note[:description] = "Description of the note"
+    @note[:date] = "01.01.2018"
+    @note[:Student_id] = @removed_student[:id]
+    @note[:Teacher_id] = @test_teacher[:id]
+    @note.save
+
+    @removed_student.delete
+
+    expect(Note.last).not_to be(@note)
+  end
+
+  it "Associating student to StudentSubject and removing student should remove StudentSubject" do
+    @test_teacher = Teacher.new
+    @test_teacher[:name] = "Test"
+    @test_teacher[:surname] = "Teacher"
+    @test_teacher.save
+
+    @test_subject = Subject.new
+    @test_subject[:name] = "Test"
+    @test_subject[:Teacher_id] = @test_teacher[:id]
+    @test_subject.save
+
+    @removed_student = Student.last
+
+    @studentSubject = StudentSubject.new
+    @studentSubject[:Student_id] = @removed_student[:id]
+    @studentSubject[:Subject_id] = @test_subject[:id]
+    @studentSubject.save
+
+    @removed_student.delete
+
+    expect(StudentSubject.last).not_to be(@studentSubject)
+  end
+
   after{
     @new_student = nil
   }
