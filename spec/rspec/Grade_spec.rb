@@ -18,6 +18,10 @@ describe "Checking Grade class initialization" do
     expect(@grade).to be_a(Sequel::Model)
   end
 
+  it "Grade is associated with :Student table" do
+    expect(Grade.table_name).to eq(:Grade)
+  end
+
   after{
     @grade = nil
   }
