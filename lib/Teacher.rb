@@ -22,4 +22,14 @@ class Teacher < Sequel::Model(Database.db[:Teacher])
         printf("%3d |%12s |%13s\n" , nr+1 , name , surname )
     end
 
+    def cascadedelete
+        self.Note.each do |n|
+            n.cascadedelete
+        end
+        self.Subject.each do |s|
+            s.cascadedelete
+        end
+        self.delete
+    end
+
 end

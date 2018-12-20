@@ -26,6 +26,13 @@ class Subject < Sequel::Model(Database.db[:Subject])
         printf("%3d |%16s |%23s\n" , nr+1 , name , self.Teacher.name + " " + self.Teacher.surname )
     end
 
+    def cascadedelete
+        self.StudentSubject.each do |n|
+            n.cascadedelete
+        end
+        self.delete
+    end
+
 end
 
 

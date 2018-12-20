@@ -10,7 +10,7 @@ class List
         print "podaj nr: "
         input = gets.to_i
         if input != 0
-            Single.Student(input)
+            Single.Student(Student.to_a[input-1].id,input-1)
             self.Student
         end
     end
@@ -25,7 +25,7 @@ class List
         print "podaj nr: "
         input = gets.to_i
         if input != 0
-            Single.Subject(input)
+            Single.Subject(Subject.to_a[input-1].id,input-1)
             self.Subject
         end
     end
@@ -40,7 +40,7 @@ class List
         print "podaj nr: "
         input = gets.to_i
         if input != 0
-            Single.Teacher(input)
+            Single.Teacher(Teacher.to_a[input-1].id,input-1)
             self.Teacher
         end
     end

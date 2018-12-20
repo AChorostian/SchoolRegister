@@ -1,13 +1,13 @@
 class Single
 
-    def self.Student(student_id)
+    def self.Student(student_id,student_nr)
 
         student = Student.where(id: student_id).first
 
         Menu.top
         puts "== Uczeń =="
         Student.printlabels
-        student.printline(student_id-1)
+        student.printline(student_nr)
         puts ""
         puts "1. Lista przedmiotów"
         puts "2. Lista uwag"
@@ -25,25 +25,24 @@ class Single
         print "podaj nr: "
 
         case gets.to_i
-        when 1 then List.StudentSubject(student_id)
-        when 2 then List.Note(student_id)
+        when 1 then List.StudentSubject(student_id); self.Student(student_id,student_nr)
+        when 2 then List.Note(student_id) ; self.Student(student_id,student_nr)
         when 3 then exit
         when 4 then exit
         when 5 then exit
         when 6 then exit
-        when 7 then exit
-        else exit
+        when 7 then student.cascadedelete
         end
     end
 
-    def self.Subject(subject_id)
+    def self.Subject(subject_id,subject_nr)
 
         subject = Subject.where(id: subject_id).first
 
         Menu.top
         puts "== Przedmiot =="
         Subject.printlabels
-        subject.printline(subject_id-1)
+        subject.printline(subject_nr)
         puts ""
         puts "1. Edytuj nazwę"
         puts "2. Zmień nauczyciela"
@@ -59,21 +58,21 @@ class Single
         case gets.to_i
         when 1 then exit
         when 2 then exit
-        when 3 then exit
+        when 3 then subject.cascadedelete
         when 4 then exit
         when 5 then exit
         else exit
         end
     end
 
-    def self.Teacher(teacher_id)
+    def self.Teacher(teacher_id,teacher_nr)
 
         teacher = Teacher.where(id: teacher_id).first
 
         Menu.top
         puts "== Nauczyciel =="
         Teacher.printlabels
-        teacher.printline(teacher_id-1)
+        teacher.printline(teacher_nr)
         puts ""
         puts "1. Edytuj imię"
         puts "2. Edytuj nazwisko"
@@ -89,7 +88,7 @@ class Single
         case gets.to_i
         when 1 then exit
         when 2 then exit
-        when 3 then exit
+        when 3 then teacher.cascadedelete
         when 4 then exit
         when 5 then exit
         else exit
@@ -113,7 +112,7 @@ class Single
         puts "2. Edytuj opis"
         puts "3. Zmień nauczyciela"
         puts ""
-        puts "4. Usun uwagę"
+        puts "4. Usuń uwagę"
         #puts "5. Pokaż nauczyciela, który wystawił uwagę"
         puts ""
         puts "0. Powrót"
@@ -124,7 +123,7 @@ class Single
         when 1 then exit
         when 2 then exit
         when 3 then exit
-        when 4 then exit
+        when 4 then note.cascadedelete
         when 5 then exit
         else exit
         end
@@ -157,8 +156,8 @@ class Single
         print "podaj nr: "
 
         case gets.to_i
-        when 1 then List.Grade(studentsubject_id,studentsubject_nr)
-        when 2 then exit
+        when 1 then List.Grade(studentsubject_id,studentsubject_nr); self.StudentSubject(studentsubject_id,studentsubject_nr)
+        when 2 then studentsubject.cascadedelete
         when 3 then exit
         when 4 then exit
         when 5 then exit
@@ -198,7 +197,7 @@ class Single
         when 1 then exit
         when 2 then exit
         when 3 then exit
-        when 4 then exit
+        when 4 then grade.cascadedelete
         else exit
         end
     end
