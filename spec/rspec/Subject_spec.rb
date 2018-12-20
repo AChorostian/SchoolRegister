@@ -41,7 +41,6 @@ describe "Checking Subject class functionality" do
     @subject.save
 
     @post_add_len = Subject.dataset.count
-
   end
 
 
@@ -80,6 +79,26 @@ describe "Checking Subject class functionality" do
     @removed_subject.delete
     expect(Subject.last).not_to eq(@removed_subject)
   end
+
+  it "Associating subject to StudentSubject and removing subject should remove StudentSubject" do
+
+    @test_student = Student.new
+    @test_student[:name] = "Test"
+    @test_student[:surname] = "Teacher"
+    @test_student.save
+
+    @removed_subject = Subject.last
+
+    @studentSubject = StudentSubject.new
+    @studentSubject[:Student_id] = @test_student[:id]
+    @studentSubject[:Subject_id] = @removed_subject[:id]
+    @studentSubject.save
+
+    @removed_subject.delete
+
+    expect(StudentSubject.last).not_to be(@studentSubject)
+  end
+
 
   after(:each) do
     @test_teacher = nil
