@@ -17,6 +17,10 @@ describe "Checking Student class initialization" do
       expect(@new_student).to be_a(Sequel::Model)
     end
 
+    it "Student is associated with :Student table" do
+      expect(Student.table_name).to eq(:Student)
+    end
+
     after{
       @new_student = nil
     }
