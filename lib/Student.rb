@@ -6,11 +6,11 @@ class Student < Sequel::Model(Database.db[:Student])
 
     def validate
         super
-        validates_presence [:name,:surname], message: 'was not given'
-        validates_type String, [:name, :surname], message: 'wrong value type'
-        validates_length_range 3..50, [:name,:surname], message: lambda{|s| "should be more than #{s} characters"}
-        validates_format /^[A-ZĄĆĘŁŃÓŚŹŻ][a-ząćęłńóśźż]+(([-][A-ZĄĆĘŁŃÓŚŹŻ])[a-ząćęłńóśźż]+)?$/, :name, message: "contains invalid characters"
-        validates_format /^[A-ZĄĆĘŁŃÓŚŹŻ][a-ząćęłńóśźż]+(([-][A-ZĄĆĘŁŃÓŚŹŻ])[a-ząćęłńóśźż]+)?$/, :surname, message: "contains invalid characters"
+        validates_presence [:name,:surname], message: 'Nie podano wszystkich niezbędnych danych.'
+        validates_type String, [:name, :surname], message: 'Nieprawidłowy typ danych dla imienia/nazwiska.'
+        validates_length_range 3..50, [:name,:surname], message: lambda{|s| "Opis powinien mieć więcej niż #{s} znaków"}
+        validates_format /^[A-ZĄĆĘŁŃÓŚŹŻ][a-ząćęłńóśźż]+(([-][A-ZĄĆĘŁŃÓŚŹŻ])[a-ząćęłńóśźż]+)?$/, :name, message: "Zły format imienia!"
+        validates_format /^[A-ZĄĆĘŁŃÓŚŹŻ][a-ząćęłńóśźż]+(([-][A-ZĄĆĘŁŃÓŚŹŻ])[a-ząćęłńóśźż]+)?$/, :surname, message: "Zły format nazwiska!"
     end
 
     def self.printlabels
