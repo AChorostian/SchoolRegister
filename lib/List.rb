@@ -46,53 +46,72 @@ class List
     end
 
     def self.Note(student_id)
+
+        student = Student.where(id: student_id).first
+        notes = student.Note
+
         Menu.top
         puts "== Uczeń =="
         Student.printlabels
-        Student.where(id: student_id).first.printline(student_id-1)
+        student.printline(student_id-1)
         puts "== Uwagi =="
         Note.printlabels
-        Note.where(Student_id: student_id).each_with_index { |n,i| n.printline(i)  }
+        notes.each_with_index { |n,i| n.printline(i)  }
         puts ""
         puts "Wybierz nr lub 0, aby wyjść."
         print "podaj nr: "
         input = gets.to_i
         if input != 0
-            Single.Note(Note.where(Student_id: student_id).to_a[input-1].id,input-1)
+            Single.Note(notes.to_a[input-1].id,input-1)
             self.Note(student_id)
         end
     end
 
     def self.StudentSubject(student_id)
+
+        student = Student.where(id: student_id).first
+        studentsubjects = StudentSubject.where(Student_id: student_id)
+
         Menu.top
         puts "== Uczeń =="
         Student.printlabels
-        Student.where(id: student_id).first.printline(student_id-1)
+        student.printline(student_id-1)
         puts "== Przedmioty =="
         StudentSubject.printlabels
-        StudentSubject.where(Student_id: student_id).each_with_index { |ss,i| ss.printline(i)  }
+        studentsubjects.each_with_index { |ss,i| ss.printline(i)  }
         puts ""
         puts "Wybierz nr lub 0, aby wyjść."
         print "podaj nr: "
         input = gets.to_i
         if input != 0
-            Single.StudentSubject(StudentSubject.where(Student_id: student_id).to_a[input-1].id,input-1)
+            Single.StudentSubject(studentsubjects.to_a[input-1].id,input-1)
             self.StudentSubject(student_id)
         end
     end
 
-    def self.Grade(studentsubject_id)
+    def self.Grade(studentsubject_id,studentsubject_nr)
+
+        studentsubject = StudentSubject.where(id: studentsubject_id).first
+        student = studentsubject.Student
+        grades = Grade.where(StudentSubject_id: studentsubject_id)
+
         Menu.top
+        puts "== Uczeń =="
+        Student.printlabels
+        student.printline(student.id-1)
+        puts "== Przedmiot =="
+        StudentSubject.printlabels
+        studentsubject.printline(studentsubject_nr)
         puts "== Oceny =="
         Grade.printlabels
-        Grade.where(StudentSubject_id: studentsubject_id).each_with_index { |g,i| g.printline(i)  }
+        grades.each_with_index { |g,i| g.printline(i)  }
         puts ""
         puts "Wybierz nr lub 0, aby wyjść."
         print "podaj nr: "
         input = gets.to_i
         if input != 0
-            #selected(cl,input)
-            self.Grade(studentsubject_id)
+            Single.Grade(grades.to_a[input-1].id,input-1,studentsubject_nr)
+            self.Grade(studentsubject_id,studentsubject_nr)
         end
     end
 

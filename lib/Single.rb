@@ -1,10 +1,13 @@
 class Single
 
-    def self.Student(id)
+    def self.Student(student_id)
+
+        student = Student.where(id: student_id).first
+
         Menu.top
         puts "== Uczeń =="
         Student.printlabels
-        Student.where(id: id).first.printline(id-1)
+        student.printline(student_id-1)
         puts ""
         puts "1. Lista przedmiotów"
         puts "2. Lista uwag"
@@ -22,8 +25,8 @@ class Single
         print "podaj nr: "
 
         case gets.to_i
-        when 1 then List.StudentSubject(id)
-        when 2 then List.Note(id)
+        when 1 then List.StudentSubject(student_id)
+        when 2 then List.Note(student_id)
         when 3 then exit
         when 4 then exit
         when 5 then exit
@@ -33,11 +36,14 @@ class Single
         end
     end
 
-    def self.Subject(id)
+    def self.Subject(subject_id)
+
+        subject = Subject.where(id: subject_id).first
+
         Menu.top
         puts "== Przedmiot =="
         Subject.printlabels
-        Subject.where(id: id).first.printline(id-1)
+        subject.printline(subject_id-1)
         puts ""
         puts "1. Edytuj nazwę"
         puts "2. Zmień nauczyciela"
@@ -60,11 +66,14 @@ class Single
         end
     end
 
-    def self.Teacher(id)
+    def self.Teacher(teacher_id)
+
+        teacher = Teacher.where(id: teacher_id).first
+
         Menu.top
         puts "== Nauczyciel =="
         Teacher.printlabels
-        Teacher.where(id: id).first.printline(id-1)
+        teacher.printline(teacher_id-1)
         puts ""
         puts "1. Edytuj imię"
         puts "2. Edytuj nazwisko"
@@ -87,14 +96,18 @@ class Single
         end
     end
 
-    def self.Note(id,nr)
+    def self.Note(note_id,note_nr)
+
+        note = Note.where(id: note_id).first
+        student = note.Student
+
         Menu.top
         puts "== Uczeń =="
         Student.printlabels
-        Note.where(id: id).first.Student.printline(Note.where(id: id).first.Student.id-1)
+        student.printline(student.id-1)
         puts "== Uwaga =="
         Note.printlabels
-        Note.where(id: id).first.printline(nr)
+        note.printline(note_nr)
         puts ""
         puts "1. Edytuj datę"
         puts "2. Edytuj opis"
@@ -117,14 +130,18 @@ class Single
         end
     end
 
-    def self.StudentSubject(id,nr)
+    def self.StudentSubject(studentsubject_id,studentsubject_nr)
+
+        studentsubject = StudentSubject.where(id: studentsubject_id).first
+        student = studentsubject.Student
+
         Menu.top
         puts "== Uczeń =="
         Student.printlabels
-        StudentSubject.where(id: id).first.Student.printline(StudentSubject.where(id: id).first.Student.id-1)
+        student.printline(student.id-1)
         puts "== Przedmiot =="
-        Subject.printlabels
-        Subject.where(id: id).first.printline(nr)
+        StudentSubject.printlabels
+        studentsubject.printline(studentsubject_nr)
         puts ""
         puts "1. Lista ocen"
         puts ""
@@ -140,12 +157,48 @@ class Single
         print "podaj nr: "
 
         case gets.to_i
-        when 1 then List.Grade(id)
+        when 1 then List.Grade(studentsubject_id,studentsubject_nr)
         when 2 then exit
         when 3 then exit
         when 4 then exit
         when 5 then exit
         when 6 then exit
+        else exit
+        end
+    end
+
+    def self.Grade(grade_id,grade_nr,studentsubject_nr)
+
+        grade = Grade.where(id: grade_id).first
+        studentsubject = grade.StudentSubject
+        student = studentsubject.Student
+
+        Menu.top
+        puts "== Uczeń =="
+        Student.printlabels
+        student.printline(student.id-1)
+        puts "== Przedmiot =="
+        StudentSubject.printlabels
+        studentsubject.printline(studentsubject_nr)
+        puts "== Ocena =="
+        Grade.printlabels
+        grade.printline(grade_nr)
+        puts ""
+        puts "1. Edytuj ocenę"
+        puts "2. Edytuj komentarz"
+        puts "3. Edytuj datę"
+        puts ""
+        puts "4. Usuń ocenę"
+        puts ""
+        puts "0. Powrót"
+        puts ""
+        print "podaj nr: "
+
+        case gets.to_i
+        when 1 then exit
+        when 2 then exit
+        when 3 then exit
+        when 4 then exit
         else exit
         end
     end
