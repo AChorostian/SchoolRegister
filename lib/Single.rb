@@ -27,7 +27,7 @@ class Single
         case gets.to_i
         when 1 then List.StudentSubject(student_id); self.Student(student_id,student_nr)
         when 2 then List.Note(student_id) ; self.Student(student_id,student_nr)
-        when 3 then exit
+        when 3 then Add.StudentSubject(student_id); self.Student(student_id,student_nr)
         when 4 then Add.Note(student_id) ; self.Student(student_id,student_nr)
         when 5 then exit
         when 6 then exit
@@ -143,8 +143,9 @@ class Single
         studentsubject.printline(studentsubject_nr)
         puts ""
         puts "1. Lista ocen"
+        puts "2. Dodaj ocenę"
         puts ""
-        puts "2. Wypisz ucznia"
+        puts "3. Wypisz ucznia"
         puts ""
         #puts "3. Przejdź do podglądu przedmiotu"
         #puts "4. Przejdź do podglądu nauczyciela"
@@ -157,8 +158,8 @@ class Single
 
         case gets.to_i
         when 1 then List.Grade(studentsubject_id,studentsubject_nr); self.StudentSubject(studentsubject_id,studentsubject_nr)
-        when 2 then studentsubject.delete
-        when 3 then exit
+        when 2 then Add.Grade(studentsubject_id); self.StudentSubject(studentsubject_id,studentsubject_nr)
+        when 3 then studentsubject.delete
         when 4 then exit
         when 5 then exit
         when 6 then exit

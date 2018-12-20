@@ -103,4 +103,55 @@ class Add
         end
     end
 
+    def self.StudentSubject(student_id)
+        studentsubject = StudentSubject.new
+        Menu.top
+        puts "== Nowy przedmiot dla ucznia =="
+        puts ""
+        Subject.printlabels
+        Subject.each_with_index { |s,i| s.printline(i) }
+        puts ""
+        print "Numer przedmiotu : "
+        studentsubject.Subject_id = gets.chomp
+        studentsubject.Student_id = student_id
+        puts ""
+        begin
+            studentsubject.save
+            puts "Poprawnie dodano przedmiot do ucznia."
+            puts "Podaj dowolny znak, aby wrócić."
+            gets
+        rescue Exception
+            studentsubject.errors.values.flatten.each { |e| puts e }
+            puts "Podaj dowolny znak, aby wrócić."
+            puts "Następnie będzie można spróbować ponownie."
+            gets
+        end
+    end
+
+    def self.Grade(studentsubject_id)
+        grade = Grade.new
+        Menu.top
+        puts "== Nowa ocena =="
+        puts ""
+        print "Ocena : "
+        grade.grade = gets.chomp
+        print "Komentarz : "
+        grade.comment = gets.chomp
+        print "Data : "
+        grade.date = gets.chomp
+        puts ""
+        grade.StudentSubject_id = studentsubject_id
+        begin
+            grade.save
+            puts "Poprawnie dodano ocenę."
+            puts "Podaj dowolny znak, aby wrócić."
+            gets
+        rescue Exception
+            grade.errors.values.flatten.each { |e| puts e }
+            puts "Podaj dowolny znak, aby wrócić."
+            puts "Następnie będzie można spróbować ponownie."
+            gets
+        end
+    end
+
 end
