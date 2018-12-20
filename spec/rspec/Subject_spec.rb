@@ -155,6 +155,11 @@ describe "Checking Subject class validation" do
     expect{@subject.save}.to raise_error(Sequel::ValidationFailed)
   end
 
+  it "Checking error when name is too long" do
+    @subject[:name] = "Test too long too long too long too long too long too long too long too long"
+    expect{@subject.save}.to raise_error(Sequel::ValidationFailed)
+  end
+
   it "Checking error when name is not String" do
     @subject[:name] = [:name => "Test"]
     expect{@subject.save}.to raise_error(Sequel::ValidationFailed)

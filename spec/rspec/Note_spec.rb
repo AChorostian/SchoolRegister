@@ -160,6 +160,12 @@ describe "Checking Note Class validation" do
     expect{@note.save}.to raise_error(Sequel::ValidationFailed)
   end
 
+  it "Checking error when description is too long" do
+    long_description = "Too long description " * 50
+    @note[:description] = long_description
+    expect{@note.save}.to raise_error(Sequel::ValidationFailed)
+  end
+
   it "Checking error when description is not string" do
     @note[:description] = 1
     expect{@note.save}.to raise_error(Sequel::ValidationFailed)

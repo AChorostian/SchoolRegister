@@ -134,6 +134,11 @@ describe "Checking Teacher class validation" do
     expect{@new_teacher.save}.to raise_error(Sequel::ValidationFailed)
   end
 
+  it "Checking error when name is too long" do
+    @new_teacher[:name] = "Testlongnamenamenamenamenamenamenamenamenamenamenamenamenamenamenamename"
+    expect{@new_teacher.save}.to raise_error(Sequel::ValidationFailed)
+  end
+
   it "Checking error when name format is invalid" do
     @new_teacher[:name] = "D4wid"
     expect{@new_teacher.save}.to raise_error(Sequel::ValidationFailed)
@@ -151,6 +156,11 @@ describe "Checking Teacher class validation" do
 
   it "Checking error when surname is too short" do
     @new_teacher[:surname] = "Ko"
+    expect{@new_teacher.save}.to raise_error(Sequel::ValidationFailed)
+  end
+
+  it "Checking error when surname is too long" do
+    @new_teacher[:surname] = "Testlongnamenamenamenamenamenamenamenamenamenamenamenamenamenamenamename"
     expect{@new_teacher.save}.to raise_error(Sequel::ValidationFailed)
   end
 

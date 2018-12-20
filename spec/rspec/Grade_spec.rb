@@ -113,8 +113,6 @@ describe "Checking Grade class functionality" do
     @test_studentSubject = nil
   }
 
-
-
 end
 
 describe "Negative cases - Grade"  do
@@ -198,6 +196,12 @@ describe "Checking Grade class functionality" do
 
   it "Checking error when comment is too short" do
     @grade[:comment] = "T"
+    expect{@grade.save}.to raise_error(Sequel::ValidationFailed)
+  end
+
+  it "Checking error when comment is too long" do
+    long_comment = "Too long comment " * 50
+    @grade[:comment] = long_comment
     expect{@grade.save}.to raise_error(Sequel::ValidationFailed)
   end
 

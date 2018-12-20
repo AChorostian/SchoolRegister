@@ -143,6 +143,11 @@ describe "Checking Student class validation" do
     expect{@new_student.save}.to raise_error(Sequel::ValidationFailed)
   end
 
+  it "Checking error when name is too long" do
+    @new_student[:name] = "Testlongnamenamenamenamenamenamenamenamenamenamenamenamename"
+    expect{@new_student.save}.to raise_error(Sequel::ValidationFailed)
+  end
+
   it "Checking error when name format is invalid" do
     @new_student[:name] = "D4wid"
     expect{@new_student.save}.to raise_error(Sequel::ValidationFailed)
@@ -162,6 +167,12 @@ describe "Checking Student class validation" do
     @new_student[:surname] = "Ko"
     expect{@new_student.save}.to raise_error(Sequel::ValidationFailed)
   end
+
+  it "Checking error when surname is too long" do
+    @new_student[:surname] = "Testlongnamenamenamenamenamenamenamenamenamenamenamenamename"
+    expect{@new_student.save}.to raise_error(Sequel::ValidationFailed)
+  end
+
 
   it "Checking error when surname format is invalid" do
     @new_student[:surname] = "kOwAlSkI"
