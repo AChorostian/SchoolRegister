@@ -103,6 +103,10 @@ describe "Checking Subject class functionality" do
     expect{@subject.printline(1)}.to output(/2[ |]+Testing subjects[ |]+Test[ |]+Teacher$/).to_stdout
   end
 
+  it "Checking print label function" do
+    expect{Subject.printlabels}.to output.to_stdout
+  end
+
 
   after(:each) do
     @test_teacher = nil

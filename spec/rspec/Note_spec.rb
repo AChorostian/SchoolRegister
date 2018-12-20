@@ -91,6 +91,10 @@ describe "Checking Note Class functionality" do
     expect{@note.printline(1)}.to output(/2[ |]+01.01.2018[ |]+Test[ |]+Teacher[ |]+Description of the note$/).to_stdout
   end
 
+  it "Checking print label function" do
+    expect{Note.printlabels}.to output.to_stdout
+  end
+
 
 
   after {

@@ -101,6 +101,10 @@ describe "Checking Grade class functionality" do
     expect{@grade.printline(1)}.to output(/2[ |]+5[ |]+Za projekt z ruby[ |]+08.01.2019$/).to_stdout
   end
 
+  it "Checking print label function" do
+    expect{Grade.printlabels}.to output.to_stdout
+  end
+
   after{
     @test_teacher = nil
     @test_subject = nil

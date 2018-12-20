@@ -121,6 +121,10 @@ describe "Checking StudentSubject Class functionality" do
     expect{@studentSubject.printline(1)}.to output(/2[ |]+Testing subject[ |]+Test[ |]+Teacher$/).to_stdout
   end
 
+  it "Checking print label function" do
+    expect{StudentSubject.printlabels}.to output.to_stdout
+  end
+
 
   after{
     @test_teacher = nil

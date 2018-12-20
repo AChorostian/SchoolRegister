@@ -108,6 +108,10 @@ describe "Checking Teacher class functionality" do
     expect{@new_teacher.printline(1)}.to output(/2[ |]+Jan[ |]+Kowalski$/).to_stdout
   end
 
+  it "Checking print label function" do
+    expect{Teacher.printlabels}.to output.to_stdout
+  end
+
   after{
     @new_teacher = nil
   }
