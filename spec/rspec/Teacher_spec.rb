@@ -70,13 +70,38 @@ describe "Checking Teacher class functionality" do
     expect(Teacher.last).not_to eq(@removed_teacher)
   end
 
-  it "Associating teacher to subject and removing teacher should set teacher_id to nil" do
+  it "Associating teacher to subject and removing teacher should remove subject" do
+    @removed_teacher = Teacher.last
+
     @subject = Subject.new
     @subject[:name] = "Testing subjects"
-    @subject[:Teacher_id] = @new_teacher[:id]
+    @subject[:Teacher_id] = @removed_teacher[:id]
     @subject.save
-    @new_teacher.delete
-    expect(Subject.first).to be(nil)
+
+    @removed_teacher.delete
+
+    expect(Subject.last).not_to be(@subject)
+  end
+
+  it "Associating teacher to note and removing teacher should remove note" do
+
+    @test_student = Student.new
+    @test_student[:name] = "Test"
+    @test_student[:surname] = "Student"
+    @test_student.save
+
+    @removed_teacher = Teacher.last
+
+    @note = Note.new
+    @note[:description] = "Description of the note"
+    @note[:date] = "01.01.2018"
+    @note[:Student_id] = @test_student[:id]
+    @note[:Teacher_id] = @removed_teacher[:id]
+    @note.save
+
+    @removed_teacher.delete
+    expect(Note.last).not_to be(@note)
+
   end
 
   after{
