@@ -101,6 +101,23 @@ describe "Checking StudentSubject Class functionality" do
     expect(StudentSubject.last).not_to eq(@removed_studentSubject)
   end
 
+  it "Associating studentSubject to grade and removing studentSubject should remove grade" do
+
+    @removed_studentSubject = StudentSubject.last
+
+    @grade = Grade.new
+    @grade[:grade] = 5
+    @grade[:comment] = "Za projekt z ruby"
+    @grade[:date] = "08.01.2019"
+    @grade[:StudentSubject_id] = @removed_studentSubject[:id]
+    @grade.save
+
+    @removed_studentSubject.delete
+
+    expect(Grade.last).not_to be(@grade)
+  end
+
+
   after{
     @test_teacher = nil
     @test_subject = nil
