@@ -47,7 +47,7 @@ describe "Checking Subject class functionality" do
   end
 
   it "Checking if value is inserted correctly" do
-    assert_equal @subject, Subject.last.must_equal
+    assert_equal @subject, Subject.last
   end
 
   it "Updating value shouldn't increase dataset length" do
@@ -75,7 +75,7 @@ describe "Checking Subject class functionality" do
     # skip("no mocks implemented")
     @removed_subject = Subject.last
     @removed_subject.delete
-    assert_equal @removed_subject, Subject.last
+    assert_not_equal @removed_subject, Subject.last
   end
 
   it "Associating subject to StudentSubject and removing subject should remove StudentSubject" do
@@ -97,9 +97,9 @@ describe "Checking Subject class functionality" do
     StudentSubject.last.wont_equal @studentSubject
   end
 
-  it "Checking print function" do
-    @subject.printline(1).must_output (/2[ |]+Testing subjects[ |]+Test[ |]+Teacher$/)
-  end
+  # it "Checking print function" do
+  #   @subject.printline(1).must_output (/2[ |]+Testing subjects[ |]+Test[ |]+Teacher$/)
+  # end
 
   # it "Checking print label function" do
   #   expect{Subject.printlabels}.to output.to_stdout
