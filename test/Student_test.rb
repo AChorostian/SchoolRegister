@@ -65,18 +65,16 @@ describe "Checking Subject class functionality" do
   end
 
   it "Deleting value should decrease dataset length" do
-    # skip("no mocks implemented")
     @removed_subject = Subject.last
     @removed_subject.delete
     assert_equal @post_add_len-1, Subject.dataset.count
   end
 
   it "Checking if value is removed correctly" do
-    # skip("no mocks implemented")
-    skip "need to check that later"
+    # skip "need to check that later"
     @removed_subject = Subject.last
     @removed_subject.delete
-    assert_not_equal @removed_subject, Subject.last
+    refute_equal @removed_subject, Subject.last
   end
 
   it "Associating subject to StudentSubject and removing subject should remove StudentSubject" do
@@ -98,13 +96,13 @@ describe "Checking Subject class functionality" do
     StudentSubject.last.wont_equal @studentSubject
   end
 
-  # it "Checking print function" do
-  #   @subject.printline(1).must_output (/2[ |]+Testing subjects[ |]+Test[ |]+Teacher$/)
-  # end
+  it "Checking print function" do
+    assert_output(/"2 |Testing subjects |Test Teacher\n"/) {@subject.printline(1)}
+  end
 
-  # it "Checking print label function" do
-  #    expect{Subject.printlabels}.to output.to_stdout
-  # end
+  it "Checking print label function" do
+    assert_output {Subject.printlabels}
+  end
 
   after do
     @test_teacher = nil
