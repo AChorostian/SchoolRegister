@@ -102,7 +102,7 @@ describe "Checking Subject class functionality" do
   # end
 
   # it "Checking print label function" do
-  #   expect{Subject.printlabels}.to output.to_stdout
+  #    expect{Subject.printlabels}.to output.to_stdout
   # end
 
   after do
