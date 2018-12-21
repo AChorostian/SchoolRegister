@@ -43,39 +43,39 @@ describe "Checking Subject class functionality" do
 
 
   it "Inserting value should increase dataset length" do
-    assert_equal @pre_add_len+1 Subject.dataset.count
+    assert_equal @pre_add_len+1, Subject.dataset.count
   end
 
   it "Checking if value is inserted correctly" do
-    assert_equal @subject Subject.last.must_equal
+    assert_equal @subject, Subject.last.must_equal
   end
 
   it "Updating value shouldn't increase dataset length" do
     @updated_subject = Subject.last
     @updated_subject[:name] = "Testing if subject is ok"
     @updated_subject.save
-    assert_equal @post_add_len Subject.dataset.count
+    assert_equal @post_add_len, Subject.dataset.count
   end
 
   it "Checking if value is updated correctly" do
     @updated_subject = Subject.last
     @updated_subject[:name] = "Testing if subject is ok"
     @updated_subject.save
-    assert_equal @updated_subject Subject.last
+    assert_equal @updated_subject, Subject.last
   end
 
   it "Deleting value should decrease dataset length" do
     # skip("no mocks implemented")
     @removed_subject = Subject.last
     @removed_subject.delete
-    assert_equal @post_add_len-1 Subject.dataset.count
+    assert_equal @post_add_len-1, Subject.dataset.count
   end
 
   it "Checking if value is removed correctly" do
     # skip("no mocks implemented")
     @removed_subject = Subject.last
     @removed_subject.delete
-    assert_equal @removed_subject Subject.last
+    assert_equal @removed_subject, Subject.last
   end
 
   it "Associating subject to StudentSubject and removing subject should remove StudentSubject" do
