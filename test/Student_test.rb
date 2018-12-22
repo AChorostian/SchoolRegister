@@ -109,3 +109,65 @@ describe "Checking Subject class functionality" do
     @subject = nil
   end
 end
+
+describe "Checking Student class validation" do
+  before do
+    @new_student = Student.new
+    @new_student[:name] = "Jan"
+    @new_student[:surname] = "Kowalski"
+  end
+
+  it "Checking error when name is nil" do
+    @new_student[:name] = nil
+    assert_raises (Sequel::ValidationFailed) {@new_student.save}
+  end
+  it "Checking error when name is too short" do
+    @new_student[:name] = "a"
+    assert_raises (Sequel::ValidationFailed) {@new_student.save}
+  end
+
+  it "Checking error when name is too long" do
+    @new_student[:name] = "Testlongnamenamenamenamenamenamenamenamenamenamenamenamename"
+    assert_raises (Sequel::ValidationFailed) {@new_student.save}
+  end
+
+  it "Checking error when name format is invalid" do
+    @new_student[:name] = "D4wid"
+    assert_raises (Sequel::ValidationFailed) {@new_student.save}
+  end
+
+  it "Checking error when name is not string" do
+    @new_student[:name] = 4
+    assert_raises (Sequel::ValidationFailed) {@new_student.save}
+  end
+
+  it "Checking error when surname is nil" do
+    @new_student[:surname] = nil
+    assert_raises (Sequel::ValidationFailed) {@new_student.save}
+  end
+
+  it "Checking error when surname is too short" do
+    @new_student[:surname] = "Ko"
+    assert_raises (Sequel::ValidationFailed) {@new_student.save}
+  end
+
+  it "Checking error when surname is too long" do
+    @new_student[:surname] = "Testlongnamenamenamenamenamenamenamenamenamenamenamenamename"
+    assert_raises (Sequel::ValidationFailed) {@new_student.save}
+  end
+
+
+  it "Checking error when surname format is invalid" do
+    @new_student[:surname] = "kOwAlSkI"
+    assert_raises (Sequel::ValidationFailed) {@new_student.save}
+  end
+
+  it "Checking error when surname is not string" do
+    @new_student[:surname] = ["Kowalski"]
+    assert_raises (Sequel::ValidationFailed) {@new_student.save}
+  end
+  after do
+    @new_student = nil
+  end
+
+end
