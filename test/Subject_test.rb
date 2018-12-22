@@ -16,7 +16,9 @@ describe "Checking Subject class initialization" do
   it "Subject is a subclass of Sequel::Model" do
     assert_kind_of(Sequel::Model,@new_subject)
   end
-
+  it "Subject is associated with :Subject table" do
+    assert_equal :Subject, Subject.table_name
+  end
   after{
     @new_subject = nil
   }

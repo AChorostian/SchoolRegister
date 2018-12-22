@@ -17,6 +17,10 @@ describe "Checking Student class initialization" do
     assert_kind_of(Sequel::Model,@new_student)
   end
 
+  it "Student is associated with :Student table" do
+    assert_equal :Student, Student.table_name
+  end
+
   after{
     @new_student = nil
   }

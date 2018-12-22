@@ -17,6 +17,10 @@ describe "Checking Teacher class initialization" do
     assert_kind_of(Sequel::Model,@teacher)
   end
 
+  it "Teacher is associated with :Teacher table" do
+    assert_equal :Teacher, Teacher.table_name
+  end
+
   after{
     @teacher = nil
   }
