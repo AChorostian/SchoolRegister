@@ -5,18 +5,21 @@ class CsvManager
 
     def self.saveToFile(filename,className)
 
-        FileUtils.mkdir_p 'data'
+        FileUtils.mkdir_p "data/"
 
-        className.all.each do |elem|
+        data = className.all
+
+        data.each do |elem|
           elem.delete(:id)
         end
 
-        csv = CSV.open('data/'+filename,"w",
+        CSV.open("data/"+filename,"w", encoding: "UTF-8",
                        :write_headers => true,
                        :headers => data.first.keys
-        )
-        data.each do |elem|
-          csv << elem
+        ) do |csv|
+            data.each do |elem|
+              csv << elem
+            end
         end
     end
 

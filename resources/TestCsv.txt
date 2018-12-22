@@ -1,2 +1,6 @@
-resources/CsvTestFiles/students.csv Student 20
-resources/CsvTestFiles/teachers.csv Teacher 10
+data/students.csv Student 20
+data/teachers.csv Teacher 10
+data/subjects.csv Subject 17
+data/notes.csv Note 100
+data/studentsubjects.csv StudentSubject 200
+data/grades.csv Grade 2000
