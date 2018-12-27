@@ -49,7 +49,7 @@ describe "Checking import from files" do
       CsvManager.importFromCsv(path, table)
       CsvManager.saveToFile(table.to_s+".csv", @db[table.to_s.to_sym])
       fileOut = File.readlines('data/'+table.to_s+".csv")
-      assert_match fileOut, File.readlines(path)
+      assert_equal fileOut, File.readlines(path)
       # expect(File.readlines(path)).to match(fileOut)
     end
   end
