@@ -45,7 +45,7 @@ class List
         end
     end
 
-    def self.Note(student_id)
+    def self.Note(student_id,student_nr)
 
         student = Student.where(id: student_id).first
         notes = student.Note
@@ -53,7 +53,7 @@ class List
         Menu.top
         puts "== Uczeń =="
         Student.printlabels
-        student.printline(student_id-1)
+        student.printline(student_nr)
         puts "== Uwagi =="
         Note.printlabels
         notes.each_with_index { |n,i| n.printline(i)  }
@@ -62,12 +62,12 @@ class List
         print "podaj nr: "
         input = gets.to_i
         if input != 0
-            Single.Note(notes.to_a[input-1].id,input-1)
-            self.Note(student_id)
+            Single.Note(notes.to_a[input-1].id,input-1,student_nr)
+            self.Note(student_id,student_nr)
         end
     end
 
-    def self.StudentSubject(student_id)
+    def self.StudentSubject(student_id,student_nr)
 
         student = Student.where(id: student_id).first
         studentsubjects = StudentSubject.where(Student_id: student_id)
@@ -75,7 +75,7 @@ class List
         Menu.top
         puts "== Uczeń =="
         Student.printlabels
-        student.printline(student_id-1)
+        student.printline(student_nr)
         puts "== Przedmioty =="
         StudentSubject.printlabels
         studentsubjects.each_with_index { |ss,i| ss.printline(i)  }
@@ -84,12 +84,12 @@ class List
         print "podaj nr: "
         input = gets.to_i
         if input != 0
-            Single.StudentSubject(studentsubjects.to_a[input-1].id,input-1)
-            self.StudentSubject(student_id)
+            Single.StudentSubject(studentsubjects.to_a[input-1].id,input-1,student_nr)
+            self.StudentSubject(student_id,student_nr)
         end
     end
 
-    def self.Grade(studentsubject_id,studentsubject_nr)
+    def self.Grade(studentsubject_id,studentsubject_nr,student_nr)
 
         studentsubject = StudentSubject.where(id: studentsubject_id).first
         student = studentsubject.Student
@@ -98,7 +98,7 @@ class List
         Menu.top
         puts "== Uczeń =="
         Student.printlabels
-        student.printline(student.id-1)
+        student.printline(student_nr)
         puts "== Przedmiot =="
         StudentSubject.printlabels
         studentsubject.printline(studentsubject_nr)
@@ -110,8 +110,8 @@ class List
         print "podaj nr: "
         input = gets.to_i
         if input != 0
-            Single.Grade(grades.to_a[input-1].id,input-1,studentsubject_nr)
-            self.Grade(studentsubject_id,studentsubject_nr)
+            Single.Grade(grades.to_a[input-1].id,input-1,studentsubject_nr,student_nr)
+            self.Grade(studentsubject_id,studentsubject_nr,student_nr)
         end
     end
 

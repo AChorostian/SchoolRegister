@@ -25,12 +25,12 @@ class Single
         print "podaj nr: "
 
         case gets.to_i
-        when 1 then List.StudentSubject(student_id); self.Student(student_id,student_nr)
-        when 2 then List.Note(student_id) ; self.Student(student_id,student_nr)
+        when 1 then List.StudentSubject(student_id,student_nr); self.Student(student_id,student_nr)
+        when 2 then List.Note(student_id,student_nr) ; self.Student(student_id,student_nr)
         when 3 then Add.StudentSubject(student_id); self.Student(student_id,student_nr)
         when 4 then Add.Note(student_id) ; self.Student(student_id,student_nr)
-        when 5 then exit
-        when 6 then exit
+        when 5 then Edit.StudentName(student_id,student_nr); self.Student(student_id,student_nr)
+        when 6 then Edit.StudentSurname(student_id,student_nr); self.Student(student_id,student_nr)
         when 7 then student.delete
         end
     end
@@ -56,12 +56,11 @@ class Single
         print "podaj nr: "
 
         case gets.to_i
-        when 1 then exit
-        when 2 then exit
+        when 1 then Edit.SubjectName(subject_id,subject_nr); self.Subject(subject_id,subject_nr)
+        when 2 then Edit.SubjectTeacher(subject_id,subject_nr); self.Subject(subject_id,subject_nr)
         when 3 then subject.delete
         when 4 then exit
         when 5 then exit
-        else exit
         end
     end
 
@@ -86,16 +85,15 @@ class Single
         print "podaj nr: "
 
         case gets.to_i
-        when 1 then exit
-        when 2 then exit
+        when 1 then Edit.TeacherName(teacher_id,teacher_nr); self.Teacher(teacher_id,teacher_nr)
+        when 2 then Edit.TeacherSurname(teacher_id,teacher_nr); self.Teacher(teacher_id,teacher_nr)
         when 3 then teacher.delete
         when 4 then exit
         when 5 then exit
-        else exit
         end
     end
 
-    def self.Note(note_id,note_nr)
+    def self.Note(note_id,note_nr,student_nr)
 
         note = Note.where(id: note_id).first
         student = note.Student
@@ -103,7 +101,7 @@ class Single
         Menu.top
         puts "== Uczeń =="
         Student.printlabels
-        student.printline(student.id-1)
+        student.printline(student_nr)
         puts "== Uwaga =="
         Note.printlabels
         note.printline(note_nr)
@@ -120,16 +118,15 @@ class Single
         print "podaj nr: "
 
         case gets.to_i
-        when 1 then exit
-        when 2 then exit
-        when 3 then exit
+        when 1 then Edit.NoteDate(note_id,note_nr,student_nr); self.Note(note_id,note_nr,student_nr)
+        when 2 then Edit.NoteDescription(note_id,note_nr,student_nr); self.Note(note_id,note_nr,student_nr)
+        when 3 then Edit.NoteTeacher(note_id,note_nr,student_nr); self.Note(note_id,note_nr,student_nr)
         when 4 then note.delete
         when 5 then exit
-        else exit
         end
     end
 
-    def self.StudentSubject(studentsubject_id,studentsubject_nr)
+    def self.StudentSubject(studentsubject_id,studentsubject_nr,student_nr)
 
         studentsubject = StudentSubject.where(id: studentsubject_id).first
         student = studentsubject.Student
@@ -137,7 +134,7 @@ class Single
         Menu.top
         puts "== Uczeń =="
         Student.printlabels
-        student.printline(student.id-1)
+        student.printline(student_nr)
         puts "== Przedmiot =="
         StudentSubject.printlabels
         studentsubject.printline(studentsubject_nr)
@@ -157,17 +154,16 @@ class Single
         print "podaj nr: "
 
         case gets.to_i
-        when 1 then List.Grade(studentsubject_id,studentsubject_nr); self.StudentSubject(studentsubject_id,studentsubject_nr)
-        when 2 then Add.Grade(studentsubject_id); self.StudentSubject(studentsubject_id,studentsubject_nr)
+        when 1 then List.Grade(studentsubject_id,studentsubject_nr,student_nr); self.StudentSubject(studentsubject_id,studentsubject_nr,student_nr)
+        when 2 then Add.Grade(studentsubject_id); self.StudentSubject(studentsubject_id,studentsubject_nr,student_nr)
         when 3 then studentsubject.delete
         when 4 then exit
         when 5 then exit
         when 6 then exit
-        else exit
         end
     end
 
-    def self.Grade(grade_id,grade_nr,studentsubject_nr)
+    def self.Grade(grade_id,grade_nr,studentsubject_nr,student_nr)
 
         grade = Grade.where(id: grade_id).first
         studentsubject = grade.StudentSubject
@@ -176,7 +172,7 @@ class Single
         Menu.top
         puts "== Uczeń =="
         Student.printlabels
-        student.printline(student.id-1)
+        student.printline(student_nr)
         puts "== Przedmiot =="
         StudentSubject.printlabels
         studentsubject.printline(studentsubject_nr)
@@ -195,11 +191,10 @@ class Single
         print "podaj nr: "
 
         case gets.to_i
-        when 1 then exit
-        when 2 then exit
-        when 3 then exit
+        when 1 then Edit.GradeGrade(grade_id,grade_nr,studentsubject_nr,student_nr); self.Grade(grade_id,grade_nr, studentsubject_nr,student_nr)
+        when 2 then Edit.GradeComment(grade_id,grade_nr,studentsubject_nr,student_nr); self.Grade(grade_id,grade_nr, studentsubject_nr,student_nr)
+        when 3 then Edit.GradeDate(grade_id,grade_nr,studentsubject_nr,student_nr); self.Grade(grade_id,grade_nr, studentsubject_nr,student_nr)
         when 4 then grade.delete
-        else exit
         end
     end
 
