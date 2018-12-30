@@ -18,7 +18,7 @@ describe "Checking Grade class initialization" do
     expect(@grade).to be_a(Sequel::Model)
   end
 
-  it "Grade is associated with :Student table" do
+  it "Grade is associated with :Grade table" do
     expect(Grade.table_name).to eq(:Grade)
   end
 
@@ -88,14 +88,12 @@ describe "Checking Grade class functionality" do
   end
 
   it "Deleting value should decrease dataset length" do
-    # skip("no mocks implemented")
     @removed_grade = Grade.last
     @removed_grade.delete
     expect(Grade.dataset.count).to eq(@post_add_len-1)
   end
 
   it "Checking if value is removed correctly" do
-    # skip("no mocks implemented")
     @removed_grade = Grade.last
     @removed_grade.delete
     expect(Grade.last).not_to eq(@removed_grade)
