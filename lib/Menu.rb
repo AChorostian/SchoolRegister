@@ -2,6 +2,7 @@ require_relative 'Add'
 require_relative 'Edit'
 require_relative 'Single'
 require_relative 'List'
+require_relative 'Stats'
 
 
 class Menu

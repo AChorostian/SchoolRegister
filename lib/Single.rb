@@ -20,18 +20,21 @@ class Single
         puts ""
         puts "7. Usuń ucznia z dziennika"
         puts ""
+        puts "8. Statystyki"
+        puts ""
         puts "0. Powrót"
         puts ""
         print "podaj nr: "
 
         case gets.to_i
-        when 1 then List.StudentSubject(student_id,student_nr); self.Student(student_id,student_nr)
-        when 2 then List.Note(student_id,student_nr) ; self.Student(student_id,student_nr)
-        when 3 then Add.StudentSubject(student_id); self.Student(student_id,student_nr)
-        when 4 then Add.Note(student_id) ; self.Student(student_id,student_nr)
-        when 5 then Edit.StudentName(student_id,student_nr); self.Student(student_id,student_nr)
-        when 6 then Edit.StudentSurname(student_id,student_nr); self.Student(student_id,student_nr)
-        when 7 then student.delete
+            when 1 then List.StudentSubject(student_id,student_nr); self.Student(student_id,student_nr)
+            when 2 then List.Note(student_id,student_nr) ; self.Student(student_id,student_nr)
+            when 3 then Add.StudentSubject(student_id); self.Student(student_id,student_nr)
+            when 4 then Add.Note(student_id) ; self.Student(student_id,student_nr)
+            when 5 then Edit.StudentName(student_id,student_nr); self.Student(student_id,student_nr)
+            when 6 then Edit.StudentSurname(student_id,student_nr); self.Student(student_id,student_nr)
+            when 7 then student.delete
+            when 8 then Stats.Student(student_id,student_nr); self.Student(student_id,student_nr)
         end
     end
 
