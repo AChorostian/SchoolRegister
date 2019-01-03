@@ -67,6 +67,27 @@ class Stats
         gets
     end
 
+    def self.Subject(subject_id,subject_nr)
 
+        subject = Subject.where(id: subject_id).first
 
+        Menu.top
+        puts "== Przedmiot =="
+        Subject.printlabels
+        subject.printline(subject_nr)
+
+        puts ""
+        puts "Liczba przypisanych uczniów: "
+        puts "Liczba wszystkich wystawionych ocen: "
+        puts "Średnia ze średnich wszystkich uczniów: "
+        puts "Średnia ze wszystkich wystawionych ocen: "
+        puts "Średnia ilość ocen przypadających na ucznia: "
+        puts "Najlepszą średnią: " + " ma uczeń: "
+        puts "Najgorszą średnią: " + " ma uczeń: "
+        puts "Najwiejszą ilość ocen: " + " ma uczeń: "
+        puts "Najmniejszą ilość ocen: " + " ma uczeń: "
+        puts ""
+        print "Podaj dowolny znak, aby wrócić: "
+        gets
+    end
 end

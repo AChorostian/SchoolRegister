@@ -51,8 +51,7 @@ class Single
         puts "2. Zmień nauczyciela"
         puts ""
         puts "3. Usun przedmiot"
-        #puts "4. Pokaż listę uczęszczających uczniów"
-        #puts "5. Pokaż dane statystyczne" #np srednia z ocen, laczna ilosc ocen...
+        puts "4. Statystyki"
         puts ""
         puts "0. Powrót"
         puts ""
@@ -62,8 +61,7 @@ class Single
         when 1 then Edit.SubjectName(subject_id,subject_nr); self.Subject(subject_id,subject_nr)
         when 2 then Edit.SubjectTeacher(subject_id,subject_nr); self.Subject(subject_id,subject_nr)
         when 3 then subject.delete
-        when 4 then exit
-        when 5 then exit
+        when 4 then Stats.Subject(subject_id,subject_nr); self.Subject(subject_id,subject_nr)
         end
     end
 
