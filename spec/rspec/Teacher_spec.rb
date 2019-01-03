@@ -17,7 +17,7 @@ describe "Checking Teacher class initialization" do
     expect(@teacher).to be_a(Sequel::Model)
   end
 
-  it "Teacher is associated with :Student table" do
+  it "Teacher is associated with :Teacher table" do
     expect(Teacher.table_name).to eq(:Teacher)
   end
 

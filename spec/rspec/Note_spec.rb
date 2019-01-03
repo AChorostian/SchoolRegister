@@ -17,7 +17,7 @@ describe "Checking Note class initialization" do
     expect(@note).to be_a(Sequel::Model)
   end
 
-  it "Note is associated with :Student table" do
+  it "Note is associated with :Note table" do
     expect(Note.table_name).to eq(:Note)
   end
 
@@ -78,14 +78,12 @@ describe "Checking Note Class functionality" do
   end
 
   it "Deleting value should decrease dataset length" do
-    # skip("no mocks implemented")
     @removed_note = Note.last
     @removed_note.delete
     expect(Note.dataset.count).to eq(@post_add_len-1)
   end
 
   it "Checking if value is removed correctly" do
-    # skip("no mocks implemented")
     @removed_note = Note.last
     @removed_note.delete
     expect(Note.last).not_to eq(@removed_note)
