@@ -12,34 +12,31 @@ class Stats
         puts "Liczba uwag: "+ student.count_notes.to_s
         puts "Średnia ze średnich ocen z przedmiotów: " + student.average_average_grades.to_s
         puts "Średnia ze wszystkich ocen ucznia: " + student.average_grades.to_s
-        puts "Najlepsza średnia: " + student.max_average_grades.average_grades.to_s + student.max_average_grades.Subject.name.to_s
-        puts "Najgorsza średnia: " + student.min_average_grades.average_grades.to_s + student.min_average_grades.Subject.name.to_s
-        puts "Najwięcej ocen: " + student.max_count_grades.count_grades.to_s + student.max_count_grades.Subject.name.to_s
-        puts "Najmniej ocen: " + student.min_count_grades.count_grades.to_s + student.min_count_grades.Subject.name.to_s
+        puts "Najlepsza średnia: " + student.max_average_grades.average_grades.to_s + " " + student.max_average_grades.Subject.name.to_s
+        puts "Najgorsza średnia: " + student.min_average_grades.average_grades.to_s + " " + student.min_average_grades.Subject.name.to_s
+        puts "Najwięcej ocen: " + student.max_count_grades.count_grades.to_s + " " + student.max_count_grades.Subject.name.to_s
+        puts "Najmniej ocen: " + student.min_count_grades.count_grades.to_s + " " + student.min_count_grades.Subject.name.to_s
         puts ""
         print "Podaj dowolny znak, aby wrócić: "
         gets
     end
 
     def self.Subject(subject_id,subject_nr)
-
         subject = Subject.where(id: subject_id).first
-
         Menu.top
         puts "== Przedmiot =="
         Subject.printlabels
         subject.printline(subject_nr)
-
         puts ""
-        puts "Liczba przypisanych uczniów: "
-        puts "Liczba wszystkich wystawionych ocen: "
-        puts "Średnia ze średnich wszystkich uczniów: "
-        puts "Średnia ze wszystkich wystawionych ocen: "
-        puts "Średnia ilość ocen przypadających na ucznia: "
-        puts "Najlepszą średnią: "
-        puts "Najgorszą średnią: "
-        puts "Najwiejszą ilość ocen: "
-        puts "Najmniejszą ilość ocen: "
+        puts "Liczba przypisanych uczniów: " + subject.count_students.to_s
+        puts "Liczba wszystkich wystawionych ocen: " + subject.count_grades.to_s
+        puts "Średnia ze średnich wszystkich uczniów: " + subject.average_average_grades.to_s
+        puts "Średnia ze wszystkich wystawionych ocen: " + subject.average_grades.to_s
+        puts "Średnia ilość ocen przypadających na ucznia: " + subject.average_count_grades.to_s
+        puts "Najlepsza średnia: " + subject.max_average_grades.average_grades.to_s + " " + subject.max_average_grades.Student.name + " " + subject.max_average_grades.Student.surname
+        puts "Najgorsza średnia: " + subject.min_average_grades.average_grades.to_s + " " + subject.min_average_grades.Student.name + " " + subject.min_average_grades.Student.surname
+        puts "Najwiejsza ilość ocen: " + subject.max_count_grades.count_grades.to_s + " " + subject.max_count_grades.Student.name + " " + subject.max_count_grades.Student.surname
+        puts "Najmniejsza ilość ocen: " + subject.min_count_grades.count_grades.to_s + " " + subject.min_count_grades.Student.name + " " + subject.min_count_grades.Student.surname
         puts ""
         print "Podaj dowolny znak, aby wrócić: "
         gets
