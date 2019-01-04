@@ -24,4 +24,16 @@ class StudentSubject < Sequel::Model(Database.db[:StudentSubject])
         self.Subject.printline(nr)
     end
 
+    def average_grades
+        Grade.where(StudentSubject_id: self.id).avg(:grade)
+    end
+
+    def sum_grades
+        Grade.where(StudentSubject_id: self.id).sum(:grade)
+    end
+
+    def count_grades
+        Grade.where(StudentSubject_id: self.id).count(:grade)
+    end
+
 end
