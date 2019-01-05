@@ -1,6 +1,6 @@
 require 'test_helper'
 
-describe "Checking import from files" do
+describe "Checking CSVManager Functionality" do
 
   before {
     Database.init
@@ -52,6 +52,39 @@ describe "Checking import from files" do
       assert_equal fileOut, File.readlines(path)
       # expect(File.readlines(path)).to match(fileOut)
     end
+  end
+
+
+end
+
+describe "Checking CSVManager negative cases" do
+
+  before {
+    Database.init
+    @db = Database.db
+    @test_file = File.new("resources/TestCsv.txt","r")
+  }
+
+  it "Checks importing from csv file when path is wrong" do
+    assert_raises(ArgumentError) {CsvManager.importFromCsv("wrong/path/to/file.csv", Student)}
+  end
+
+  it "Checks importing from csv file when file is empty" do
+    @pre = Student.dataset.count
+    CsvManager.importFromCsv("resources/EmptyFile.csv", Student)
+    assert_equal @pre, Student.dataset.count
+  end
+
+  it "Checks importing from csv file when file is not csv" do
+    assert_raises(ArgumentError) {CsvManager.importFromCsv("resources/NotACsvFile.txt", Student)}
+  end
+
+  it "Checks exporting to csv file when path is wrong" do
+    assert_raises(ArgumentError) {CsvManager.saveToFile("wrong/path/for/file.csv", @db[:Student])}
+  end
+
+  it "Checks exporting to csv file when table name is wrong" do
+    assert_raises(Sequel::DatabaseError) {CsvManager.saveToFile("wrong/path/for/file.csv", @db[:WrongName])}
   end
 
 

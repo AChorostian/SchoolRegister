@@ -1,6 +1,6 @@
 require_relative '../../lib/Register.rb'
 
-describe "Checking import from files" do
+describe "Checking CSVManager Functionality" do
 
   before {
     Database.init
@@ -48,6 +48,39 @@ describe "Checking import from files" do
       fileOut = File.readlines('data/'+table.to_s+".csv")
       expect(File.readlines(path)).to match(fileOut)
     end
+  end
+
+
+end
+
+describe "Checking CSVManager negative cases" do
+
+  before {
+    Database.init
+    @db = Database.db
+    @test_file = File.new("resources/TestCsv.txt","r")
+  }
+
+  it "Checks importing from csv file when path is wrong" do
+    expect{CsvManager.importFromCsv("wrong/path/to/file.csv", Student)}.to raise_error(ArgumentError)
+  end
+
+  it "Checks importing from csv file when file is empty" do
+    @pre = Student.dataset.count
+    CsvManager.importFromCsv("resources/EmptyFile.csv", Student)
+    expect(Student.dataset.count).to eq(@pre)
+  end
+
+  it "Checks importing from csv file when file is not csv" do
+    expect{CsvManager.importFromCsv("resources/NotACsvFile.txt", Student)}.to raise_error(ArgumentError)
+  end
+
+  it "Checks exporting to csv file when path is wrong" do
+    expect{CsvManager.saveToFile("wrong/path/for/file.csv", @db[:Student])}.to raise_error(ArgumentError)
+  end
+
+  it "Checks exporting to csv file when table name is wrong" do
+    expect{CsvManager.saveToFile("wrong/path/for/file.csv", @db[:WrongName])}.to raise_error(Sequel::DatabaseError)
   end
 
 
