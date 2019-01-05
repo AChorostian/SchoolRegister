@@ -6,31 +6,22 @@
 
 ## How to run:
 
-```
-bundle install #install gems
-ruby bin/run.rb #run application
-rake #run tests
-```
-
-
 step by step Instructions:
 
 1. install Ruby.
 2. install bundler.
-3. install rspec and simplecov.
+3. install rspec, simplecov and sqlite.
 4. install rubymine.
-
 5. clone and open main project directory from rubymine.
+6. `bundle install`
 7. you should receive message that you need to install more gems. click install.
-8. add cofiguration for testing:
-   * "+" button -> RSpec
-   * Spec Script: select file "spec/Dziennik_spec.rb"
-   * Working directory: select main project directory (contains lib, spec...)
-9. add cofiguration for running app
-   * "+" button -> Ruby
-   * Ruby Script: select file "lib/Dziennik.rb"
-   * Working directory: select main project directory (contains lib, spec...)
-10. complete!
+8. complete!
+
+#### Run application
+`ruby bin/run.rb`
+#### Run unit tests
+`rake`
+
 
 # Excercise (in polish)
 
