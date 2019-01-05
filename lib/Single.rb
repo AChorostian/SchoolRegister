@@ -51,6 +51,7 @@ class Single
         puts "2. Zmień nauczyciela"
         puts ""
         puts "3. Usun przedmiot"
+        puts ""
         puts "4. Statystyki"
         puts ""
         puts "0. Powrót"
@@ -78,8 +79,8 @@ class Single
         puts "2. Edytuj nazwisko"
         puts ""
         puts "3. Usun nauczyciela"
-        #puts "4. Pokaż listę uczonych przedmiotów"
-        #puts "5. Pokaż dane statystyczne" #np srednia z ocen, laczna ilosc ocen, ilosc uwag
+        puts ""
+        puts "4. Statystyki"
         puts ""
         puts "0. Powrót"
         puts ""
@@ -89,7 +90,7 @@ class Single
         when 1 then Edit.TeacherName(teacher_id,teacher_nr); self.Teacher(teacher_id,teacher_nr)
         when 2 then Edit.TeacherSurname(teacher_id,teacher_nr); self.Teacher(teacher_id,teacher_nr)
         when 3 then teacher.delete
-        when 4 then exit
+        when 4 then Stats.Teacher(teacher_id,teacher_nr); self.Teacher(teacher_id,teacher_nr)
         when 5 then exit
         end
     end
@@ -112,7 +113,6 @@ class Single
         puts "3. Zmień nauczyciela"
         puts ""
         puts "4. Usuń uwagę"
-        #puts "5. Pokaż nauczyciela, który wystawił uwagę"
         puts ""
         puts "0. Powrót"
         puts ""
@@ -123,7 +123,6 @@ class Single
         when 2 then Edit.NoteDescription(note_id,note_nr,student_nr); self.Note(note_id,note_nr,student_nr)
         when 3 then Edit.NoteTeacher(note_id,note_nr,student_nr); self.Note(note_id,note_nr,student_nr)
         when 4 then note.delete
-        when 5 then exit
         end
     end
 
@@ -145,11 +144,6 @@ class Single
         puts ""
         puts "3. Wypisz ucznia"
         puts ""
-        #puts "3. Przejdź do podglądu przedmiotu"
-        #puts "4. Przejdź do podglądu nauczyciela"
-        #puts "5. Pokaż listę uczęszczających uczniów"
-        #puts "6. Pokaż dane statystyczne" #np srednia z ocen, laczna ilosc ocen...
-        puts ""
         puts "0. Powrót"
         puts ""
         print "podaj nr: "
@@ -158,9 +152,6 @@ class Single
         when 1 then List.Grade(studentsubject_id,studentsubject_nr,student_nr); self.StudentSubject(studentsubject_id,studentsubject_nr,student_nr)
         when 2 then Add.Grade(studentsubject_id); self.StudentSubject(studentsubject_id,studentsubject_nr,student_nr)
         when 3 then studentsubject.delete
-        when 4 then exit
-        when 5 then exit
-        when 6 then exit
         end
     end
 

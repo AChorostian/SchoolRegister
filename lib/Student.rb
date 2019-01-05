@@ -59,6 +59,11 @@ class Student < Sequel::Model(Database.db[:Student])
     def min_count_grades
         self.StudentSubject.min_by(&:count_grades)
     end
+
+    def fullname
+        name.to_s + " " + surname.to_s
+    end
+
 end
 
 

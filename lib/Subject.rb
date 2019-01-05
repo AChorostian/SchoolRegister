@@ -35,6 +35,10 @@ class Subject < Sequel::Model(Database.db[:Subject])
         self.StudentSubject.sum(&:count_grades)
     end
 
+    def sum_grades
+        self.StudentSubject.sum(&:sum_grades)
+    end
+
     def average_average_grades
         self.StudentSubject.sum(&:average_grades).to_f / self.count_students.to_f
     end
@@ -62,6 +66,7 @@ class Subject < Sequel::Model(Database.db[:Subject])
     def min_count_grades
         self.StudentSubject.min_by(&:count_grades)
     end
+
 end
 
 

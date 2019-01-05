@@ -25,4 +25,24 @@ class Teacher < Sequel::Model(Database.db[:Teacher])
         printf("%3d |%12s |%13s\n" , nr+1 , name , surname )
     end
 
+    def count_subjects
+        self.Subject.count
+    end
+
+    def count_grades
+        self.Subject.sum(&:count_grades)
+    end
+
+    def count_notes
+        self.Note.count
+    end
+
+    def average_average_subjects
+        self.Subject.sum(&:average_grades).to_f / self.Subject.count.to_f
+    end
+
+    def average_grades
+        self.Subject.sum(&:sum_grades).to_f / self.Subject.sum(&:count_grades).to_f
+    end
+
 end
