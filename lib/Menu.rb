@@ -17,8 +17,6 @@ class Menu
       puts "5. Dodaj Przedmiot"
       puts "6. Dodaj Nauczyciela"
       puts ""
-      puts "7. Statystyki"
-      puts ""
       puts "0. Wyjscie"
       puts ""
       print "podaj nr: "
