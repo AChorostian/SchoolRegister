@@ -36,11 +36,17 @@ class Student < Sequel::Model(Database.db[:Student])
         self.Note.length
     end
 
-    def average_average_grades
+    def overall_average_grades
+        if self.count_subjects.to_f == 0
+            return 0
+        end
         self.StudentSubject.sum(&:average_grades).to_f / self.count_subjects.to_f
     end
 
     def average_grades
+        if self.count_subjects.to_f == 0
+            return 0
+        end
         self.StudentSubject.sum(&:sum_grades).to_f / self.count_grades.to_f
     end
 

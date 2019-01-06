@@ -38,10 +38,16 @@ class Teacher < Sequel::Model(Database.db[:Teacher])
     end
 
     def average_average_subjects
+        if self.Subject.count.to_f == 0
+            return 0
+        end
         self.Subject.sum(&:average_grades).to_f / self.Subject.count.to_f
     end
 
     def average_grades
+        if self.Subject.sum(&:count_grades).to_f == 0
+            return 0
+        end
         self.Subject.sum(&:sum_grades).to_f / self.Subject.sum(&:count_grades).to_f
     end
 

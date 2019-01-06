@@ -1,0 +1,2001 @@
+grade,comment,date,StudentSubject_id
+4,praca domowa,21.09.2018,24
+1,sprawdzian,26.09.2018,32
+2,praca domowa,12.06.2018,86
+3,test,24.05.2018,143
+1,sprawdzian,30.04.2018,99
+6,sprawdzian,30.04.2018,178
+3,sprawdzian,08.02.2018,88
+6,kartkówka,18.02.2018,109
+6,kartkówka,02.01.2018,134
+6,praca domowa,24.01.2018,163
+5,kartkówka,10.05.2018,25
+4,aktywność,15.06.2018,176
+3,praca dodatkowa,18.10.2018,67
+3,aktywność,04.06.2018,37
+4,kartkówka,07.05.2018,137
+3,praca dodatkowa,07.06.2018,132
+2,kartkówka,12.10.2018,14
+5,praca domowa,20.08.2018,90
+2,kartkówka,19.10.2018,14
+3,kartkówka,30.06.2018,199
+2,sprawdzian,09.08.2018,54
+5,praca dodatkowa,06.03.2018,86
+1,praca dodatkowa,27.04.2018,197
+1,praca domowa,11.05.2018,82
+2,sprawdzian,23.12.2017,12
+1,kartkówka,11.10.2018,5
+2,praca domowa,25.06.2018,108
+2,kartkówka,29.03.2018,176
+3,kartkówka,04.10.2018,22
+1,sprawdzian,07.04.2018,142
+3,praca domowa,01.08.2018,169
+1,praca dodatkowa,21.12.2017,117
+2,kartkówka,28.04.2018,62
+4,aktywność,10.02.2018,132
+2,praca domowa,19.01.2018,32
+5,praca dodatkowa,28.07.2018,6
+1,praca domowa,07.07.2018,32
+4,praca dodatkowa,03.09.2018,172
+3,kartkówka,31.10.2018,45
+5,aktywność,01.06.2018,54
+1,test,11.01.2018,129
+5,aktywność,25.03.2018,136
+1,aktywność,13.10.2018,32
+1,kartkówka,18.01.2018,63
+1,aktywność,04.04.2018,82
+6,praca dodatkowa,17.09.2018,45
+4,sprawdzian,16.06.2018,29
+6,kartkówka,05.08.2018,161
+2,praca domowa,03.06.2018,132
+3,test,12.01.2018,44
+1,sprawdzian,17.06.2018,58
+3,praca dodatkowa,19.03.2018,32
+4,sprawdzian,04.09.2018,77
+3,test,09.01.2018,71
+5,praca dodatkowa,06.10.2018,92
+2,sprawdzian,05.07.2018,166
+3,test,09.05.2018,193
+2,praca domowa,07.01.2018,103
+1,sprawdzian,26.05.2018,124
+6,aktywność,13.08.2018,167
+6,kartkówka,06.08.2018,64
+2,kartkówka,12.01.2018,200
+3,aktywność,06.08.2018,74
+2,sprawdzian,22.02.2018,65
+1,praca domowa,03.06.2018,47
+5,praca domowa,30.06.2018,78
+5,aktywność,28.10.2018,130
+6,praca dodatkowa,01.01.2018,55
+2,praca dodatkowa,05.08.2018,58
+5,sprawdzian,09.08.2018,109
+1,test,20.01.2018,184
+5,kartkówka,18.03.2018,177
+4,praca domowa,02.10.2018,46
+4,praca dodatkowa,10.01.2018,181
+1,aktywność,30.12.2017,17
+3,aktywność,17.05.2018,176
+3,praca dodatkowa,18.10.2018,170
+3,test,01.03.2018,52
+2,praca domowa,20.01.2018,135
+5,praca domowa,09.07.2018,55
+4,praca domowa,01.06.2018,188
+1,kartkówka,12.09.2018,85
+4,praca dodatkowa,10.09.2018,66
+6,praca domowa,25.09.2018,149
+1,sprawdzian,14.06.2018,128
+2,aktywność,04.10.2018,186
+3,praca domowa,16.01.2018,192
+5,praca domowa,05.09.2018,50
+5,test,24.05.2018,95
+3,aktywność,09.08.2018,5
+1,sprawdzian,20.01.2018,108
+6,aktywność,14.05.2018,74
+4,test,22.07.2018,14
+4,praca dodatkowa,30.05.2018,126
+1,praca domowa,27.02.2018,127
+4,aktywność,13.01.2018,71
+3,praca dodatkowa,05.04.2018,44
+4,kartkówka,29.07.2018,65
+2,kartkówka,09.06.2018,94
+2,praca dodatkowa,09.04.2018,95
+3,kartkówka,13.05.2018,151
+6,sprawdzian,13.02.2018,172
+3,aktywność,08.02.2018,8
+3,kartkówka,09.07.2018,83
+1,kartkówka,20.02.2018,32
+2,test,23.12.2017,137
+6,praca domowa,22.09.2018,10
+5,aktywność,30.09.2018,138
+3,aktywność,20.03.2018,178
+6,aktywność,05.07.2018,48
+1,sprawdzian,15.02.2018,79
+2,praca domowa,17.03.2018,16
+4,test,09.07.2018,115
+3,kartkówka,15.09.2018,81
+3,praca domowa,08.01.2018,127
+2,aktywność,21.12.2017,81
+2,sprawdzian,24.03.2018,164
+3,praca dodatkowa,01.10.2018,21
+4,sprawdzian,06.02.2018,117
+1,aktywność,12.08.2018,165
+6,aktywność,26.08.2018,169
+5,sprawdzian,11.06.2018,5
+1,aktywność,17.08.2018,105
+1,test,08.06.2018,105
+2,test,10.10.2018,30
+6,aktywność,27.02.2018,189
+2,test,24.02.2018,162
+6,test,07.06.2018,9
+6,praca dodatkowa,19.12.2017,35
+4,praca domowa,15.01.2018,48
+6,test,22.06.2018,109
+2,aktywność,16.04.2018,194
+3,praca domowa,24.02.2018,90
+1,kartkówka,18.01.2018,47
+5,aktywność,22.07.2018,192
+6,praca dodatkowa,03.03.2018,36
+6,test,17.02.2018,142
+3,aktywność,01.09.2018,73
+2,sprawdzian,15.05.2018,127
+1,praca dodatkowa,07.04.2018,20
+4,test,23.04.2018,168
+1,praca dodatkowa,21.05.2018,40
+4,sprawdzian,09.07.2018,134
+1,kartkówka,17.09.2018,59
+3,kartkówka,03.08.2018,84
+3,praca dodatkowa,28.09.2018,8
+6,kartkówka,07.06.2018,55
+1,aktywność,15.06.2018,115
+1,aktywność,25.06.2018,89
+1,aktywność,24.12.2017,187
+5,aktywność,07.05.2018,42
+3,sprawdzian,18.10.2018,167
+1,sprawdzian,10.09.2018,132
+6,praca dodatkowa,10.08.2018,93
+3,praca domowa,03.05.2018,165
+3,praca domowa,06.03.2018,71
+3,praca domowa,27.07.2018,145
+3,test,23.10.2018,71
+6,praca dodatkowa,23.04.2018,92
+4,praca domowa,19.01.2018,151
+5,sprawdzian,08.02.2018,146
+3,kartkówka,20.06.2018,24
+1,praca dodatkowa,06.09.2018,61
+2,sprawdzian,08.09.2018,151
+2,praca domowa,30.12.2017,7
+6,praca domowa,13.02.2018,14
+4,praca domowa,11.04.2018,140
+1,praca domowa,25.08.2018,42
+3,sprawdzian,21.06.2018,112
+3,aktywność,29.05.2018,116
+5,kartkówka,19.07.2018,12
+6,praca domowa,18.04.2018,97
+6,test,28.07.2018,7
+3,sprawdzian,04.07.2018,23
+2,sprawdzian,29.12.2017,68
+5,aktywność,17.01.2018,147
+1,kartkówka,16.10.2018,55
+5,praca dodatkowa,03.02.2018,16
+6,aktywność,07.02.2018,10
+5,kartkówka,09.04.2018,5
+1,praca domowa,13.02.2018,2
+2,aktywność,19.09.2018,60
+1,kartkówka,26.09.2018,7
+1,praca dodatkowa,22.09.2018,44
+1,test,27.06.2018,27
+1,aktywność,12.10.2018,76
+2,test,04.08.2018,71
+1,praca domowa,27.09.2018,12
+5,aktywność,04.04.2018,159
+3,test,04.08.2018,149
+2,praca domowa,29.08.2018,195
+6,aktywność,20.10.2018,50
+4,test,28.02.2018,192
+2,praca dodatkowa,17.06.2018,16
+1,test,22.09.2018,195
+5,aktywność,11.02.2018,145
+1,sprawdzian,08.10.2018,148
+2,sprawdzian,28.04.2018,46
+4,praca domowa,26.07.2018,192
+1,praca dodatkowa,21.10.2018,92
+3,aktywność,11.05.2018,185
+2,sprawdzian,28.01.2018,30
+2,kartkówka,27.09.2018,60
+5,praca dodatkowa,26.04.2018,120
+5,sprawdzian,22.06.2018,92
+3,praca domowa,18.10.2018,49
+1,praca dodatkowa,02.07.2018,3
+1,praca dodatkowa,24.10.2018,138
+1,praca dodatkowa,13.08.2018,177
+1,kartkówka,20.04.2018,5
+5,test,02.02.2018,35
+3,aktywność,27.03.2018,63
+1,sprawdzian,28.01.2018,14
+4,sprawdzian,25.12.2017,194
+2,sprawdzian,03.08.2018,169
+6,aktywność,28.09.2018,143
+2,aktywność,16.09.2018,107
+4,praca domowa,12.09.2018,148
+1,kartkówka,15.09.2018,53
+4,sprawdzian,26.03.2018,164
+1,praca domowa,11.01.2018,122
+5,praca domowa,25.06.2018,89
+5,test,22.06.2018,49
+6,kartkówka,23.12.2017,34
+3,aktywność,13.05.2018,169
+1,praca dodatkowa,18.09.2018,34
+4,kartkówka,12.06.2018,59
+5,sprawdzian,20.07.2018,73
+5,praca dodatkowa,01.07.2018,127
+3,aktywność,17.06.2018,78
+5,praca dodatkowa,09.06.2018,128
+3,test,14.09.2018,196
+6,aktywność,14.10.2018,146
+4,kartkówka,23.07.2018,102
+4,aktywność,22.07.2018,109
+1,praca dodatkowa,29.05.2018,164
+1,sprawdzian,25.07.2018,126
+2,praca dodatkowa,16.08.2018,144
+5,praca dodatkowa,01.04.2018,114
+4,sprawdzian,25.02.2018,57
+5,praca domowa,04.08.2018,185
+1,praca domowa,29.12.2017,196
+3,test,05.05.2018,106
+3,test,30.03.2018,149
+5,sprawdzian,28.10.2018,88
+6,test,15.03.2018,24
+1,praca dodatkowa,22.09.2018,142
+4,praca dodatkowa,27.08.2018,23
+3,test,22.02.2018,144
+6,test,18.04.2018,129
+1,praca dodatkowa,04.02.2018,121
+4,kartkówka,18.06.2018,65
+1,aktywność,09.01.2018,137
+3,praca domowa,01.08.2018,20
+2,test,19.08.2018,66
+5,aktywność,17.06.2018,125
+3,test,07.01.2018,192
+1,praca dodatkowa,05.02.2018,165
+1,praca dodatkowa,24.04.2018,77
+1,praca dodatkowa,30.04.2018,46
+3,kartkówka,31.05.2018,55
+2,kartkówka,30.12.2017,178
+5,kartkówka,03.08.2018,172
+2,kartkówka,06.02.2018,36
+6,praca domowa,18.08.2018,45
+1,praca domowa,04.05.2018,173
+1,praca domowa,31.03.2018,88
+1,aktywność,02.10.2018,102
+5,sprawdzian,07.07.2018,34
+4,kartkówka,15.02.2018,27
+4,praca dodatkowa,27.10.2018,85
+5,praca dodatkowa,28.05.2018,184
+5,sprawdzian,09.04.2018,52
+2,kartkówka,11.01.2018,85
+6,aktywność,14.05.2018,41
+4,test,28.12.2017,192
+5,praca dodatkowa,21.10.2018,196
+3,kartkówka,13.05.2018,90
+1,sprawdzian,08.06.2018,119
+3,sprawdzian,11.06.2018,44
+5,aktywność,10.08.2018,12
+6,aktywność,31.05.2018,199
+3,aktywność,17.06.2018,117
+4,aktywność,13.09.2018,6
+6,praca domowa,21.02.2018,70
+5,sprawdzian,05.10.2018,189
+4,test,21.02.2018,100
+1,aktywność,28.03.2018,127
+1,praca domowa,24.08.2018,177
+6,kartkówka,16.03.2018,63
+4,praca domowa,28.08.2018,46
+3,test,07.07.2018,6
+4,sprawdzian,16.03.2018,182
+6,test,08.02.2018,87
+3,praca domowa,27.12.2017,55
+3,praca dodatkowa,31.08.2018,65
+6,praca domowa,12.06.2018,92
+3,praca dodatkowa,23.10.2018,6
+1,praca dodatkowa,10.02.2018,113
+4,test,14.03.2018,181
+1,praca dodatkowa,12.01.2018,159
+5,praca dodatkowa,19.03.2018,66
+4,kartkówka,24.03.2018,39
+5,test,16.02.2018,61
+4,aktywność,27.02.2018,174
+1,kartkówka,11.06.2018,160
+4,sprawdzian,08.06.2018,133
+2,test,22.06.2018,59
+4,praca domowa,10.09.2018,176
+4,praca dodatkowa,17.01.2018,76
+5,aktywność,19.10.2018,64
+1,test,15.02.2018,71
+3,praca dodatkowa,05.05.2018,18
+5,test,24.03.2018,193
+3,praca dodatkowa,16.06.2018,122
+2,kartkówka,26.08.2018,145
+5,test,09.06.2018,6
+5,sprawdzian,26.04.2018,173
+2,sprawdzian,21.09.2018,15
+2,kartkówka,05.03.2018,186
+1,test,27.08.2018,170
+3,aktywność,04.08.2018,153
+3,sprawdzian,12.10.2018,95
+5,sprawdzian,15.10.2018,128
+5,praca domowa,18.03.2018,119
+4,praca domowa,26.08.2018,49
+5,aktywność,13.04.2018,185
+2,praca dodatkowa,05.01.2018,12
+6,praca dodatkowa,10.03.2018,104
+3,praca domowa,30.05.2018,197
+5,praca domowa,27.06.2018,169
+4,sprawdzian,01.03.2018,152
+4,aktywność,28.05.2018,44
+2,praca dodatkowa,17.10.2018,122
+4,praca domowa,03.07.2018,19
+3,praca dodatkowa,30.03.2018,150
+5,aktywność,23.12.2017,188
+2,praca dodatkowa,12.03.2018,37
+6,sprawdzian,08.01.2018,196
+3,praca dodatkowa,06.03.2018,155
+1,praca dodatkowa,13.03.2018,74
+4,praca domowa,06.03.2018,67
+5,sprawdzian,29.04.2018,21
+2,sprawdzian,16.05.2018,72
+1,praca domowa,15.10.2018,44
+3,praca dodatkowa,17.06.2018,153
+2,praca domowa,14.05.2018,109
+5,kartkówka,25.07.2018,99
+3,aktywność,10.08.2018,171
+6,test,30.12.2017,53
+2,sprawdzian,27.10.2018,92
+4,praca dodatkowa,19.08.2018,50
+2,praca domowa,16.10.2018,56
+2,sprawdzian,18.06.2018,86
+4,kartkówka,27.04.2018,72
+2,kartkówka,18.06.2018,37
+1,aktywność,03.04.2018,12
+1,aktywność,06.01.2018,95
+4,praca dodatkowa,01.02.2018,180
+6,praca domowa,03.04.2018,19
+4,kartkówka,13.05.2018,38
+2,kartkówka,15.05.2018,123
+6,praca domowa,10.01.2018,108
+2,praca dodatkowa,12.04.2018,76
+6,kartkówka,25.08.2018,89
+6,praca dodatkowa,27.10.2018,90
+6,praca dodatkowa,20.05.2018,75
+1,aktywność,26.07.2018,107
+4,sprawdzian,16.02.2018,34
+3,test,14.08.2018,119
+6,test,19.01.2018,134
+1,aktywność,07.06.2018,111
+1,praca domowa,04.02.2018,38
+1,kartkówka,19.08.2018,193
+1,praca domowa,19.01.2018,130
+5,praca dodatkowa,21.09.2018,2
+3,kartkówka,30.10.2018,18
+6,test,21.04.2018,124
+3,praca dodatkowa,14.01.2018,72
+1,test,05.10.2018,146
+3,sprawdzian,28.12.2017,39
+4,kartkówka,31.01.2018,128
+4,aktywność,06.05.2018,110
+4,kartkówka,17.06.2018,103
+1,kartkówka,07.02.2018,66
+6,aktywność,25.07.2018,22
+5,praca dodatkowa,20.06.2018,88
+2,kartkówka,07.03.2018,96
+4,sprawdzian,18.04.2018,55
+6,test,28.04.2018,89
+5,aktywność,17.09.2018,175
+5,praca domowa,18.03.2018,199
+6,aktywność,12.10.2018,40
+1,sprawdzian,03.10.2018,185
+3,test,07.07.2018,115
+3,aktywność,14.07.2018,77
+4,aktywność,17.12.2017,23
+2,kartkówka,29.05.2018,61
+6,test,23.04.2018,68
+2,sprawdzian,03.01.2018,176
+2,test,19.02.2018,103
+3,kartkówka,17.10.2018,188
+5,aktywność,27.07.2018,180
+4,test,27.01.2018,99
+2,kartkówka,16.03.2018,87
+5,aktywność,23.01.2018,175
+4,praca dodatkowa,12.03.2018,181
+5,test,05.08.2018,69
+1,aktywność,17.06.2018,192
+2,praca dodatkowa,14.06.2018,68
+5,test,03.03.2018,118
+4,praca domowa,02.01.2018,191
+1,test,19.10.2018,134
+2,praca dodatkowa,28.02.2018,128
+2,sprawdzian,05.03.2018,78
+5,aktywność,01.09.2018,163
+5,sprawdzian,02.02.2018,39
+4,test,27.08.2018,62
+5,kartkówka,19.10.2018,196
+1,praca domowa,11.08.2018,26
+4,kartkówka,25.03.2018,63
+4,aktywność,05.03.2018,9
+3,test,04.01.2018,10
+2,aktywność,17.08.2018,14
+4,test,14.01.2018,103
+1,test,07.05.2018,6
+4,test,27.07.2018,33
+6,praca dodatkowa,03.04.2018,66
+2,kartkówka,18.07.2018,195
+6,praca dodatkowa,25.12.2017,159
+2,praca dodatkowa,26.05.2018,152
+6,praca dodatkowa,02.07.2018,155
+6,sprawdzian,09.03.2018,2
+2,sprawdzian,12.02.2018,45
+3,praca dodatkowa,23.10.2018,57
+5,aktywność,16.04.2018,66
+1,test,30.07.2018,42
+3,praca dodatkowa,28.01.2018,188
+4,test,18.08.2018,103
+6,praca dodatkowa,13.04.2018,37
+5,kartkówka,28.05.2018,178
+2,aktywność,15.07.2018,91
+2,test,09.01.2018,163
+4,aktywność,08.03.2018,2
+3,praca domowa,17.08.2018,29
+4,praca dodatkowa,22.09.2018,137
+4,praca domowa,21.07.2018,144
+1,praca dodatkowa,14.08.2018,23
+4,sprawdzian,18.07.2018,68
+5,praca domowa,16.08.2018,62
+3,sprawdzian,23.09.2018,180
+1,sprawdzian,18.10.2018,162
+4,sprawdzian,18.06.2018,37
+6,kartkówka,01.10.2018,2
+5,praca domowa,14.06.2018,31
+2,praca dodatkowa,12.03.2018,72
+6,aktywność,27.01.2018,105
+5,test,27.01.2018,87
+6,kartkówka,02.06.2018,135
+6,aktywność,09.04.2018,67
+4,kartkówka,24.08.2018,167
+2,praca domowa,19.08.2018,161
+4,kartkówka,18.04.2018,197
+2,praca dodatkowa,08.06.2018,45
+6,sprawdzian,18.07.2018,8
+2,aktywność,26.04.2018,97
+1,kartkówka,15.09.2018,32
+1,praca domowa,07.04.2018,95
+1,test,08.09.2018,144
+4,kartkówka,05.09.2018,46
+5,test,12.06.2018,112
+5,kartkówka,16.04.2018,33
+2,praca domowa,08.08.2018,114
+4,praca domowa,22.05.2018,165
+5,praca domowa,26.05.2018,46
+4,test,20.12.2017,40
+6,praca dodatkowa,21.10.2018,149
+6,kartkówka,04.01.2018,104
+6,praca domowa,23.08.2018,18
+5,aktywność,07.06.2018,171
+1,sprawdzian,27.08.2018,85
+6,sprawdzian,11.02.2018,76
+4,sprawdzian,08.08.2018,60
+1,kartkówka,02.10.2018,61
+4,test,19.06.2018,190
+3,test,14.01.2018,55
+5,test,23.06.2018,189
+5,kartkówka,13.01.2018,126
+1,praca dodatkowa,31.07.2018,130
+4,kartkówka,04.08.2018,60
+6,aktywność,26.05.2018,194
+4,test,21.04.2018,37
+6,test,13.04.2018,189
+2,sprawdzian,21.02.2018,147
+1,praca domowa,26.07.2018,111
+1,aktywność,07.08.2018,26
+1,test,13.02.2018,44
+3,praca domowa,14.04.2018,105
+5,praca domowa,17.09.2018,144
+5,kartkówka,10.01.2018,132
+3,praca domowa,30.09.2018,121
+2,aktywność,28.06.2018,73
+5,sprawdzian,09.04.2018,66
+5,sprawdzian,31.08.2018,84
+1,test,21.01.2018,178
+1,aktywność,09.10.2018,191
+2,praca domowa,29.09.2018,102
+5,kartkówka,31.01.2018,193
+1,praca domowa,09.04.2018,109
+4,praca domowa,16.06.2018,17
+3,aktywność,20.06.2018,134
+4,sprawdzian,13.10.2018,132
+4,test,25.07.2018,180
+3,aktywność,15.03.2018,159
+1,aktywność,17.02.2018,41
+4,praca dodatkowa,26.12.2017,48
+5,praca dodatkowa,04.02.2018,24
+1,praca dodatkowa,24.09.2018,86
+5,praca domowa,07.10.2018,63
+1,sprawdzian,23.09.2018,129
+1,kartkówka,11.07.2018,32
+3,aktywność,02.02.2018,173
+5,aktywność,13.07.2018,63
+2,test,12.09.2018,177
+6,sprawdzian,04.03.2018,149
+3,test,10.03.2018,69
+2,praca domowa,02.09.2018,112
+2,test,09.02.2018,147
+2,sprawdzian,11.04.2018,7
+1,kartkówka,23.06.2018,91
+2,praca domowa,17.08.2018,105
+4,praca domowa,14.08.2018,60
+1,praca dodatkowa,30.09.2018,78
+2,praca dodatkowa,17.05.2018,183
+1,aktywność,26.05.2018,151
+1,aktywność,07.03.2018,88
+1,kartkówka,06.02.2018,113
+5,sprawdzian,25.09.2018,81
+4,kartkówka,27.01.2018,177
+1,praca dodatkowa,28.12.2017,160
+4,kartkówka,02.03.2018,9
+2,test,28.02.2018,43
+3,kartkówka,14.10.2018,100
+6,test,30.09.2018,47
+3,sprawdzian,28.07.2018,172
+5,praca dodatkowa,24.06.2018,50
+1,aktywność,31.10.2018,67
+3,test,21.07.2018,68
+1,praca domowa,21.12.2017,109
+3,praca domowa,11.10.2018,38
+1,aktywność,03.02.2018,118
+5,aktywność,30.08.2018,105
+4,sprawdzian,15.09.2018,24
+3,sprawdzian,13.07.2018,154
+6,sprawdzian,22.12.2017,35
+6,test,04.09.2018,2
+2,praca domowa,12.08.2018,89
+4,sprawdzian,04.07.2018,118
+5,aktywność,16.03.2018,152
+5,kartkówka,02.08.2018,113
+2,aktywność,11.10.2018,52
+2,sprawdzian,28.04.2018,142
+1,kartkówka,15.10.2018,127
+3,praca domowa,28.12.2017,189
+4,praca domowa,29.03.2018,67
+2,praca domowa,06.02.2018,39
+6,sprawdzian,05.09.2018,4
+5,sprawdzian,10.01.2018,69
+3,aktywność,09.01.2018,5
+5,test,09.09.2018,75
+5,praca dodatkowa,30.08.2018,150
+5,praca domowa,21.02.2018,154
+3,sprawdzian,30.10.2018,195
+2,praca dodatkowa,04.02.2018,184
+1,kartkówka,08.01.2018,74
+2,aktywność,16.02.2018,143
+4,kartkówka,29.10.2018,138
+4,praca domowa,24.06.2018,135
+2,praca domowa,07.03.2018,3
+6,praca dodatkowa,21.09.2018,53
+1,aktywność,25.05.2018,85
+3,test,31.08.2018,130
+2,kartkówka,20.05.2018,140
+5,praca dodatkowa,14.01.2018,148
+4,kartkówka,05.10.2018,46
+4,praca domowa,18.08.2018,186
+4,kartkówka,24.05.2018,33
+3,aktywność,26.06.2018,149
+1,sprawdzian,21.08.2018,77
+2,sprawdzian,31.10.2018,164
+3,test,08.03.2018,126
+4,test,20.05.2018,13
+4,praca dodatkowa,28.05.2018,88
+1,aktywność,24.02.2018,30
+1,kartkówka,19.09.2018,71
+2,test,11.04.2018,137
+2,kartkówka,08.10.2018,108
+4,kartkówka,16.05.2018,198
+5,praca dodatkowa,30.12.2017,68
+4,kartkówka,29.06.2018,131
+1,aktywność,07.08.2018,22
+4,praca domowa,18.12.2017,138
+1,kartkówka,16.07.2018,142
+4,aktywność,07.05.2018,6
+4,sprawdzian,24.01.2018,178
+5,aktywność,27.05.2018,50
+2,aktywność,04.07.2018,13
+2,praca dodatkowa,19.02.2018,190
+1,kartkówka,09.09.2018,39
+5,sprawdzian,13.01.2018,145
+3,kartkówka,15.08.2018,181
+4,kartkówka,05.09.2018,136
+2,test,17.06.2018,180
+1,praca dodatkowa,22.01.2018,75
+4,praca dodatkowa,17.09.2018,164
+6,kartkówka,13.02.2018,78
+3,praca domowa,11.01.2018,192
+1,aktywność,02.01.2018,1
+3,test,30.12.2017,52
+2,praca dodatkowa,13.09.2018,145
+6,aktywność,25.06.2018,6
+6,test,25.05.2018,17
+5,sprawdzian,31.12.2017,49
+2,kartkówka,22.03.2018,157
+6,kartkówka,05.04.2018,63
+5,aktywność,11.04.2018,116
+5,kartkówka,24.08.2018,127
+6,praca dodatkowa,18.12.2017,137
+4,kartkówka,08.10.2018,111
+2,test,20.01.2018,122
+1,praca domowa,27.04.2018,67
+4,kartkówka,13.06.2018,124
+6,aktywność,04.09.2018,46
+4,praca dodatkowa,03.07.2018,141
+5,aktywność,19.05.2018,111
+1,kartkówka,12.01.2018,49
+5,sprawdzian,28.08.2018,76
+1,praca domowa,20.03.2018,66
+6,sprawdzian,30.12.2017,74
+2,test,23.12.2017,20
+1,test,18.02.2018,133
+2,praca dodatkowa,30.03.2018,183
+6,praca domowa,21.05.2018,109
+6,praca dodatkowa,21.03.2018,120
+4,sprawdzian,31.10.2018,132
+4,test,03.09.2018,34
+6,sprawdzian,22.10.2018,140
+1,praca domowa,18.07.2018,59
+4,aktywność,29.01.2018,200
+6,kartkówka,22.04.2018,76
+3,praca domowa,09.04.2018,26
+3,test,29.06.2018,101
+5,test,07.06.2018,117
+5,praca dodatkowa,30.05.2018,48
+5,test,10.05.2018,101
+6,sprawdzian,14.10.2018,129
+2,praca domowa,23.07.2018,60
+6,sprawdzian,26.03.2018,94
+5,praca dodatkowa,26.08.2018,133
+3,praca dodatkowa,20.07.2018,94
+6,aktywność,10.09.2018,44
+3,aktywność,06.06.2018,34
+5,test,28.06.2018,184
+3,praca domowa,23.08.2018,27
+3,kartkówka,24.07.2018,133
+4,sprawdzian,11.05.2018,86
+6,aktywność,23.05.2018,17
+2,praca dodatkowa,02.08.2018,100
+3,praca dodatkowa,07.04.2018,40
+4,aktywność,30.07.2018,30
+1,sprawdzian,24.02.2018,132
+4,kartkówka,09.02.2018,80
+2,kartkówka,06.06.2018,66
+3,sprawdzian,05.10.2018,48
+4,aktywność,13.08.2018,128
+2,test,10.10.2018,104
+3,aktywność,05.04.2018,35
+5,praca dodatkowa,07.04.2018,63
+5,kartkówka,26.01.2018,194
+5,test,10.03.2018,146
+4,praca domowa,14.10.2018,120
+5,sprawdzian,29.06.2018,149
+3,aktywność,02.04.2018,95
+2,praca domowa,30.12.2017,199
+3,kartkówka,08.10.2018,179
+4,aktywność,08.01.2018,183
+3,kartkówka,27.03.2018,176
+4,kartkówka,26.03.2018,157
+2,sprawdzian,26.05.2018,121
+4,aktywność,22.01.2018,123
+4,praca dodatkowa,22.07.2018,155
+4,sprawdzian,10.06.2018,178
+1,test,10.08.2018,193
+3,praca domowa,21.12.2017,60
+6,sprawdzian,24.03.2018,131
+1,praca dodatkowa,13.01.2018,156
+5,sprawdzian,18.12.2017,5
+4,kartkówka,16.04.2018,1
+1,test,10.04.2018,142
+6,test,15.08.2018,128
+5,aktywność,29.09.2018,39
+6,aktywność,19.12.2017,62
+6,aktywność,17.02.2018,19
+1,test,02.10.2018,187
+5,kartkówka,10.04.2018,192
+5,aktywność,19.01.2018,1
+5,praca dodatkowa,26.04.2018,116
+5,praca dodatkowa,28.07.2018,125
+4,praca domowa,08.05.2018,152
+3,test,05.02.2018,165
+4,aktywność,26.08.2018,179
+1,sprawdzian,02.01.2018,88
+1,praca dodatkowa,02.10.2018,165
+5,sprawdzian,16.02.2018,84
+1,aktywność,17.10.2018,3
+1,praca dodatkowa,10.10.2018,1
+6,praca domowa,12.09.2018,106
+3,aktywność,03.03.2018,81
+5,aktywność,23.02.2018,82
+5,sprawdzian,04.04.2018,29
+2,test,07.03.2018,30
+3,sprawdzian,12.08.2018,174
+1,praca domowa,06.02.2018,95
+4,aktywność,05.01.2018,42
+4,praca domowa,19.12.2017,9
+4,test,08.07.2018,115
+3,kartkówka,25.12.2017,33
+1,kartkówka,17.10.2018,182
+2,test,19.06.2018,141
+5,test,25.10.2018,38
+2,sprawdzian,27.02.2018,192
+4,praca domowa,27.05.2018,40
+5,praca dodatkowa,08.07.2018,155
+4,praca dodatkowa,05.10.2018,116
+4,praca dodatkowa,24.01.2018,75
+4,test,13.10.2018,162
+3,test,28.08.2018,195
+4,praca dodatkowa,11.06.2018,61
+4,kartkówka,09.05.2018,20
+4,aktywność,19.09.2018,86
+4,test,29.05.2018,183
+6,kartkówka,19.07.2018,90
+5,test,24.09.2018,113
+6,test,21.10.2018,128
+2,sprawdzian,02.01.2018,139
+4,sprawdzian,14.02.2018,190
+4,praca domowa,13.06.2018,106
+2,test,01.09.2018,108
+3,sprawdzian,27.05.2018,117
+1,praca dodatkowa,10.01.2018,36
+6,praca domowa,29.04.2018,155
+3,praca dodatkowa,28.09.2018,160
+3,test,21.03.2018,138
+6,test,30.05.2018,104
+3,kartkówka,16.10.2018,178
+2,kartkówka,10.06.2018,83
+3,kartkówka,17.02.2018,163
+4,praca dodatkowa,13.03.2018,49
+1,praca domowa,21.09.2018,169
+4,test,22.06.2018,111
+4,sprawdzian,14.03.2018,181
+2,sprawdzian,29.06.2018,22
+4,praca domowa,05.06.2018,42
+1,praca domowa,02.07.2018,79
+3,aktywność,01.05.2018,8
+2,praca dodatkowa,16.03.2018,35
+4,aktywność,22.08.2018,187
+1,sprawdzian,19.08.2018,145
+1,sprawdzian,07.09.2018,112
+4,praca domowa,27.09.2018,67
+6,aktywność,13.05.2018,146
+6,praca dodatkowa,24.08.2018,33
+3,sprawdzian,18.09.2018,19
+1,sprawdzian,27.10.2018,125
+1,sprawdzian,07.09.2018,105
+1,kartkówka,15.07.2018,181
+5,aktywność,30.10.2018,158
+4,aktywność,18.01.2018,96
+1,test,29.04.2018,37
+4,kartkówka,01.09.2018,85
+3,test,06.03.2018,91
+2,praca domowa,16.02.2018,142
+2,test,30.12.2017,112
+6,praca domowa,30.05.2018,5
+4,praca domowa,12.05.2018,50
+6,praca domowa,21.01.2018,25
+5,sprawdzian,20.02.2018,105
+1,aktywność,16.09.2018,122
+3,test,19.07.2018,29
+6,praca domowa,11.06.2018,192
+4,test,30.12.2017,93
+5,sprawdzian,03.03.2018,13
+6,praca domowa,23.02.2018,98
+5,sprawdzian,05.05.2018,103
+2,aktywność,17.02.2018,9
+2,praca domowa,24.04.2018,3
+4,praca domowa,25.04.2018,173
+4,praca dodatkowa,24.04.2018,10
+4,sprawdzian,07.03.2018,115
+2,sprawdzian,19.06.2018,116
+3,praca domowa,30.08.2018,105
+4,aktywność,05.07.2018,86
+6,sprawdzian,25.02.2018,79
+5,aktywność,20.08.2018,119
+4,test,28.10.2018,21
+3,sprawdzian,22.10.2018,25
+2,praca dodatkowa,27.03.2018,151
+1,sprawdzian,28.04.2018,6
+5,kartkówka,15.02.2018,90
+5,sprawdzian,03.06.2018,41
+5,aktywność,29.01.2018,71
+3,sprawdzian,19.10.2018,91
+1,sprawdzian,18.10.2018,31
+3,test,22.05.2018,71
+3,aktywność,10.03.2018,74
+3,kartkówka,18.05.2018,59
+4,praca domowa,04.02.2018,84
+3,praca dodatkowa,17.01.2018,26
+4,praca domowa,22.07.2018,57
+1,praca domowa,17.10.2018,78
+2,praca dodatkowa,13.06.2018,109
+5,praca dodatkowa,07.09.2018,29
+2,test,02.03.2018,179
+5,praca dodatkowa,03.02.2018,88
+3,kartkówka,01.03.2018,115
+4,test,13.07.2018,106
+4,test,23.03.2018,120
+2,aktywność,08.03.2018,171
+2,praca domowa,21.10.2018,41
+1,kartkówka,26.09.2018,7
+1,aktywność,09.06.2018,95
+6,aktywność,03.10.2018,46
+2,aktywność,26.08.2018,2
+3,praca dodatkowa,22.04.2018,28
+4,praca domowa,18.09.2018,100
+3,aktywność,13.09.2018,106
+6,kartkówka,03.04.2018,148
+4,kartkówka,16.08.2018,74
+5,kartkówka,18.07.2018,41
+5,praca domowa,06.06.2018,83
+3,test,23.04.2018,133
+1,sprawdzian,19.07.2018,116
+3,sprawdzian,26.10.2018,118
+6,praca domowa,30.03.2018,132
+6,aktywność,11.05.2018,145
+1,test,31.10.2018,184
+6,aktywność,15.10.2018,110
+1,test,15.04.2018,106
+4,praca dodatkowa,07.07.2018,141
+3,kartkówka,24.09.2018,166
+2,test,31.12.2017,113
+4,aktywność,03.06.2018,130
+4,test,02.08.2018,96
+1,praca domowa,28.12.2017,30
+6,praca dodatkowa,21.07.2018,54
+4,aktywność,03.03.2018,161
+2,kartkówka,06.06.2018,170
+6,aktywność,06.01.2018,144
+3,praca dodatkowa,02.03.2018,86
+4,praca domowa,13.01.2018,44
+1,praca dodatkowa,11.07.2018,17
+1,sprawdzian,26.05.2018,27
+5,aktywność,19.04.2018,104
+3,test,01.07.2018,11
+4,test,11.10.2018,18
+2,aktywność,28.04.2018,67
+6,sprawdzian,19.10.2018,160
+1,test,15.05.2018,79
+5,praca domowa,15.03.2018,16
+5,sprawdzian,12.03.2018,65
+4,sprawdzian,24.12.2017,41
+6,praca dodatkowa,06.04.2018,79
+1,praca domowa,16.01.2018,13
+4,sprawdzian,15.02.2018,48
+5,praca dodatkowa,12.01.2018,189
+6,sprawdzian,22.10.2018,163
+2,praca dodatkowa,14.08.2018,7
+4,praca dodatkowa,27.05.2018,61
+1,sprawdzian,04.07.2018,49
+2,test,29.06.2018,10
+3,sprawdzian,14.02.2018,190
+6,aktywność,17.04.2018,106
+3,praca dodatkowa,20.03.2018,98
+1,kartkówka,21.07.2018,107
+3,praca dodatkowa,09.08.2018,98
+4,praca dodatkowa,22.12.2017,11
+6,aktywność,07.05.2018,197
+4,sprawdzian,13.10.2018,7
+1,praca domowa,01.02.2018,53
+1,sprawdzian,12.10.2018,53
+5,praca dodatkowa,23.12.2017,191
+6,praca dodatkowa,30.03.2018,49
+3,kartkówka,27.03.2018,159
+1,aktywność,07.04.2018,158
+5,test,19.02.2018,191
+5,kartkówka,15.03.2018,28
+5,aktywność,28.12.2017,77
+4,aktywność,19.09.2018,147
+1,aktywność,03.05.2018,11
+4,test,15.08.2018,186
+5,aktywność,10.10.2018,98
+6,test,19.06.2018,8
+1,praca dodatkowa,28.09.2018,147
+3,kartkówka,27.07.2018,66
+6,test,05.04.2018,51
+3,kartkówka,04.02.2018,147
+3,kartkówka,19.02.2018,97
+2,praca dodatkowa,27.04.2018,123
+3,test,05.01.2018,52
+6,praca dodatkowa,19.05.2018,150
+1,aktywność,04.10.2018,190
+3,kartkówka,15.07.2018,71
+2,kartkówka,14.07.2018,43
+6,praca dodatkowa,08.04.2018,72
+6,test,05.04.2018,95
+4,aktywność,22.09.2018,168
+2,praca dodatkowa,10.07.2018,43
+4,aktywność,13.08.2018,97
+5,aktywność,08.03.2018,116
+2,test,03.08.2018,188
+6,praca domowa,25.09.2018,127
+6,sprawdzian,16.03.2018,30
+3,sprawdzian,17.06.2018,143
+1,aktywność,06.03.2018,36
+2,test,31.01.2018,86
+6,praca domowa,06.09.2018,106
+2,praca domowa,09.07.2018,124
+3,aktywność,27.12.2017,171
+1,aktywność,03.04.2018,141
+6,sprawdzian,25.07.2018,157
+6,test,03.08.2018,117
+4,test,06.04.2018,99
+2,aktywność,12.08.2018,164
+6,kartkówka,13.08.2018,113
+3,kartkówka,15.01.2018,76
+2,sprawdzian,14.06.2018,164
+6,aktywność,05.05.2018,122
+6,praca dodatkowa,01.03.2018,96
+1,test,23.05.2018,162
+3,aktywność,14.05.2018,89
+4,kartkówka,28.02.2018,157
+5,aktywność,23.08.2018,99
+5,test,06.03.2018,65
+5,praca dodatkowa,19.04.2018,157
+1,praca domowa,06.09.2018,44
+5,sprawdzian,28.04.2018,63
+4,kartkówka,10.03.2018,23
+2,praca dodatkowa,11.04.2018,52
+4,aktywność,15.06.2018,67
+1,kartkówka,12.02.2018,90
+1,praca domowa,20.02.2018,178
+1,aktywność,25.01.2018,95
+2,kartkówka,29.12.2017,109
+2,aktywność,07.08.2018,40
+4,sprawdzian,27.04.2018,59
+1,sprawdzian,04.09.2018,104
+3,kartkówka,25.04.2018,114
+3,praca domowa,06.07.2018,3
+2,kartkówka,03.10.2018,124
+2,aktywność,06.01.2018,90
+4,kartkówka,12.04.2018,126
+3,sprawdzian,26.04.2018,123
+5,praca domowa,10.01.2018,198
+1,kartkówka,19.09.2018,129
+2,sprawdzian,30.09.2018,125
+5,praca domowa,01.10.2018,21
+6,sprawdzian,02.08.2018,132
+5,praca dodatkowa,25.12.2017,20
+5,praca dodatkowa,08.07.2018,139
+2,kartkówka,01.06.2018,26
+4,praca dodatkowa,28.01.2018,8
+5,praca domowa,05.03.2018,62
+3,praca domowa,08.03.2018,39
+5,sprawdzian,17.04.2018,184
+5,aktywność,27.02.2018,145
+4,test,19.10.2018,183
+6,kartkówka,15.02.2018,110
+5,kartkówka,25.03.2018,95
+4,test,07.10.2018,116
+3,praca dodatkowa,13.10.2018,65
+3,praca dodatkowa,28.03.2018,158
+5,aktywność,12.06.2018,196
+4,aktywność,09.09.2018,97
+1,praca dodatkowa,21.07.2018,90
+6,praca domowa,27.09.2018,149
+2,kartkówka,31.12.2017,85
+3,aktywność,21.02.2018,43
+2,kartkówka,09.10.2018,161
+6,test,05.04.2018,22
+3,aktywność,07.10.2018,129
+1,aktywność,20.01.2018,102
+6,praca dodatkowa,21.12.2017,62
+6,sprawdzian,04.04.2018,132
+5,praca domowa,20.06.2018,186
+6,praca domowa,20.02.2018,94
+3,praca dodatkowa,10.01.2018,58
+3,praca domowa,04.06.2018,52
+4,praca dodatkowa,27.03.2018,108
+6,praca dodatkowa,11.10.2018,162
+4,praca dodatkowa,10.05.2018,57
+2,sprawdzian,04.05.2018,14
+2,praca domowa,15.09.2018,24
+3,praca domowa,07.04.2018,27
+4,praca dodatkowa,03.03.2018,23
+4,kartkówka,15.04.2018,115
+3,praca dodatkowa,11.03.2018,113
+6,praca domowa,12.10.2018,135
+3,kartkówka,04.01.2018,4
+3,aktywność,16.12.2017,11
+6,praca dodatkowa,06.10.2018,10
+4,praca domowa,11.09.2018,185
+4,sprawdzian,02.02.2018,168
+5,test,06.07.2018,79
+4,praca dodatkowa,21.02.2018,143
+4,praca dodatkowa,10.05.2018,160
+6,sprawdzian,21.08.2018,98
+3,praca dodatkowa,18.03.2018,76
+6,sprawdzian,11.09.2018,191
+5,test,20.01.2018,107
+2,test,22.06.2018,148
+5,praca dodatkowa,25.04.2018,63
+6,sprawdzian,24.10.2018,89
+4,praca dodatkowa,23.01.2018,107
+4,sprawdzian,16.10.2018,188
+5,kartkówka,13.09.2018,143
+6,praca dodatkowa,31.05.2018,138
+1,praca domowa,12.03.2018,175
+5,praca dodatkowa,20.05.2018,27
+3,test,06.01.2018,134
+1,praca domowa,01.04.2018,148
+2,praca domowa,08.07.2018,198
+1,sprawdzian,28.07.2018,57
+5,praca dodatkowa,05.09.2018,49
+6,praca dodatkowa,08.02.2018,186
+6,sprawdzian,28.09.2018,119
+1,sprawdzian,26.01.2018,20
+3,aktywność,16.07.2018,54
+1,praca domowa,12.04.2018,175
+3,test,28.01.2018,112
+2,test,10.01.2018,92
+6,kartkówka,08.04.2018,106
+2,praca dodatkowa,11.04.2018,45
+4,praca dodatkowa,17.05.2018,38
+5,praca domowa,20.07.2018,59
+1,sprawdzian,08.10.2018,90
+5,kartkówka,31.01.2018,61
+6,praca dodatkowa,08.01.2018,71
+2,sprawdzian,24.03.2018,12
+5,praca domowa,22.09.2018,194
+4,praca domowa,16.12.2017,52
+4,sprawdzian,16.12.2017,19
+1,praca dodatkowa,27.01.2018,55
+1,kartkówka,19.08.2018,147
+2,sprawdzian,27.05.2018,30
+6,kartkówka,27.05.2018,20
+6,praca domowa,21.02.2018,33
+6,praca dodatkowa,28.08.2018,180
+3,sprawdzian,13.04.2018,99
+3,praca domowa,02.05.2018,160
+4,sprawdzian,06.01.2018,92
+6,test,18.10.2018,176
+2,sprawdzian,01.10.2018,46
+4,sprawdzian,28.12.2017,58
+1,praca domowa,08.08.2018,63
+3,praca domowa,08.03.2018,29
+1,praca dodatkowa,22.03.2018,196
+4,aktywność,06.04.2018,10
+1,aktywność,25.09.2018,10
+1,aktywność,18.07.2018,179
+2,praca dodatkowa,24.10.2018,145
+2,praca domowa,10.10.2018,164
+6,sprawdzian,26.02.2018,75
+5,praca domowa,30.04.2018,85
+3,aktywność,08.02.2018,12
+3,sprawdzian,19.07.2018,64
+2,aktywność,23.03.2018,72
+2,praca dodatkowa,15.02.2018,185
+6,kartkówka,25.09.2018,4
+2,praca domowa,31.10.2018,36
+4,kartkówka,20.08.2018,36
+6,sprawdzian,14.07.2018,58
+4,kartkówka,11.04.2018,165
+2,test,19.07.2018,7
+4,test,08.09.2018,37
+5,kartkówka,19.07.2018,192
+5,test,10.03.2018,195
+6,test,16.02.2018,107
+3,praca domowa,14.07.2018,62
+3,aktywność,09.10.2018,192
+5,sprawdzian,03.02.2018,10
+3,praca domowa,13.08.2018,104
+5,aktywność,24.06.2018,57
+2,sprawdzian,01.06.2018,184
+4,kartkówka,02.02.2018,3
+4,test,12.04.2018,91
+1,test,20.08.2018,39
+2,sprawdzian,19.09.2018,63
+6,praca domowa,22.09.2018,194
+5,aktywność,17.02.2018,71
+3,aktywność,29.07.2018,95
+3,praca dodatkowa,25.03.2018,57
+3,kartkówka,21.08.2018,168
+3,aktywność,26.07.2018,94
+4,aktywność,22.03.2018,112
+6,praca dodatkowa,22.12.2017,191
+4,test,11.09.2018,70
+3,praca domowa,18.09.2018,196
+3,praca dodatkowa,06.02.2018,28
+4,test,29.08.2018,156
+3,praca dodatkowa,07.06.2018,25
+2,kartkówka,21.01.2018,100
+1,kartkówka,30.03.2018,122
+1,praca dodatkowa,12.10.2018,13
+3,kartkówka,05.01.2018,188
+6,praca dodatkowa,29.04.2018,163
+5,kartkówka,16.05.2018,84
+2,praca dodatkowa,03.08.2018,170
+6,kartkówka,26.09.2018,47
+6,praca dodatkowa,17.09.2018,189
+2,sprawdzian,17.02.2018,195
+5,test,24.07.2018,63
+3,test,06.10.2018,170
+5,sprawdzian,02.06.2018,114
+1,aktywność,18.03.2018,67
+2,praca dodatkowa,20.07.2018,6
+5,test,06.02.2018,143
+5,kartkówka,21.03.2018,49
+4,aktywność,27.09.2018,172
+4,sprawdzian,31.10.2018,173
+1,praca dodatkowa,16.05.2018,27
+4,aktywność,07.04.2018,156
+5,praca domowa,18.01.2018,171
+3,praca dodatkowa,19.06.2018,173
+5,kartkówka,18.10.2018,145
+6,kartkówka,21.05.2018,150
+6,aktywność,27.01.2018,172
+1,praca dodatkowa,21.06.2018,88
+2,praca domowa,31.07.2018,163
+2,praca domowa,08.03.2018,119
+1,test,05.06.2018,112
+3,aktywność,30.04.2018,180
+3,kartkówka,17.04.2018,125
+4,praca dodatkowa,03.05.2018,195
+5,kartkówka,07.08.2018,172
+4,praca dodatkowa,20.04.2018,92
+6,kartkówka,22.03.2018,189
+3,praca domowa,27.09.2018,152
+2,sprawdzian,30.12.2017,7
+5,aktywność,06.09.2018,90
+1,sprawdzian,26.08.2018,88
+4,test,28.02.2018,170
+2,sprawdzian,01.04.2018,148
+2,praca domowa,06.08.2018,95
+5,test,17.07.2018,14
+1,aktywność,11.08.2018,130
+2,sprawdzian,21.03.2018,38
+5,praca dodatkowa,14.06.2018,191
+6,sprawdzian,12.10.2018,121
+3,sprawdzian,14.02.2018,49
+2,sprawdzian,31.05.2018,36
+4,aktywność,06.02.2018,52
+6,test,03.03.2018,100
+4,test,28.07.2018,103
+3,praca domowa,29.03.2018,50
+6,praca dodatkowa,20.06.2018,178
+3,aktywność,07.06.2018,47
+3,praca domowa,15.08.2018,2
+1,praca domowa,06.06.2018,27
+4,kartkówka,27.09.2018,1
+3,sprawdzian,11.10.2018,66
+5,praca domowa,22.06.2018,36
+3,praca domowa,22.09.2018,182
+2,sprawdzian,18.03.2018,59
+6,aktywność,29.10.2018,59
+4,test,07.04.2018,90
+1,kartkówka,09.06.2018,160
+2,kartkówka,19.05.2018,91
+3,test,19.04.2018,129
+2,kartkówka,01.02.2018,8
+1,sprawdzian,20.10.2018,92
+5,aktywność,20.05.2018,148
+6,praca dodatkowa,19.03.2018,128
+2,praca domowa,19.06.2018,53
+4,kartkówka,29.01.2018,165
+5,kartkówka,06.03.2018,124
+2,test,15.06.2018,120
+1,kartkówka,13.06.2018,181
+4,test,30.03.2018,1
+6,praca dodatkowa,04.06.2018,39
+1,praca dodatkowa,29.05.2018,106
+3,aktywność,02.05.2018,176
+4,praca domowa,18.12.2017,103
+1,sprawdzian,16.02.2018,162
+6,praca dodatkowa,20.10.2018,28
+2,kartkówka,21.08.2018,24
+6,test,05.06.2018,140
+4,aktywność,13.03.2018,170
+6,praca dodatkowa,15.06.2018,107
+4,praca dodatkowa,14.09.2018,100
+1,test,17.02.2018,81
+2,sprawdzian,21.12.2017,131
+2,sprawdzian,16.08.2018,160
+4,praca dodatkowa,01.08.2018,17
+5,praca domowa,30.12.2017,147
+5,sprawdzian,02.06.2018,189
+2,praca dodatkowa,25.09.2018,146
+4,praca domowa,23.07.2018,99
+2,sprawdzian,01.09.2018,155
+4,praca domowa,21.10.2018,86
+3,kartkówka,15.07.2018,60
+6,aktywność,07.05.2018,185
+3,aktywność,16.04.2018,130
+3,aktywność,06.09.2018,109
+4,test,05.09.2018,135
+6,kartkówka,30.01.2018,98
+4,praca dodatkowa,21.10.2018,135
+2,kartkówka,26.10.2018,172
+3,sprawdzian,11.10.2018,14
+4,praca dodatkowa,29.07.2018,69
+3,sprawdzian,12.01.2018,10
+2,praca domowa,11.10.2018,39
+6,test,15.03.2018,73
+4,praca dodatkowa,11.06.2018,167
+4,test,29.08.2018,192
+6,test,08.06.2018,115
+2,praca dodatkowa,21.07.2018,67
+6,praca dodatkowa,27.05.2018,192
+4,test,09.08.2018,22
+5,sprawdzian,21.05.2018,151
+4,test,11.02.2018,162
+1,test,26.09.2018,139
+2,sprawdzian,26.03.2018,16
+3,praca dodatkowa,01.01.2018,179
+4,test,24.06.2018,186
+4,praca dodatkowa,21.12.2017,161
+1,aktywność,23.05.2018,56
+6,kartkówka,26.01.2018,131
+3,sprawdzian,14.06.2018,35
+2,test,29.01.2018,127
+2,kartkówka,06.06.2018,137
+1,test,31.12.2017,102
+4,aktywność,07.06.2018,8
+5,praca domowa,05.09.2018,169
+2,praca dodatkowa,13.03.2018,148
+2,aktywność,24.12.2017,110
+4,test,16.10.2018,55
+1,kartkówka,17.03.2018,171
+6,sprawdzian,13.04.2018,115
+6,aktywność,08.05.2018,122
+5,aktywność,14.07.2018,129
+2,praca dodatkowa,11.08.2018,72
+2,aktywność,10.09.2018,35
+4,praca domowa,20.04.2018,109
+1,sprawdzian,08.02.2018,57
+4,kartkówka,17.05.2018,87
+2,praca dodatkowa,19.09.2018,103
+3,sprawdzian,13.05.2018,56
+1,praca dodatkowa,05.01.2018,1
+1,praca domowa,06.07.2018,157
+5,praca domowa,23.02.2018,107
+6,aktywność,07.05.2018,28
+6,praca domowa,06.05.2018,12
+6,test,17.08.2018,172
+2,praca domowa,29.03.2018,19
+5,kartkówka,11.06.2018,164
+5,aktywność,26.02.2018,104
+2,praca dodatkowa,15.09.2018,28
+2,kartkówka,26.10.2018,128
+1,praca dodatkowa,17.08.2018,79
+2,test,22.07.2018,109
+6,test,12.05.2018,49
+6,aktywność,04.04.2018,181
+5,praca domowa,09.02.2018,141
+6,test,18.08.2018,3
+1,praca domowa,30.12.2017,37
+2,aktywność,10.04.2018,95
+5,aktywność,17.03.2018,81
+5,praca dodatkowa,02.05.2018,121
+3,sprawdzian,28.03.2018,107
+6,sprawdzian,25.04.2018,68
+4,aktywność,01.05.2018,161
+2,praca domowa,02.02.2018,113
+1,praca dodatkowa,17.02.2018,10
+1,sprawdzian,06.10.2018,33
+5,praca domowa,25.09.2018,119
+4,kartkówka,08.05.2018,168
+6,kartkówka,28.04.2018,102
+3,aktywność,26.10.2018,93
+1,sprawdzian,07.10.2018,15
+2,sprawdzian,09.01.2018,109
+3,kartkówka,19.05.2018,69
+1,sprawdzian,23.04.2018,195
+6,sprawdzian,20.05.2018,147
+5,test,09.02.2018,147
+4,test,21.04.2018,78
+5,kartkówka,11.07.2018,61
+3,kartkówka,17.10.2018,73
+3,aktywność,20.05.2018,52
+4,sprawdzian,05.10.2018,15
+1,praca domowa,29.01.2018,129
+1,sprawdzian,14.02.2018,193
+2,praca domowa,21.06.2018,190
+4,praca domowa,25.02.2018,52
+4,kartkówka,05.08.2018,92
+5,sprawdzian,17.10.2018,85
+3,aktywność,08.08.2018,85
+6,praca dodatkowa,22.01.2018,149
+1,sprawdzian,19.06.2018,59
+4,test,30.05.2018,42
+5,praca domowa,12.08.2018,6
+3,kartkówka,12.07.2018,160
+2,praca domowa,12.10.2018,20
+3,praca domowa,24.03.2018,74
+1,sprawdzian,31.08.2018,42
+1,kartkówka,05.06.2018,133
+5,sprawdzian,17.10.2018,105
+1,test,07.01.2018,100
+3,aktywność,07.10.2018,73
+1,praca dodatkowa,23.02.2018,101
+5,aktywność,25.02.2018,141
+6,test,31.12.2017,96
+4,test,07.04.2018,86
+2,praca dodatkowa,28.02.2018,64
+5,praca dodatkowa,27.05.2018,37
+5,sprawdzian,02.03.2018,118
+3,sprawdzian,29.07.2018,189
+6,praca domowa,25.09.2018,47
+1,sprawdzian,28.12.2017,92
+3,praca domowa,15.06.2018,119
+2,praca dodatkowa,19.06.2018,119
+3,praca domowa,31.01.2018,52
+3,praca domowa,28.04.2018,65
+2,sprawdzian,16.03.2018,119
+5,test,28.04.2018,114
+1,praca domowa,26.07.2018,158
+1,praca domowa,15.03.2018,178
+2,kartkówka,06.04.2018,13
+5,praca domowa,28.05.2018,92
+6,praca dodatkowa,29.09.2018,115
+5,test,28.06.2018,56
+1,test,01.05.2018,166
+4,kartkówka,23.03.2018,154
+1,praca dodatkowa,12.02.2018,1
+3,praca domowa,31.12.2017,5
+5,praca domowa,17.01.2018,50
+5,test,25.12.2017,110
+6,praca dodatkowa,18.12.2017,6
+4,test,26.06.2018,32
+4,praca dodatkowa,03.02.2018,37
+1,kartkówka,14.10.2018,39
+1,sprawdzian,23.03.2018,6
+6,test,05.08.2018,82
+4,praca dodatkowa,14.06.2018,80
+1,praca dodatkowa,28.03.2018,24
+6,praca domowa,15.05.2018,187
+6,sprawdzian,16.05.2018,70
+1,sprawdzian,14.04.2018,161
+1,test,23.05.2018,58
+3,praca dodatkowa,25.02.2018,80
+2,aktywność,26.10.2018,44
+4,aktywność,04.01.2018,68
+2,sprawdzian,02.04.2018,55
+1,praca dodatkowa,11.02.2018,183
+2,kartkówka,31.05.2018,173
+2,test,16.03.2018,97
+4,kartkówka,03.02.2018,5
+3,kartkówka,29.06.2018,168
+3,praca dodatkowa,08.10.2018,34
+6,test,26.04.2018,1
+6,aktywność,18.05.2018,66
+3,kartkówka,20.06.2018,9
+1,praca dodatkowa,31.05.2018,2
+5,aktywność,03.08.2018,170
+1,praca dodatkowa,21.01.2018,75
+5,sprawdzian,08.10.2018,165
+4,aktywność,02.04.2018,187
+4,aktywność,20.09.2018,193
+3,kartkówka,19.01.2018,69
+5,test,18.07.2018,125
+4,sprawdzian,14.08.2018,121
+3,praca domowa,20.01.2018,28
+4,praca domowa,10.10.2018,86
+4,test,02.05.2018,142
+2,kartkówka,07.08.2018,168
+4,praca domowa,06.10.2018,141
+4,praca dodatkowa,16.05.2018,7
+6,praca domowa,28.10.2018,138
+6,aktywność,12.06.2018,190
+6,praca dodatkowa,19.08.2018,58
+5,kartkówka,15.03.2018,74
+5,kartkówka,18.10.2018,18
+1,sprawdzian,06.04.2018,43
+3,praca domowa,07.07.2018,149
+6,aktywność,12.03.2018,194
+1,kartkówka,30.01.2018,66
+2,praca dodatkowa,10.03.2018,68
+3,praca domowa,16.04.2018,35
+4,kartkówka,26.07.2018,51
+2,aktywność,21.12.2017,187
+3,kartkówka,28.03.2018,5
+4,test,23.09.2018,189
+3,sprawdzian,25.03.2018,132
+1,aktywność,14.09.2018,113
+5,aktywność,13.09.2018,189
+6,aktywność,29.12.2017,113
+4,kartkówka,31.07.2018,8
+1,kartkówka,02.09.2018,124
+4,praca dodatkowa,18.10.2018,117
+3,aktywność,15.04.2018,160
+1,aktywność,11.04.2018,120
+6,sprawdzian,13.08.2018,74
+5,aktywność,19.06.2018,140
+1,aktywność,17.12.2017,170
+1,praca dodatkowa,24.07.2018,175
+1,praca domowa,19.04.2018,34
+3,aktywność,19.09.2018,116
+1,aktywność,01.02.2018,137
+5,praca domowa,16.05.2018,16
+5,praca dodatkowa,19.01.2018,4
+3,praca domowa,26.07.2018,18
+2,kartkówka,18.04.2018,97
+3,aktywność,17.06.2018,199
+4,aktywność,17.01.2018,45
+1,aktywność,07.03.2018,67
+6,praca domowa,17.09.2018,104
+2,aktywność,08.05.2018,165
+3,kartkówka,21.08.2018,39
+5,kartkówka,12.10.2018,72
+2,sprawdzian,20.03.2018,75
+4,test,18.08.2018,111
+5,praca domowa,08.02.2018,3
+4,praca dodatkowa,20.08.2018,64
+3,praca domowa,27.12.2017,166
+4,sprawdzian,21.02.2018,13
+6,praca domowa,05.08.2018,146
+6,praca domowa,18.07.2018,10
+2,praca domowa,26.03.2018,51
+2,sprawdzian,21.08.2018,196
+4,praca domowa,10.08.2018,10
+3,kartkówka,17.04.2018,189
+1,aktywność,20.10.2018,199
+6,praca domowa,10.03.2018,175
+5,praca dodatkowa,20.09.2018,135
+2,sprawdzian,19.12.2017,6
+1,aktywność,17.04.2018,110
+3,kartkówka,22.05.2018,91
+4,praca domowa,20.06.2018,96
+5,aktywność,07.01.2018,143
+5,kartkówka,17.01.2018,9
+6,aktywność,17.05.2018,142
+5,aktywność,12.07.2018,100
+5,praca dodatkowa,11.06.2018,97
+3,aktywność,03.01.2018,8
+5,praca domowa,06.08.2018,179
+3,aktywność,18.06.2018,66
+5,kartkówka,27.04.2018,1
+4,kartkówka,08.03.2018,22
+2,sprawdzian,22.07.2018,112
+4,sprawdzian,29.09.2018,2
+3,praca dodatkowa,29.09.2018,148
+6,sprawdzian,03.07.2018,97
+5,aktywność,01.08.2018,19
+5,praca domowa,01.08.2018,70
+4,praca dodatkowa,25.05.2018,40
+6,kartkówka,03.02.2018,92
+5,kartkówka,30.04.2018,121
+2,praca dodatkowa,25.05.2018,105
+1,aktywność,09.06.2018,125
+4,kartkówka,27.10.2018,88
+4,kartkówka,31.10.2018,158
+1,praca dodatkowa,04.07.2018,117
+5,praca domowa,19.12.2017,103
+3,test,20.12.2017,102
+6,test,27.08.2018,148
+3,aktywność,09.03.2018,21
+4,praca dodatkowa,21.08.2018,70
+2,kartkówka,30.04.2018,151
+1,praca domowa,19.07.2018,91
+5,praca domowa,17.02.2018,192
+5,praca domowa,11.06.2018,173
+1,praca dodatkowa,22.01.2018,30
+2,aktywność,06.07.2018,73
+5,aktywność,17.12.2017,167
+1,kartkówka,25.01.2018,63
+6,sprawdzian,04.08.2018,90
+3,aktywność,30.08.2018,16
+4,praca dodatkowa,23.06.2018,154
+3,praca dodatkowa,05.09.2018,101
+2,kartkówka,05.03.2018,75
+6,aktywność,28.02.2018,17
+3,praca domowa,18.04.2018,40
+4,test,13.04.2018,126
+1,test,12.09.2018,137
+1,test,07.10.2018,74
+1,aktywność,14.03.2018,97
+5,test,25.08.2018,80
+1,praca dodatkowa,12.03.2018,116
+3,aktywność,01.04.2018,76
+3,praca domowa,31.08.2018,12
+5,aktywność,02.10.2018,168
+1,praca domowa,16.05.2018,85
+2,aktywność,07.09.2018,199
+4,praca domowa,07.05.2018,90
+2,praca dodatkowa,27.02.2018,85
+1,praca domowa,18.07.2018,87
+2,test,07.09.2018,9
+5,aktywność,13.06.2018,42
+3,sprawdzian,11.05.2018,130
+6,test,08.06.2018,64
+4,kartkówka,03.05.2018,54
+5,praca dodatkowa,18.07.2018,150
+2,aktywność,04.05.2018,79
+1,sprawdzian,20.10.2018,32
+3,sprawdzian,23.03.2018,184
+6,sprawdzian,28.09.2018,15
+6,aktywność,25.08.2018,159
+5,sprawdzian,16.04.2018,196
+1,praca domowa,02.05.2018,144
+1,kartkówka,02.03.2018,97
+6,praca dodatkowa,01.01.2018,180
+5,praca dodatkowa,29.08.2018,93
+5,praca dodatkowa,17.03.2018,91
+2,test,10.05.2018,24
+5,sprawdzian,28.04.2018,89
+1,test,09.08.2018,63
+2,sprawdzian,29.10.2018,140
+3,sprawdzian,27.02.2018,180
+6,praca domowa,20.04.2018,65
+5,sprawdzian,13.05.2018,108
+6,test,23.02.2018,199
+1,kartkówka,16.08.2018,34
+4,sprawdzian,27.04.2018,52
+1,aktywność,13.06.2018,102
+5,praca domowa,13.08.2018,163
+4,praca dodatkowa,16.05.2018,45
+6,aktywność,03.06.2018,27
+5,test,27.10.2018,121
+5,aktywność,31.10.2018,21
+3,aktywność,01.08.2018,148
+6,test,04.01.2018,91
+1,praca dodatkowa,11.10.2018,145
+4,praca domowa,22.03.2018,130
+1,kartkówka,21.09.2018,88
+2,praca dodatkowa,30.07.2018,8
+1,sprawdzian,12.10.2018,19
+4,sprawdzian,17.02.2018,81
+2,test,20.04.2018,148
+5,sprawdzian,10.09.2018,33
+3,kartkówka,27.07.2018,170
+2,kartkówka,22.06.2018,8
+6,praca domowa,02.06.2018,88
+4,aktywność,11.08.2018,87
+4,praca dodatkowa,21.06.2018,138
+1,aktywność,22.01.2018,49
+1,test,16.06.2018,10
+4,aktywność,02.09.2018,119
+2,praca domowa,16.07.2018,192
+6,sprawdzian,02.06.2018,75
+1,kartkówka,19.02.2018,39
+6,kartkówka,16.01.2018,148
+3,aktywność,14.03.2018,103
+1,praca domowa,06.08.2018,187
+2,kartkówka,20.09.2018,145
+5,test,22.10.2018,75
+2,sprawdzian,05.08.2018,48
+4,sprawdzian,02.01.2018,135
+2,kartkówka,11.01.2018,187
+4,kartkówka,07.07.2018,44
+1,kartkówka,08.05.2018,190
+6,praca domowa,03.09.2018,59
+5,praca dodatkowa,22.02.2018,69
+1,aktywność,07.07.2018,17
+6,test,24.01.2018,70
+6,praca domowa,22.03.2018,67
+4,kartkówka,02.02.2018,49
+1,aktywność,15.04.2018,166
+6,sprawdzian,08.09.2018,181
+4,praca dodatkowa,28.04.2018,36
+3,praca domowa,02.08.2018,87
+6,sprawdzian,03.10.2018,27
+4,praca dodatkowa,13.10.2018,75
+2,test,09.02.2018,32
+6,test,30.08.2018,71
+3,praca domowa,10.07.2018,84
+4,aktywność,15.03.2018,126
+5,praca dodatkowa,15.06.2018,150
+4,sprawdzian,17.12.2017,166
+6,test,24.04.2018,164
+5,praca dodatkowa,16.09.2018,105
+1,praca dodatkowa,02.02.2018,160
+1,sprawdzian,21.10.2018,73
+1,sprawdzian,21.12.2017,78
+5,praca domowa,23.05.2018,196
+6,kartkówka,22.08.2018,156
+2,aktywność,28.04.2018,39
+3,praca dodatkowa,05.07.2018,111
+1,test,03.04.2018,92
+2,praca dodatkowa,18.01.2018,31
+2,kartkówka,08.10.2018,182
+4,test,07.01.2018,131
+3,praca dodatkowa,27.09.2018,68
+6,praca dodatkowa,04.02.2018,76
+5,sprawdzian,07.08.2018,111
+1,kartkówka,17.05.2018,177
+5,aktywność,06.01.2018,142
+1,test,10.01.2018,56
+1,sprawdzian,06.03.2018,146
+6,praca dodatkowa,06.10.2018,185
+2,test,12.07.2018,34
+1,aktywność,22.04.2018,63
+1,sprawdzian,09.03.2018,181
+1,praca dodatkowa,04.10.2018,46
+4,praca domowa,12.10.2018,152
+3,kartkówka,06.02.2018,166
+3,praca dodatkowa,24.02.2018,136
+3,praca domowa,18.06.2018,107
+3,praca domowa,23.01.2018,184
+5,test,26.10.2018,161
+4,praca dodatkowa,08.08.2018,84
+4,praca dodatkowa,16.08.2018,92
+6,test,30.10.2018,85
+5,praca dodatkowa,15.08.2018,147
+5,praca dodatkowa,25.06.2018,44
+2,kartkówka,18.12.2017,168
+6,praca domowa,08.09.2018,22
+2,aktywność,21.08.2018,122
+2,kartkówka,18.10.2018,52
+4,sprawdzian,28.10.2018,106
+3,test,23.05.2018,27
+4,kartkówka,07.08.2018,182
+4,kartkówka,19.12.2017,173
+1,praca dodatkowa,24.03.2018,47
+5,test,17.05.2018,104
+5,kartkówka,26.02.2018,26
+5,test,04.02.2018,50
+5,sprawdzian,10.03.2018,70
+6,aktywność,07.05.2018,167
+1,praca domowa,09.04.2018,27
+6,aktywność,28.07.2018,2
+6,praca domowa,29.08.2018,93
+3,test,27.10.2018,194
+6,sprawdzian,25.07.2018,163
+3,aktywność,01.04.2018,16
+4,test,30.12.2017,17
+4,sprawdzian,05.09.2018,69
+5,aktywność,24.05.2018,126
+5,praca domowa,13.02.2018,110
+3,test,24.04.2018,97
+3,sprawdzian,13.09.2018,24
+1,praca domowa,22.07.2018,81
+5,aktywność,03.04.2018,96
+4,aktywność,30.01.2018,11
+4,praca domowa,24.06.2018,19
+1,aktywność,30.03.2018,194
+6,praca domowa,24.08.2018,181
+3,praca domowa,22.08.2018,7
+2,praca domowa,12.09.2018,152
+5,sprawdzian,14.03.2018,37
+4,test,07.08.2018,6
+3,sprawdzian,28.03.2018,197
+4,sprawdzian,18.08.2018,103
+1,test,14.07.2018,191
+3,praca dodatkowa,18.09.2018,94
+1,sprawdzian,13.09.2018,105
+4,aktywność,07.05.2018,177
+2,kartkówka,20.05.2018,66
+5,praca dodatkowa,15.07.2018,36
+6,test,25.01.2018,103
+2,test,25.01.2018,191
+5,sprawdzian,13.07.2018,52
+1,kartkówka,11.02.2018,4
+4,praca domowa,09.10.2018,96
+4,test,28.02.2018,123
+5,praca dodatkowa,14.01.2018,90
+2,test,11.06.2018,29
+2,test,10.06.2018,82
+3,test,19.03.2018,150
+5,kartkówka,30.05.2018,11
+1,aktywność,09.06.2018,133
+3,kartkówka,23.02.2018,120
+1,praca domowa,21.03.2018,109
+5,kartkówka,29.01.2018,177
+1,sprawdzian,01.01.2018,105
+6,test,01.07.2018,17
+5,test,02.04.2018,106
+5,test,29.04.2018,169
+1,praca domowa,24.10.2018,59
+3,praca dodatkowa,11.04.2018,142
+6,sprawdzian,11.09.2018,131
+2,sprawdzian,23.02.2018,98
+1,test,01.06.2018,42
+2,sprawdzian,23.03.2018,7
+4,test,01.01.2018,23
+2,test,06.07.2018,98
+6,praca dodatkowa,15.09.2018,10
+3,aktywność,22.12.2017,60
+6,test,07.06.2018,156
+5,kartkówka,26.04.2018,85
+5,kartkówka,30.03.2018,116
+4,kartkówka,23.01.2018,121
+4,praca dodatkowa,31.03.2018,158
+1,praca dodatkowa,16.05.2018,154
+3,sprawdzian,24.06.2018,169
+3,sprawdzian,22.09.2018,12
+5,kartkówka,20.04.2018,135
+2,aktywność,27.02.2018,48
+6,praca dodatkowa,09.09.2018,143
+2,praca domowa,17.05.2018,169
+3,aktywność,05.03.2018,73
+4,sprawdzian,11.10.2018,51
+1,sprawdzian,07.05.2018,101
+4,kartkówka,06.09.2018,133
+2,sprawdzian,27.07.2018,156
+5,aktywność,12.07.2018,24
+1,test,16.09.2018,9
+2,praca domowa,16.03.2018,138
+1,test,16.12.2017,187
+1,test,23.06.2018,23
+2,praca dodatkowa,16.08.2018,69
+6,aktywność,10.09.2018,182
+6,praca dodatkowa,28.02.2018,26
+4,aktywność,03.09.2018,94
+2,kartkówka,23.10.2018,183
+3,kartkówka,25.07.2018,74
+5,praca dodatkowa,12.02.2018,78
+4,aktywność,29.04.2018,143
+5,praca domowa,22.08.2018,117
+4,kartkówka,02.08.2018,51
+6,kartkówka,03.09.2018,11
+2,kartkówka,22.10.2018,171
+2,kartkówka,23.07.2018,182
+6,praca domowa,24.09.2018,97
+1,sprawdzian,29.01.2018,92
+1,praca domowa,03.01.2018,26
+4,kartkówka,21.08.2018,152
+2,praca dodatkowa,21.12.2017,130
+6,praca domowa,03.01.2018,179
+1,aktywność,20.07.2018,93
+3,aktywność,08.05.2018,183
+1,test,05.01.2018,118
+2,praca dodatkowa,03.10.2018,14
+4,aktywność,21.07.2018,127
+6,praca domowa,29.06.2018,94
+5,test,30.10.2018,50
+5,sprawdzian,06.02.2018,19
+4,praca dodatkowa,18.08.2018,110
+1,praca dodatkowa,12.04.2018,82
+4,aktywność,01.01.2018,18
+4,aktywność,02.03.2018,71
+4,aktywność,19.07.2018,20
+3,test,24.01.2018,97
+5,test,04.06.2018,120
+2,sprawdzian,22.07.2018,38
+6,kartkówka,20.12.2017,125
+1,praca domowa,19.07.2018,185
+3,praca dodatkowa,20.06.2018,106
+2,aktywność,27.01.2018,79
+3,aktywność,15.06.2018,182
+3,sprawdzian,15.10.2018,5
+6,praca dodatkowa,07.04.2018,128
+1,praca dodatkowa,05.06.2018,184
+5,aktywność,12.01.2018,94
+6,test,13.02.2018,187
+5,praca dodatkowa,24.04.2018,44
+4,praca dodatkowa,08.04.2018,186
+4,test,17.07.2018,90
+2,sprawdzian,06.03.2018,123
+1,praca domowa,17.01.2018,146
+1,kartkówka,28.06.2018,37
+4,test,19.01.2018,96
+4,test,18.12.2017,17
+2,praca domowa,12.10.2018,69
+4,sprawdzian,13.10.2018,73
+5,kartkówka,01.01.2018,100
+5,kartkówka,15.06.2018,25
+6,aktywność,27.03.2018,106
+2,praca dodatkowa,28.03.2018,126
+1,kartkówka,27.07.2018,33
+3,praca domowa,22.01.2018,84
+4,praca domowa,31.07.2018,122
+2,praca dodatkowa,21.05.2018,52
+5,kartkówka,07.06.2018,99
+4,praca dodatkowa,19.03.2018,35
+3,praca domowa,18.08.2018,86
+5,test,25.03.2018,67
+2,praca dodatkowa,08.02.2018,138
+1,praca domowa,17.12.2017,140
+3,sprawdzian,19.05.2018,145
+4,test,11.03.2018,67
+1,praca dodatkowa,22.12.2017,70
+4,sprawdzian,11.06.2018,65
+6,test,17.05.2018,192
+2,kartkówka,08.07.2018,60
+3,test,29.10.2018,154
+6,sprawdzian,19.10.2018,47
+3,aktywność,02.09.2018,84
+4,praca domowa,10.10.2018,172
+5,aktywność,07.07.2018,115
+2,test,19.02.2018,157
+6,praca domowa,19.07.2018,107
+3,test,15.02.2018,194
+3,praca dodatkowa,17.09.2018,62
+2,aktywność,18.04.2018,135
+3,aktywność,23.06.2018,142
+2,praca domowa,16.09.2018,138
+5,sprawdzian,07.07.2018,73
+1,praca dodatkowa,11.07.2018,157
+1,kartkówka,09.03.2018,185
+5,praca domowa,23.10.2018,136
+4,test,08.10.2018,125
+3,kartkówka,01.03.2018,183
+2,praca dodatkowa,10.04.2018,151
+3,test,26.09.2018,38
+6,aktywność,21.09.2018,181
+5,aktywność,03.09.2018,165
+5,test,20.10.2018,20
+3,kartkówka,18.03.2018,190
+1,test,24.10.2018,89
+2,aktywność,05.03.2018,50
+2,praca domowa,13.05.2018,155
+6,aktywność,06.08.2018,3
+3,praca dodatkowa,15.06.2018,95
+1,aktywność,14.10.2018,64
+5,praca dodatkowa,14.09.2018,181
+1,kartkówka,05.06.2018,35
+3,test,01.04.2018,88
+4,aktywność,29.03.2018,192
+4,test,23.02.2018,87
+5,praca domowa,06.02.2018,137
+4,sprawdzian,04.01.2018,197
+2,praca domowa,22.03.2018,111
+5,praca domowa,12.09.2018,166
+3,test,24.10.2018,189
+1,sprawdzian,26.03.2018,138
+6,praca domowa,21.10.2018,40
+1,praca dodatkowa,12.05.2018,53
+6,aktywność,12.02.2018,107
+5,praca domowa,04.04.2018,89
+5,praca dodatkowa,23.06.2018,195
+5,praca domowa,25.10.2018,160
+6,praca dodatkowa,27.07.2018,30
+6,praca domowa,21.03.2018,103
+6,praca dodatkowa,18.08.2018,68
+6,praca domowa,08.03.2018,132
+1,aktywność,12.09.2018,178
+5,aktywność,18.07.2018,76
+4,aktywność,17.09.2018,47
+6,kartkówka,19.04.2018,119
+4,kartkówka,13.09.2018,170
+2,praca domowa,04.03.2018,158
+1,aktywność,28.01.2018,46
+3,aktywność,05.03.2018,52
+5,aktywność,20.08.2018,20
+1,test,25.01.2018,87
+6,praca domowa,02.05.2018,133
+2,aktywność,03.01.2018,26
+2,praca domowa,08.05.2018,48
+4,praca domowa,28.09.2018,180
+2,aktywność,13.01.2018,22
+2,kartkówka,22.05.2018,64
+5,praca dodatkowa,13.04.2018,176
+4,test,24.04.2018,157
+4,sprawdzian,11.06.2018,158
+1,kartkówka,23.10.2018,196
+6,aktywność,05.02.2018,120
+5,kartkówka,28.02.2018,115
+1,praca domowa,02.07.2018,40
+3,praca dodatkowa,15.01.2018,177
+1,sprawdzian,15.09.2018,125
+2,kartkówka,27.08.2018,53
+1,praca dodatkowa,03.03.2018,119
+1,test,27.12.2017,197
+6,test,10.01.2018,198
+1,kartkówka,08.04.2018,37
+2,praca dodatkowa,15.06.2018,75
+1,aktywność,24.02.2018,130
+6,sprawdzian,23.04.2018,171
+3,aktywność,26.12.2017,156
+6,praca dodatkowa,27.02.2018,76
+4,praca dodatkowa,29.05.2018,171
+6,sprawdzian,12.01.2018,140
+2,sprawdzian,23.01.2018,27
+6,test,29.03.2018,174
+6,kartkówka,29.04.2018,43
+1,test,18.05.2018,163
+2,aktywność,18.01.2018,16
+1,praca domowa,16.03.2018,172
+3,test,13.04.2018,176
+2,aktywność,25.04.2018,65
+6,aktywność,15.10.2018,107
+5,test,07.09.2018,185
+3,sprawdzian,02.02.2018,48
+2,praca dodatkowa,09.04.2018,159
+1,sprawdzian,11.08.2018,14
+3,praca domowa,25.01.2018,10
+5,aktywność,23.09.2018,17
+6,praca domowa,22.10.2018,116
+1,praca domowa,21.05.2018,40
+1,kartkówka,08.06.2018,153
+2,test,26.01.2018,32
+1,kartkówka,17.08.2018,21
+3,praca domowa,27.05.2018,162
+4,sprawdzian,25.04.2018,55
+6,test,28.02.2018,9
+2,praca dodatkowa,12.08.2018,65
+6,aktywność,17.10.2018,185
+4,praca domowa,29.06.2018,184
+6,sprawdzian,04.09.2018,182
+2,sprawdzian,12.01.2018,193
+5,kartkówka,24.02.2018,5
+4,aktywność,03.09.2018,70
+4,aktywność,17.07.2018,86
+4,praca dodatkowa,05.05.2018,98
+3,praca domowa,16.10.2018,178
+4,praca dodatkowa,28.05.2018,50
+2,kartkówka,23.02.2018,104
+2,praca dodatkowa,20.08.2018,148
+5,praca dodatkowa,31.07.2018,68
+1,praca domowa,13.06.2018,139
+1,kartkówka,30.07.2018,63
+3,kartkówka,27.04.2018,125
+5,praca dodatkowa,16.09.2018,109
+4,praca dodatkowa,09.02.2018,38
+4,aktywność,07.02.2018,23
+5,sprawdzian,19.02.2018,184
+3,praca domowa,03.10.2018,113
+5,praca domowa,12.07.2018,184
+3,test,29.06.2018,148
+4,aktywność,03.02.2018,90
+6,kartkówka,04.06.2018,103
+4,aktywność,22.05.2018,129
+1,aktywność,21.02.2018,113
+4,test,06.10.2018,82
+4,sprawdzian,02.02.2018,179
+4,sprawdzian,23.03.2018,95
+2,praca domowa,25.08.2018,172
+1,kartkówka,27.09.2018,152
+3,sprawdzian,15.02.2018,115
+2,kartkówka,27.07.2018,177
+2,praca domowa,16.01.2018,174
+5,test,30.03.2018,103
+3,praca domowa,29.01.2018,189
+1,kartkówka,23.02.2018,200
+1,aktywność,26.07.2018,185
+2,praca dodatkowa,31.05.2018,176
+3,kartkówka,26.06.2018,141
+2,test,11.02.2018,98
+2,aktywność,02.02.2018,145
+2,praca domowa,06.10.2018,75
+2,kartkówka,19.04.2018,68
+1,praca domowa,03.01.2018,107
+6,praca domowa,14.08.2018,123
+6,aktywność,07.09.2018,106
+5,praca dodatkowa,21.10.2018,108
+6,test,30.03.2018,58
+4,kartkówka,11.10.2018,158
+3,praca dodatkowa,22.02.2018,112
+5,aktywność,01.01.2018,108
+3,praca domowa,26.09.2018,69
+1,praca domowa,28.12.2017,24
+6,test,24.01.2018,149
+6,praca domowa,24.09.2018,26
+6,kartkówka,24.06.2018,129
+3,kartkówka,11.09.2018,25
+1,test,24.06.2018,58
+6,praca dodatkowa,10.05.2018,92
+2,sprawdzian,29.03.2018,71
+4,aktywność,26.02.2018,122
+2,kartkówka,28.10.2018,50
+1,aktywność,04.04.2018,175
+1,kartkówka,10.04.2018,67
+5,test,03.05.2018,80
+6,test,14.07.2018,84
+6,sprawdzian,16.03.2018,189
+3,test,07.03.2018,142
+2,test,21.06.2018,60
+3,praca dodatkowa,16.01.2018,78
+3,aktywność,16.03.2018,42
+6,praca dodatkowa,04.04.2018,161
+1,praca domowa,30.08.2018,70
+3,praca dodatkowa,16.07.2018,22
+5,praca domowa,13.06.2018,76
+4,kartkówka,02.08.2018,192
+6,sprawdzian,12.08.2018,67
+6,praca dodatkowa,31.07.2018,53
+5,kartkówka,17.03.2018,130
+2,praca domowa,08.04.2018,81
+3,praca domowa,30.08.2018,42
+6,sprawdzian,14.01.2018,56
+2,praca domowa,30.01.2018,120
+6,praca dodatkowa,17.06.2018,181
+6,test,06.08.2018,99
+2,sprawdzian,08.09.2018,195
+3,kartkówka,16.04.2018,145
+2,aktywność,07.08.2018,39
+3,aktywność,21.08.2018,107
+6,aktywność,27.09.2018,64
+1,kartkówka,22.02.2018,11
+3,sprawdzian,17.03.2018,134
+4,kartkówka,21.05.2018,40

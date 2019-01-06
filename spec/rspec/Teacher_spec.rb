@@ -120,7 +120,56 @@ describe "Checking Teacher class functionality" do
     @new_teacher = nil
   }
 end
+describe "Teacher - statistics (with db loaded)" do
+  before(:all) do
+    Database.init
+    Register.init
+    @teacher = Teacher.first
+  end
+  it "Count Subjects test" do
+    expect(@teacher.count_subjects).to eq(2)
+  end
 
+  it "Count Grades test" do
+    expect(@teacher.count_grades).to eq(251)
+  end
+
+  it "Count Notes test" do
+    expect(@teacher.count_notes).to eq(10)
+  end
+
+  it "Overall Average Grades test" do
+    expect(@teacher.average_average_subjects).to eq(3.5605714285714285)
+  end
+
+  it "Average Grades test" do
+    expect(@teacher.average_grades).to eq(3.5617529880478087)
+  end
+end
+describe "Teacher - statistics (no db loaded)" do
+  before(:all) do
+    @teacher = Teacher.new
+  end
+  it "Count Subjects test" do
+    expect(@teacher.count_subjects).to eq(0)
+  end
+
+  it "Count Grades test" do
+    expect(@teacher.count_grades).to eq(0)
+  end
+
+  it "Count Notes test" do
+    expect(@teacher.count_notes).to eq(0)
+  end
+
+  it "Overall Average Grades test" do
+    expect(@teacher.average_average_subjects).to eq(0)
+  end
+
+  it "Average Grades test" do
+    expect(@teacher.average_grades).to eq(0)
+  end
+end
 describe "Checking Teacher class validation" do
   before{
     @new_teacher = Teacher.new

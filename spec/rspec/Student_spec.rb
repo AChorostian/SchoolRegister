@@ -125,11 +125,106 @@ describe "Checking Student class functionality" do
     expect{Student.printlabels}.to output.to_stdout
   end
 
+  it "Checking fullname function" do
+    expect(@new_student.fullname).to eq("Jan Kowalski")
+  end
+
   after{
     @new_student = nil
   }
 end
 
+describe "Student - statistics (with db loaded)" do
+  before(:all) do
+    Database.init
+    Register.init
+    @student = Student.first
+  end
+  it "Count Subjects test" do
+    expect(@student.count_subjects).to eq(10)
+  end
+
+  it "Count Grades test" do
+    expect(@student.count_grades).to eq(85)
+  end
+
+  it "Count Notes test" do
+    expect(@student.count_notes).to eq(3)
+  end
+
+  it "Overall Average Grades test" do
+    expect(@student.overall_average_grades).to eq(3.4849603174603176)
+  end
+
+  it "Average Grades test" do
+    expect(@student.average_grades).to eq(3.541176470588235)
+  end
+
+  it "MaxAvg Grades test - key checking" do
+    expect(@student.max_average_grades).to be_instance_of(StudentSubject)
+  end
+
+  it "MaxAvg Grades test - value checking" do
+    expect(@student.max_average_grades.average_grades).to eq(4.071428571428571)
+  end
+  it "MinAvg Grades test - object checking" do
+    expect(@student.min_average_grades).to be_instance_of(StudentSubject)
+  end
+  it "MinAvg Grades test - key checking" do
+    expect(@student.min_average_grades.average_grades).to eq(2.6)
+  end
+  it "Max count grades test - object checking" do
+    expect(@student.max_count_grades).to be_instance_of(StudentSubject)
+  end
+  it "Max count grades test" do
+    expect(@student.max_count_grades.average_grades).to eq(4.071428571428571)
+  end
+  it "Min count grades test - object checking" do
+    expect(@student.min_count_grades).to be_instance_of(StudentSubject)
+  end
+  it "Min count grades test" do
+    expect(@student.min_count_grades.average_grades).to eq(2.6)
+  end
+
+end
+describe "Student - statistics (no db loaded)" do
+  before(:all) do
+    @student = Student.new
+  end
+  it "Count Subjects test" do
+    expect(@student.count_subjects).to eq(0)
+  end
+
+  it "Count Grades test" do
+    expect(@student.count_grades).to eq(0)
+  end
+
+  it "Count Notes test" do
+    expect(@student.count_notes).to eq(0)
+  end
+
+  it "Overall Average Grades test" do
+    expect(@student.overall_average_grades).to eq(0)
+  end
+
+  it "Average Grades test" do
+    expect(@student.average_grades).to eq(0)
+  end
+
+  it "MaxAvg Grades test - key checking" do
+    expect(@student.max_average_grades).to be_nil
+  end
+  it "MinAvg Grades test - object checking" do
+    expect(@student.min_average_grades).to be_nil
+  end
+  it "Max count grades test - object checking" do
+    expect(@student.max_count_grades).to be_nil
+  end
+  it "Min count grades test - object checking" do
+    expect(@student.min_count_grades).to be_nil
+  end
+
+end
 describe "Checking Student class validation" do
   before{
     @new_student = Student.new

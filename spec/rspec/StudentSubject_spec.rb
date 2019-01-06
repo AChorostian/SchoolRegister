@@ -162,6 +162,76 @@ describe "Negative cases - StudentSubject" do
 
 end
 
+describe "Statistics - StudentSubject" do
+  before(:each) do
+    Database.init
+    @test_student = Student.new
+    @test_student[:name] = "Test"
+    @test_student[:surname] = "Student"
+    @test_student.save
+
+    @test_teacher = Teacher.new
+    @test_teacher[:name] = "Test"
+    @test_teacher[:surname] = "Teacher"
+    @test_teacher.save
+
+    @test_subject = Subject.new
+    @test_subject[:name] = "Testing subject"
+    @test_subject[:Teacher_id] = @test_teacher[:id]
+    @test_subject.save
+
+    @studentSubject = StudentSubject.new
+    @studentSubject[:Student_id] = @test_student[:id]
+    @studentSubject[:Subject_id] = @test_subject[:id]
+    @studentSubject.save
+
+    @grade = Grade.new
+    @grade[:grade] = 5
+    @grade[:comment] = "Za projekt z ruby"
+    @grade[:date] = "08.01.2019"
+    @grade[:StudentSubject_id] = @studentSubject[:id]
+    @grade.save
+  end
+
+  it "Checking average of grades - one grade" do
+    expect(@studentSubject.average_grades).to eq(5.0)
+  end
+  it "Checking average of grades - two grades" do
+    @new_grade = Grade.new
+    @new_grade[:grade] = 2
+    @new_grade[:comment] = "Za projekt z ruby2"
+    @new_grade[:date] = "08.01.2019"
+    @new_grade[:StudentSubject_id] = @studentSubject[:id]
+    @new_grade.save
+    expect(@studentSubject.average_grades).to eq(3.5)
+  end
+  it "Checking sum of grades - one grade" do
+    expect(@studentSubject.sum_grades).to eq(5)
+  end
+  it "Checking sum of grades - two grades" do
+    @new_grade = Grade.new
+    @new_grade[:grade] = 2
+    @new_grade[:comment] = "Za projekt z ruby2"
+    @new_grade[:date] = "08.01.2019"
+    @new_grade[:StudentSubject_id] = @studentSubject[:id]
+    @new_grade.save
+    expect(@studentSubject.sum_grades).to eq(7)
+  end
+  it "Checking count of grades - one grade" do
+    expect(@studentSubject.count_grades).to eq(1)
+  end
+  it "Checking count of grades - two grades" do
+    @new_grade = Grade.new
+    @new_grade[:grade] = 2
+    @new_grade[:comment] = "Za projekt z ruby2"
+    @new_grade[:date] = "08.01.2019"
+    @new_grade[:StudentSubject_id] = @studentSubject[:id]
+    @new_grade.save
+    expect(@studentSubject.count_grades).to eq(2)
+  end
+
+end
+
 describe "Checking StudentSubject Class validation" do
 
   before {

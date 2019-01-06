@@ -93,14 +93,14 @@ describe "Checking Subject class functionality" do
 
     @removed_subject = Subject.last
 
-    @studentSubject = StudentSubject.new
-    @studentSubject[:Student_id] = @test_student[:id]
-    @studentSubject[:Subject_id] = @removed_subject[:id]
-    @studentSubject.save
+    @subjectSubject = StudentSubject.new
+    @subjectSubject[:Student_id] = @test_student[:id]
+    @subjectSubject[:Subject_id] = @removed_subject[:id]
+    @subjectSubject.save
 
     @removed_subject.delete
 
-    expect(StudentSubject.last).not_to be(@studentSubject)
+    expect(StudentSubject.last).not_to be(@subjectSubject)
   end
 
   it "Checking print function" do
@@ -134,7 +134,101 @@ describe "Negative cases" do
     @subject = nil
   }
 end
+describe "Subject - statistics (with db loaded)" do
+  before(:all) do
+    Database.init
+    Register.init
+    @subject = Subject.first
+  end
+  it "Count Students test" do
+    expect(@subject.count_students).to eq(12)
+  end
 
+  it "Count Grades test" do
+    expect(@subject.count_grades).to eq(127)
+  end
+
+  it "Sum Grades test" do
+    expect(@subject.sum_grades).to eq(442)
+  end
+
+  it "Overall Average Grades test" do
+    expect(@subject.average_average_grades).to eq(3.4748176795970913)
+  end
+
+  it "Average Grades test" do
+    expect(@subject.average_grades).to eq(3.4803149606299213)
+  end
+
+  it "Average Count Grades test" do
+    expect(@subject.average_count_grades).to eq(10.583333333333334)
+  end
+  it "Max average grades test - object checking" do
+    expect(@subject.max_average_grades).to be_instance_of(StudentSubject)
+  end
+  it "Min average grades test - object checking" do
+    expect(@subject.min_average_grades).to be_instance_of(StudentSubject)
+  end
+  it "Max count grades test - object checking" do
+    expect(@subject.max_count_grades).to be_instance_of(StudentSubject)
+  end
+  it "Min count grades test - object checking" do
+    expect(@subject.min_count_grades).to be_instance_of(StudentSubject)
+  end
+  it "Max average grades test - value checking" do
+    expect(@subject.max_average_grades.average_grades).to eq(4.125)
+  end
+  it "Min average grades test - value checking" do
+    expect(@subject.min_average_grades.average_grades).to eq(2.8)
+  end
+  it "Max count grades test - value checking" do
+    expect(@subject.max_count_grades.count_grades).to eq(17)
+  end
+  it "Min count grades test - value checking" do
+    expect(@subject.min_count_grades.count_grades).to eq(6)
+  end
+
+end
+describe "Subject - statistics (no db loaded)" do
+  before(:all) do
+    @subject = Subject.new
+  end
+  it "Count Students test" do
+    expect(@subject.count_students).to be(0)
+  end
+
+  it "Count Grades test" do
+    expect(@subject.count_grades).to eq(0)
+  end
+
+  it "Sum Grades test" do
+    expect(@subject.sum_grades).to eq(0)
+  end
+
+  it "Overall Average Grades test" do
+    expect(@subject.average_average_grades).to eq(0)
+  end
+
+  it "Average Grades test" do
+    expect(@subject.average_grades).to eq(0)
+  end
+
+  it "Average Count Grades test" do
+    expect(@subject.average_count_grades).to eq(0)
+  end
+  it "Max average grades test" do
+    expect(@subject.max_average_grades).to be_nil
+  end
+  it "Min average grades test" do
+    expect(@subject.min_average_grades).to be_nil
+  end
+  it "Max count grades test" do
+    expect(@subject.max_count_grades).to be_nil
+  end
+  it "Min count grades test" do
+    expect(@subject.min_count_grades).to be_nil
+  end
+end
 describe "Checking Subject class validation" do
 
   before {
