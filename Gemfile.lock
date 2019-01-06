@@ -7,6 +7,8 @@ GEM
     fileutils (1.0.2)
     json (2.1.0)
     minitest (5.11.3)
+    minitest-hooks (1.5.0)
+      minitest (> 5.3)
     rake (12.3.2)
     rspec (3.8.0)
       rspec-core (~> 3.8.0)
@@ -38,6 +40,7 @@ DEPENDENCIES
   csv
   fileutils
   minitest
+  minitest-hooks
   rake
   rspec
   rspec-mocks

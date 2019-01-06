@@ -132,6 +132,98 @@ describe "Checking Student class functionality" do
   end
 end
 
+describe "Student - statistics (with db loaded)" do
+  before(:all) do
+    Database.init
+    Register.init
+    @student = Student.first
+  end
+  it "Count Subjects test" do
+    assert_equal 10, @student.count_subjects
+  end
+
+  it "Count Grades test" do
+    assert_equal 85, @student.count_grades
+  end
+
+  it "Count Notes test" do
+    assert_equal 3, @student.count_notes
+  end
+
+  it "Overall Average Grades test" do
+    assert_equal 3.4849603174603176, @student.overall_average_grades
+  end
+
+  it "Average Grades test" do
+    assert_equal 3.541176470588235, @student.average_grades
+  end
+
+  it "MaxAvg Grades test - key checking" do
+    assert_instance_of StudentSubject, @student.max_average_grades
+  end
+
+  it "MaxAvg Grades test - value checking" do
+    assert_equal 4.071428571428571, @student.max_average_grades.average_grades
+  end
+  it "MinAvg Grades test - object checking" do
+    assert_instance_of StudentSubject, @student.min_average_grades
+  end
+  it "MinAvg Grades test - key checking" do
+    assert_equal 2.6, @student.min_average_grades.average_grades
+  end
+  it "Max count grades test - object checking" do
+    assert_instance_of StudentSubject, @student.max_count_grades
+  end
+  it "Max count grades test" do
+    assert_equal 4.071428571428571, @student.max_count_grades.average_grades
+  end
+  it "Min count grades test - object checking" do
+    assert_instance_of StudentSubject, @student.min_count_grades
+  end
+  it "Min count grades test" do
+    assert_equal 2.6, @student.min_count_grades.average_grades
+  end
+
+end
+describe "Student - statistics (no db loaded)" do
+  before(:all) do
+    @student = Student.new
+  end
+  it "Count Subjects test" do
+    assert_equal 0, @student.count_subjects
+  end
+
+  it "Count Grades test" do
+    assert_equal 0, @student.count_grades
+  end
+
+  it "Count Notes test" do
+    assert_equal 0, @student.count_notes
+  end
+
+  it "Overall Average Grades test" do
+    assert_equal 0, @student.overall_average_grades
+  end
+
+  it "Average Grades test" do
+    assert_equal 0, @student.average_grades
+  end
+
+  it "MaxAvg Grades test - key checking" do
+    assert_nil @student.max_average_grades
+  end
+  it "MinAvg Grades test - object checking" do
+    assert_nil @student.min_average_grades
+  end
+  it "Max count grades test - object checking" do
+    assert_nil @student.max_count_grades
+  end
+  it "Min count grades test - object checking" do
+    assert_nil @student.min_count_grades
+  end
+
+end
+
 describe "Checking Student class validation" do
   before do
     @new_student = Student.new
