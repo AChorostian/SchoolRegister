@@ -128,6 +128,102 @@ describe "Negative cases" do
   }
 end
 
+describe "Subject - statistics (with db loaded)" do
+  before(:all) do
+    Database.init
+    Register.init
+    @subject = Subject.first
+  end
+  it "Count Students test" do
+    assert_equal 12, @subject.count_students
+  end
+
+  it "Count Grades test" do
+    assert_equal 127, @subject.count_grades
+  end
+
+  it "Sum Grades test" do
+    assert_equal 442, @subject.sum_grades
+  end
+
+  it "Overall Average Grades test" do
+    assert_equal 3.4748176795970913, @subject.average_average_grades
+  end
+
+  it "Average Grades test" do
+    assert_equal 3.4803149606299213, @subject.average_grades
+  end
+
+  it "Average Count Grades test" do
+    assert_equal 10.583333333333334, @subject.average_count_grades
+  end
+  it "Max average grades test - object checking" do
+    assert_instance_of StudentSubject, @subject.max_average_grades
+  end
+  it "Min average grades test - object checking" do
+    assert_instance_of StudentSubject, @subject.min_average_grades
+  end
+  it "Max count grades test - object checking" do
+    assert_instance_of StudentSubject, @subject.max_count_grades
+  end
+  it "Min count grades test - object checking" do
+    assert_instance_of StudentSubject, @subject.min_count_grades
+  end
+  it "Max average grades test - value checking" do
+    assert_equal 4.125, @subject.max_average_grades.average_grades
+  end
+  it "Min average grades test - value checking" do
+    assert_equal 2.8, @subject.min_average_grades.average_grades
+  end
+  it "Max count grades test - value checking" do
+    assert_equal 17, @subject.max_count_grades.count_grades
+  end
+  it "Min count grades test - value checking" do
+    assert_equal 6, @subject.min_count_grades.count_grades
+  end
+
+end
+describe "Subject - statistics (no db loaded)" do
+  before(:all) do
+    @subject = Subject.new
+  end
+  it "Count Students test" do
+    assert_equal 0, @subject.count_students
+  end
+
+  it "Count Grades test" do
+    assert_equal 0, @subject.count_grades
+  end
+
+  it "Sum Grades test" do
+    assert_equal 0, @subject.sum_grades
+  end
+
+  it "Overall Average Grades test" do
+    assert_equal 0, @subject.average_average_grades
+  end
+
+  it "Average Grades test" do
+    assert_equal 0, @subject.average_grades
+  end
+
+  it "Average Count Grades test" do
+    assert_equal 0, @subject.average_count_grades
+  end
+  it "Max average grades test" do
+    assert_nil @subject.max_average_grades
+  end
+  it "Min average grades test" do
+    assert_nil @subject.min_average_grades
+  end
+  it "Max count grades test" do
+    assert_nil @subject.max_count_grades
+  end
+  it "Min count grades test" do
+    assert_nil @subject.min_count_grades
+  end
+end
+
 describe "Checking Subject class validation" do
 
   before {

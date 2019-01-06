@@ -120,7 +120,56 @@ describe "Checking Teacher class functionality" do
     @new_teacher = nil
   end
 end
+describe "Teacher - statistics (with db loaded)" do
+  before(:all) do
+    Database.init
+    Register.init
+    @teacher = Teacher.first
+  end
+  it "Count Subjects test" do
+    assert_equal 2, @teacher.count_subjects
+  end
 
+  it "Count Grades test" do
+    assert_equal 251, @teacher.count_grades
+  end
+
+  it "Count Notes test" do
+    assert_equal 10, @teacher.count_notes
+  end
+
+  it "Overall Average Grades test" do
+    assert_equal 3.5605714285714285, @teacher.average_average_subjects
+  end
+
+  it "Average Grades test" do
+    assert_equal 3.5617529880478087, @teacher.average_grades
+  end
+end
+describe "Teacher - statistics (no db loaded)" do
+  before(:all) do
+    @teacher = Teacher.new
+  end
+  it "Count Subjects test" do
+    assert_equal 0, @teacher.count_subjects
+  end
+
+  it "Count Grades test" do
+    assert_equal 0, @teacher.count_subjects
+  end
+
+  it "Count Notes test" do
+    assert_equal 0, @teacher.count_subjects
+  end
+
+  it "Overall Average Grades test" do
+    assert_equal 0, @teacher.count_subjects
+  end
+
+  it "Average Grades test" do
+    assert_equal 0, @teacher.count_subjects
+  end
+end
 describe "Checking Teacher class validation" do
   before do
     @new_teacher = Teacher.new
