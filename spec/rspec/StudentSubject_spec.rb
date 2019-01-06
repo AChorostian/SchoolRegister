@@ -231,7 +231,6 @@ describe "Statistics - StudentSubject" do
   end
 
 end
-
 describe "Checking StudentSubject Class validation" do
 
   before {
