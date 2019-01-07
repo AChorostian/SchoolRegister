@@ -295,8 +295,6 @@ describe "Checking Student class validation" do
     expect{@new_student.save}.to raise_error(Sequel::ValidationFailed)
   end
 
-
-
   after{
     @new_student = nil
   }

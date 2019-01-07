@@ -125,7 +125,9 @@ describe "Checking Student class functionality" do
   it "Checking print label function" do
     assert_output {Student.printlabels}
   end
-
+  it "Checking fullname function" do
+    assert_equal "Jan Kowalski", @new_student.fullname
+  end
   after do
     @test_teacher = nil
     @subject = nil
@@ -281,7 +283,6 @@ describe "Checking Student class validation" do
     @new_student[:surname] = "Testlongnamenamenamenamenamenamenamenamenamenamenamenamename"
     assert_raises (Sequel::ValidationFailed) {@new_student.save}
   end
-
 
   it "Checking error when surname format is invalid" do
     @new_student[:surname] = "kOwAlSkI"
