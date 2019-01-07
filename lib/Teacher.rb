@@ -50,5 +50,8 @@ class Teacher < Sequel::Model(Database.db[:Teacher])
         end
         self.Subject.sum(&:sum_grades).to_f / self.Subject.sum(&:count_grades).to_f
     end
-
+    def get_all_data
+        result = Array.new
+        result << self.count_subjects << self.count_grades << self.count_notes << self.average_average_subjects << self.average_grades
+    end
 end

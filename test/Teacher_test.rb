@@ -145,6 +145,12 @@ describe "Teacher - statistics (with db loaded)" do
   it "Average Grades test" do
     assert_equal 3.5617529880478087, @teacher.average_grades
   end
+  it "Get all data should return an array" do
+    assert_instance_of Array, @teacher.get_all_data
+  end
+  it "Get all data should return all data from stats" do
+    assert_equal [2, 251, 10, 3.5605714285714285, 3.5617529880478087], @teacher.get_all_data
+  end
 end
 describe "Teacher - statistics (no db loaded)" do
   before(:all) do
@@ -168,6 +174,12 @@ describe "Teacher - statistics (no db loaded)" do
 
   it "Average Grades test" do
     assert_equal 0, @teacher.count_subjects
+  end
+  it "Get all data should return an array" do
+    assert_instance_of Array, @teacher.get_all_data
+  end
+  it "Get all data should return all data from stats" do
+    assert_equal [0, 0, 0, 0, 0], @teacher.get_all_data
   end
 end
 describe "Checking Teacher class validation" do

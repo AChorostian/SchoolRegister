@@ -185,6 +185,12 @@ describe "Student - statistics (with db loaded)" do
   it "Min count grades test" do
     expect(@student.min_count_grades.average_grades).to eq(2.6)
   end
+  it "Get all data should return an array" do
+    expect(@student.get_all_data).to be_instance_of(Array)
+  end
+  it "Get all data should return all data from stats" do
+    expect(@student.get_all_data).to match_array([10, 85, 3, 3.4849603174603176, 3.541176470588235, 4.071428571428571, "Fizyka", 2.6, "Religia", 14, "Fizyka", 5, "Religia"])
+  end
 
 end
 describe "Student - statistics (no db loaded)" do
@@ -222,6 +228,12 @@ describe "Student - statistics (no db loaded)" do
   end
   it "Min count grades test - object checking" do
     expect(@student.min_count_grades).to be_nil
+  end
+  it "Get all data should return an array" do
+    expect(@student.get_all_data).to be_instance_of(Array)
+  end
+  it "Get all data should return all data from stats" do
+    expect(@student.get_all_data).to match_array([0, 0, 0, 0, 0, 0.0, "Brak danych", 0.0, "Brak danych", 0.0, "Brak danych", 0.0, "Brak danych"])
   end
 
 end

@@ -6,16 +6,17 @@ class Stats
         puts "== Uczeń =="
         Student.printlabels
         student.printline(student_nr)
+        data = student.get_all_data
         puts ""
-        puts "Liczba przedmiotów: " + student.count_subjects.to_s
-        puts "Liczba wszystkich ocen: " + student.count_grades.to_s
-        puts "Liczba uwag: "+ student.count_notes.to_s
-        puts "Średnia ze średnich ocen z przedmiotów: " + student.overall_average_grades.to_s
-        puts "Średnia ze wszystkich ocen ucznia: " + student.average_grades.to_s
-        puts "Najlepsza średnia: " + student.max_average_grades.average_grades.to_s + " " + student.max_average_grades.Subject.name
-        puts "Najgorsza średnia: " + student.min_average_grades.average_grades.to_s + " " + student.min_average_grades.Subject.name
-        puts "Najwięcej ocen: " + student.max_count_grades.count_grades.to_s + " " + student.max_count_grades.Subject.name
-        puts "Najmniej ocen: " + student.min_count_grades.count_grades.to_s + " " + student.min_count_grades.Subject.name
+        puts "Liczba przedmiotów: " + data[0].to_s
+        puts "Liczba wszystkich ocen: " + data[1].to_s
+        puts "Liczba uwag: "+ data[2].to_s
+        puts "Średnia ze średnich ocen z przedmiotów: " + data[3].to_s
+        puts "Średnia ze wszystkich ocen ucznia: " + data[4].to_s
+        puts "Najlepsza średnia: " + data[5].to_s + " " + data[6].to_s
+        puts "Najgorsza średnia: " + data[7].to_s + " " + data[8].to_s
+        puts "Najwięcej ocen: " + data[9].to_s + " " + data[10].to_s
+        puts "Najmniej ocen: " + data[11].to_s + " " + data[12].to_s
         puts ""
         print "Podaj dowolny znak, aby wrócić: "
         gets
@@ -27,16 +28,17 @@ class Stats
         puts "== Przedmiot =="
         Subject.printlabels
         subject.printline(subject_nr)
+        data = subject.get_all_data
         puts ""
-        puts "Liczba przypisanych uczniów: " + subject.count_students.to_s
-        puts "Liczba wszystkich wystawionych ocen: " + subject.count_grades.to_s
-        puts "Średnia ze średnich wszystkich uczniów: " + subject.overall_average_grades.to_s
-        puts "Średnia ze wszystkich wystawionych ocen: " + subject.average_grades.to_s
-        puts "Średnia ilość ocen przypadających na ucznia: " + subject.average_count_grades.to_s
-        puts "Najlepsza średnia: " + subject.max_average_grades.average_grades.to_s + " " + subject.max_average_grades.Student.fullname
-        puts "Najgorsza średnia: " + subject.min_average_grades.average_grades.to_s + " " + subject.min_average_grades.Student.fullname
-        puts "Najwiejsza ilość ocen: " + subject.max_count_grades.count_grades.to_s + " " + subject.max_count_grades.Student.fullname
-        puts "Najmniejsza ilość ocen: " + subject.min_count_grades.count_grades.to_s + " " + subject.min_count_grades.Student.fullname
+        puts "Liczba przypisanych uczniów: " + data[0].to_s
+        puts "Liczba wszystkich wystawionych ocen: " + data[1].to_s
+        puts "Średnia ze średnich wszystkich uczniów: " + data[2].to_s
+        puts "Średnia ze wszystkich wystawionych ocen: " + data[3].to_s
+        puts "Średnia ilość ocen przypadających na ucznia: " + data[4].to_s
+        puts "Najlepsza średnia: " + data[5].to_s+ " " + data[6].to_s
+        puts "Najgorsza średnia: " + data[7].to_s + " " + data[8].to_s
+        puts "Najwiejsza ilość ocen: " + data[9].to_s + " " + data[10].to_s
+        puts "Najmniejsza ilość ocen: " + data[11].to_s + " " + data[12].to_s
         puts ""
         print "Podaj dowolny znak, aby wrócić: "
         gets
@@ -48,12 +50,13 @@ class Stats
         puts "== Nauczyciel =="
         Teacher.printlabels
         teacher.printline(teacher_nr)
+        data = teacher.get_all_data
         puts ""
-        puts "Liczba przypisanych przedmiotów: " + teacher.count_subjects.to_s
-        puts "Liczba wystawionych ocen: " + teacher.count_grades.to_s
-        puts "Liczba wystawionych uwag: " + teacher.count_notes.to_s
-        puts "Średnia ze średnich wszystkich uczonych przedmiotów: " + teacher.average_average_subjects.to_s
-        puts "Średnia ze wszystkich wystawionych ocen: " + teacher.average_grades.to_s
+        puts "Liczba przypisanych przedmiotów: " + data[0].to_s
+        puts "Liczba wystawionych ocen: " + data[1].to_s
+        puts "Liczba wystawionych uwag: " + data[2].to_s
+        puts "Średnia ze średnich wszystkich uczonych przedmiotów: " + data[3].to_s
+        puts "Średnia ze wszystkich wystawionych ocen: " + data[4].to_s
         puts ""
         print "Podaj dowolny znak, aby wrócić: "
         gets

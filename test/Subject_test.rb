@@ -181,6 +181,12 @@ describe "Subject - statistics (with db loaded)" do
   it "Min count grades test - value checking" do
     assert_equal 6, @subject.min_count_grades.count_grades
   end
+  it "Get all data should return an array" do
+    assert_instance_of Array, @subject.get_all_data
+  end
+  it "Get all data should return all data from stats" do
+    assert_equal [12, 127, 3.4748176795970913, 3.4803149606299213, 10.583333333333334, 4.125, "Kazimierz Górski", 2.8, "Renata Urbańska", 17, "Joanna Baranowska", 6, "Czesław Wróbel"], @subject.get_all_data
+  end
 
 end
 describe "Subject - statistics (no db loaded)" do
@@ -221,6 +227,12 @@ describe "Subject - statistics (no db loaded)" do
   end
   it "Min count grades test" do
     assert_nil @subject.min_count_grades
+  end
+  it "Get all data should return an array" do
+    assert_instance_of Array, @subject.get_all_data
+  end
+  it "Get all data should return all data from stats" do
+    assert_equal [0, 0, 0, 0, 0, 0.0, "Brak danych", 0.0, "Brak danych", 0.0, "Brak danych", 0.0, "Brak danych"], @subject.get_all_data
   end
 end
 

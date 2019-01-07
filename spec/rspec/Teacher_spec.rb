@@ -145,6 +145,12 @@ describe "Teacher - statistics (with db loaded)" do
   it "Average Grades test" do
     expect(@teacher.average_grades).to eq(3.5617529880478087)
   end
+  it "Get all data should return an array" do
+    expect(@teacher.get_all_data).to be_instance_of(Array)
+  end
+  it "Get all data should return all data from stats" do
+    expect(@teacher.get_all_data).to match_array([2, 251, 10, 3.5605714285714285, 3.5617529880478087])
+  end
 end
 describe "Teacher - statistics (no db loaded)" do
   before(:all) do
@@ -168,6 +174,12 @@ describe "Teacher - statistics (no db loaded)" do
 
   it "Average Grades test" do
     expect(@teacher.average_grades).to eq(0)
+  end
+  it "Get all data should return an array" do
+    expect(@teacher.get_all_data).to be_instance_of(Array)
+  end
+  it "Get all data should return all data from stats" do
+    expect(@teacher.get_all_data).to match_array([0, 0, 0, 0, 0])
   end
 end
 describe "Checking Teacher class validation" do

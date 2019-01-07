@@ -76,6 +76,23 @@ class Subject < Sequel::Model(Database.db[:Subject])
         self.StudentSubject.min_by(&:count_grades)
     end
 
+    def get_all_data
+        result = Array.new
+        result << self.count_students << self.count_grades << self.average_average_grades << self.average_grades << self.average_count_grades
+        self.max_average_grades.nil? ?
+            result << 0.0 << "Brak danych" :
+            result << self.max_average_grades.average_grades << self.max_average_grades.Student.fullname
+        self.min_average_grades.nil? ?
+            result << 0.0 << "Brak danych" :
+            result << self.min_average_grades.average_grades << self.min_average_grades.Student.fullname
+        self.max_count_grades.nil? ?
+            result << 0.0 << "Brak danych" :
+            result << self.max_count_grades.count_grades << self.max_count_grades.Student.fullname
+        self.min_count_grades.nil? ?
+            result << 0.0 << "Brak danych" :
+            result << self.min_count_grades.count_grades << self.min_count_grades.Student.fullname
+    end
+
 end
 
 
