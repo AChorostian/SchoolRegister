@@ -17,6 +17,8 @@ class Menu
       puts "5. Dodaj Przedmiot"
       puts "6. Dodaj Nauczyciela"
       puts ""
+      puts "7. Eksportuj do CSV"
+      puts "8. Importuj nową bazę z CSV"
       puts "0. Wyjscie"
       puts ""
       print "podaj nr: "
@@ -28,6 +30,12 @@ class Menu
           when 4 then Add.Student
           when 5 then Add.Subject
           when 6 then Add.Teacher
+          when 7
+              Register.export
+          when 8
+              Database.drops
+              Database.init
+              Register.init
           else exit
       end
   end

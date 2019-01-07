@@ -25,10 +25,13 @@ class Register
         Menu.main while true
     end
 
-    def exitandsave
-        # CsvManager.saveToFile("students.csv", Database.findall(Student))
-        # CsvManager.saveToFile("teachers.csv", Database.findall(Teacher))
-        # CsvManager.saveToFile("subjects.csv", Database.findall(Subject))
+    def self.export
+        CsvManager.saveToFile("students1.csv", Database.db[:Student] )
+        CsvManager.saveToFile("teachers1.csv", Database.db[:Teacher] )
+        CsvManager.saveToFile("subjects.csv", Database.db[:Subject] )
+        CsvManager.saveToFile("notes.csv", Database.db[:Note] )
+        CsvManager.saveToFile("studentsubjects.csv", Database.db[:StudentSubject] )
+        CsvManager.saveToFile("grades.csv", Database.db[:Grade] )
     end
 
 end
