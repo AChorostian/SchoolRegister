@@ -9,7 +9,7 @@ describe "Checking Register class initialization" do
   end
 
   it "Returns instance of Register while created" do
-    assert_instance_of Subject, @register
+    assert_instance_of Register, @register
   end
 
   after{
