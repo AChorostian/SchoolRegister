@@ -29,7 +29,11 @@ class Student < Sequel::Model(Database.db[:Student])
     end
 
     def count_grades
-        self.StudentSubject.sum(&:count_grades)
+        if !self.StudentSubject.empty?
+            self.StudentSubject.sum(&:count_grades)
+        else
+            return 0
+        end
     end
 
     def count_notes

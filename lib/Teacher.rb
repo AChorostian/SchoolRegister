@@ -30,7 +30,11 @@ class Teacher < Sequel::Model(Database.db[:Teacher])
     end
 
     def count_grades
-        self.Subject.sum(&:count_grades)
+        if !self.Subject.empty?
+            self.Subject.sum(&:count_grades)
+        else
+            return 0
+        end
     end
 
     def count_notes
@@ -45,7 +49,7 @@ class Teacher < Sequel::Model(Database.db[:Teacher])
     end
 
     def average_grades
-        if self.Subject.sum(&:count_grades).to_f == 0
+        if self.Subject.empty?
             return 0
         end
         self.Subject.sum(&:sum_grades).to_f / self.Subject.sum(&:count_grades).to_f
