@@ -26,8 +26,8 @@ class Register
     end
 
     def self.export
-        CsvManager.saveToFile("students1.csv", Database.db[:Student] )
-        CsvManager.saveToFile("teachers1.csv", Database.db[:Teacher] )
+        CsvManager.saveToFile("students.csv", Database.db[:Student] )
+        CsvManager.saveToFile("teachers.csv", Database.db[:Teacher] )
         CsvManager.saveToFile("subjects.csv", Database.db[:Subject] )
         CsvManager.saveToFile("notes.csv", Database.db[:Note] )
         CsvManager.saveToFile("studentsubjects.csv", Database.db[:StudentSubject] )
