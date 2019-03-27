@@ -1,4 +1,4 @@
-# GoFive
+# SchoolRegister
 
 | Autorzy  	| Język programowania  	| Travis Status  	|
 |:-----:	|:-----:	|:-----:	|
